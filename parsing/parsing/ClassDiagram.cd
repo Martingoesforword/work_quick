@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TiXmlString" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAIAAAAEAAAlAsICAQACAAEAAIIAiQExCAABAAA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinystr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlOutStream" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinystr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlVisitor" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAAAAAgAA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlBase" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAgggBQAEAgEAAAQAgBhABASADAQAiAIAAAiAAAkAAA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlNode" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKAgAAAIAEAEiiBAhEAAYQAEAAqBgCECAYtgAAtAIDA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlAttribute" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQggAAAgAAQggAEAABAAQQAAAIEAGQAAABgQAIEEAA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlAttributeSet" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAQAAQAAABAAAAAAJAAAAACAiQAAAAAA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlElement" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAACACQAAJAAAAIIEAgQSAAA0BCBAgAAAEIFE=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlComment" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAIAAAAAAAAAAAAAAAQAAAAAAAAEIAAAgAAAEIBA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlText" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKAgAAAABAAAAAAAAEAAAABAAAABgAEAAAAgAAAEIBQ=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlDeclaration" Collapsed="true">
+    <Position X="15.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIAgACCAAAQAAAAAAAAAAAAAgAAAAIEAAAIoAAAEKBA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlUnknown" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAAEAAAAAAAAAAAAACAAAAAAEAAAAgAIAEIBA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlDocument" Collapsed="true">
+    <Position X="10.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAABBAQAQABAgEICAAAAAEQBAEBFAAgAEgUJBA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlHandle" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAEAAAAEAAAIAAAEgAIAABAAAAAAAAAIEoCAEAABA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlPrinter" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAEABEhAQgBAAQAAAAMAAAAAAAAABQIBQAwAA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TiXmlCursor" Collapsed="true">
+    <Position X="20" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAABABAAAA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="__unnamed_enum_01da_1" Collapsed="true">
+    <Position X="20" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAACABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TiXmlEncoding" Collapsed="true">
+    <Position X="21.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAAAAABAAAA=</HashCode>
+      <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

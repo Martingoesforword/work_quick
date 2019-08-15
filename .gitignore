@@ -1,5 +1,6 @@
-﻿################################################################################
-# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
-################################################################################
-
-/parsing/x64/Debug/parsing.exe
+﻿ 
+/parsing/tinyxml/.vs/tinyxml/v15
+/parsing/.vs
+/parsing/parsing/Debug
+/parsing/parsing/x64/Debug
+/parsing/x64/Debug
