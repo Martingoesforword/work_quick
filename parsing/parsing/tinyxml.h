@@ -151,7 +151,7 @@ public:
 };
 
 // Only used by Attribute::Query functions
-enum 
+tool_enum 
 { 
 	TIXML_SUCCESS,
 	TIXML_NO_ATTRIBUTE,
@@ -160,7 +160,7 @@ enum
 
 
 // Used by the parsing routines.
-enum TiXmlEncoding
+tool_enum TiXmlEncoding
 {
 	TIXML_ENCODING_UNKNOWN,
 	TIXML_ENCODING_UTF8,
@@ -261,7 +261,7 @@ public:
 	*/
 	static void EncodeString( const TIXML_STRING& str, TIXML_STRING* out );
 
-	enum
+	tool_enum
 	{
 		TIXML_NO_ERROR = 0,
 		TIXML_ERROR,
@@ -403,7 +403,7 @@ private:
 		unsigned int	strLength;
 		char		    chr;
 	};
-	enum
+	tool_enum
 	{
 		NUM_ENTITY = 5,
 		MAX_ENTITY_LENGTH = 6
@@ -459,7 +459,7 @@ public:
 	/** The types of XML nodes supported by TinyXml. (All the
 			unsupported types are picked up by UNKNOWN.)
 	*/
-	enum NodeType
+	tool_enum NodeType
 	{
 		TINYXML_DOCUMENT,
 		TINYXML_ELEMENT,
@@ -677,7 +677,7 @@ public:
 	TiXmlElement* FirstChildElement( const std::string& _value )				{	return FirstChildElement (_value.c_str ());	}	///< STL std::string form.
 	#endif
 
-	/** Query the type (as an enumerated value, above) of this node.
+	/** Query the type (as an tool_enumerated value, above) of this node.
 		The possible types are: TINYXML_DOCUMENT, TINYXML_ELEMENT, TINYXML_COMMENT,
 								TINYXML_UNKNOWN, TINYXML_TEXT, and TINYXML_DECLARATION.
 	*/

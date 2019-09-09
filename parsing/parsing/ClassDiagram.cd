@@ -112,19 +112,19 @@
       <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Enum Name="__unnamed_enum_01da_1" Collapsed="true">
+  <tool_enum Name="__unnamed_tool_enum_01da_1" Collapsed="true">
     <Position X="20" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAAAAAACABAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>tinyxml.h</FileName>
     </TypeIdentifier>
-  </Enum>
-  <Enum Name="TiXmlEncoding" Collapsed="true">
+  </tool_enum>
+  <tool_enum Name="TiXmlEncoding" Collapsed="true">
     <Position X="21.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAAAAABAAAA=</HashCode>
       <FileName>E:\workplace\xmlparsing\parsing\tinyxml\tinyxml.h</FileName>
     </TypeIdentifier>
-  </Enum>
+  </tool_enum>
   <Font Name="微软雅黑" Size="9" />
 </ClassDiagram>

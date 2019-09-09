@@ -1,10 +1,11 @@
 #pragma once
-#include "helper.h" 
-#include "enum.h"
+#include "tool_includeHelper.h" 
+#include "tool_staticText.h"
+ 
 
 struct stct_indepinfo
-{
-	string type;
+{ 
+	string type;	 
 	string name;
 	string parentname; 
 	bool Isonclick;
@@ -61,7 +62,7 @@ void add(string conclassname, string id,string parentconbinename,bool isonclick 
 		indep.type = H9D_WND;
 		indep.name = "wnd_" + formalId(parentconbinename) + "_" + formalId(id);
 		indep.parentname = parentconbinename;
-		indep.Isonclick = false;
+		indep.Isonclick = false;  
 		indeps.push_back(indep);
 	}
 }

@@ -1,20 +1,25 @@
 #pragma once
-#include "helper.h"
+#include "tool_includeHelper.h"
 #include "../tinyxml/tinyxml.h" 
 #include "struct_def.h" 
 //解析一个xml的某个节点
 void IterateXmlNode(string windowname, string path, stct_window& res_window);
+
 //去除NULL判断函数
 void CheckNULL(void* ptr);
 void CheckNULL(int is);
+
 //根据标签名在xml树结构中查找节点并返回节点文本（只能查找基本的子叶节点）
 string findSubByTag(string tag, TiXmlElement* xml);
+
 //将必要的窗口数据生成窗口树结构
 void deal_window(stct_window *res, TiXmlElement* xml, bool isWindow);
+
 //查找ID为id的xml指针
 TiXmlElement* findXmlById(string id, TiXmlElement* xml);
 
 
+//实现
 void CheckNULL(void* ptr)
 {
 	if (!ptr) { exit(1); }
@@ -49,7 +54,6 @@ void deal_window(stct_window *res, TiXmlElement* xml, bool isWindow)
 	TiXmlNode* node = nullptr;
 	for (node = xml->FirstChild(); node; node = node->NextSibling())
 	{
-		printf("%s\n", node->Value());
 		if (node->Type() == TiXmlNode::TINYXML_ELEMENT && !strcmp(node->Value(), "Control"))
 		{
 			//循环找寻子节点为Control的节点，并进行处理

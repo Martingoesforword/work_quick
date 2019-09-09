@@ -1,5 +1,5 @@
 #pragma once
-#include "helper.h"
+#include "tool_includeHelper.h"
 #include "tool_indepcontrol.h"
 #include "tool_stct.h"
 /*
@@ -74,9 +74,9 @@ void output_headfile(ostream out,string _hname) {
 		}
 
 	};
-	enum {MaxTipsNum = 3, MaxBoxReward = 5};
+	tool_enum {MaxTipsNum = 3, MaxBoxReward = 5};
 	*/
-####
+	print_stct(out);
 
 	/*
 	类似
@@ -119,6 +119,7 @@ void output_headfile(ostream out,string _hname) {
 	/*
 	类似
 		std::vector<AmusementBoxRewrad>			m_box_reward_vec;
+	根据结构体定义生成结构体vector
 	*/
 	printdefown(out);
 
@@ -131,7 +132,7 @@ void output_headfile(ostream out,string _hname) {
 		void OnBtnJumpWeb(H3D_CLIENT::IUIWnd* wnd);
 	*/
 	out << "private:" << endl;
-	print_stct(out);
+	
 
 
 	/*

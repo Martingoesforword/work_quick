@@ -1,5 +1,5 @@
 #pragma once
-#include "helper.h"
+#include "tool_includeHelper.h"
 #define MAX_SUBCONTROL 200 
 struct stct_window {
 	string id;

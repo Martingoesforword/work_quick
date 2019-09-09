@@ -1,5 +1,5 @@
 #pragma once
-#include "helper.h" 
+#include "tool_includeHelper.h" 
 using namespace std;
 #define STCT_STRING "stct_"
 struct item_declaration {
@@ -20,8 +20,6 @@ void format_stct_name(list_declaration& dec12,string name) {
 	dec12.struct_name_dec = STCT_STRING;
 	dec12.struct_name_dec.append(name);
 } 
-
- 
 void format_stct(list_declaration& dec12, string name, vector<item_declaration>& items_dec) {
 	 
 	format_stct_name(dec12, name);
