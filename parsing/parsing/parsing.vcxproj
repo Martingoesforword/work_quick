@@ -24,6 +24,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>parsing</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <ProjectName>quick_work_ui</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -84,7 +85,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -152,29 +153,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="design_class.h" />
-    <ClInclude Include="design_enum.h" />
-    <ClInclude Include="design_function.h" />
-    <ClInclude Include="design_headfile.h" />
-    <ClInclude Include="design_initbind.h" />
-    <ClInclude Include="design_sourcefile.h" />
-    <ClInclude Include="design_stct.h" />
+    <ClInclude Include="tool_headfile.h" />
+    <ClInclude Include="tool_indepcontrol.h" />
+    <ClInclude Include="tool_stct.h" />
+    <ClInclude Include="tool.h" />
     <ClInclude Include="helper.h" />
+    <ClInclude Include="struct_def.h" />
     <ClInclude Include="tinystr.h" />
     <ClInclude Include="tinyxml.h" />
-    <ClInclude Include="referance.h" />
-    <ClInclude Include="头文件.h" />
+    <ClInclude Include="enum.h" />
+    <ClInclude Include="tool_list.h" />
+    <ClInclude Include="tool_xml_get.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="parsing.cpp" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="tinystr.cpp" />
     <ClCompile Include="tinyxml.cpp" />
     <ClCompile Include="tinyxmlerror.cpp" />
     <ClCompile Include="tinyxmlparser.cpp" />
-    <ClCompile Include="源文件示例.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="layout.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

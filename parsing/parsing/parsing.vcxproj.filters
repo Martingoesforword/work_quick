@@ -21,41 +21,35 @@
     <ClInclude Include="tinyxml.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="design_stct.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="referance.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="design_class.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="design_enum.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="design_headfile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="design_sourcefile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="helper.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="design_initbind.h">
+    <ClInclude Include="struct_def.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="design_function.h">
+    <ClInclude Include="tool_xml_get.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="头文件.h">
-      <Filter>资源文件</Filter>
+    <ClInclude Include="tool_indepcontrol.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_headfile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_stct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="enum.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="parsing.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="tinystr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -68,11 +62,16 @@
     <ClCompile Include="tinyxmlparser.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源文件示例.cpp">
-      <Filter>资源文件</Filter>
+    <ClCompile Include="test.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="layout.xml">
+      <Filter>资源文件</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

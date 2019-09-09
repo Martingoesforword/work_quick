@@ -1,0 +1,2791 @@
+<?xml version="1.0"?>
+<Windows>
+  <Window index="0" layername="wnd_helpTip" Class="Window">
+    <Align>Normal Normal</Align>
+    <AppearanceType>sc_normal</AppearanceType>
+    <CanChangeSize>false</CanChangeSize>
+    <Font>
+    </Font>
+    <FontID>
+    </FontID>
+    <ID>wnd_helpTip</ID>
+    <Position>374 256</Position>
+    <Rect>0 263 403 0</Rect>
+    <Show>false</Show>
+    <Tile>-1 -1</Tile>
+    <TileHeadTail>0 0</TileHeadTail>
+    <TileModeAdv>tilemode_null</TileModeAdv>
+    <TileSize>16 16</TileSize>
+    <ZLevel>z_9</ZLevel>
+    <ResourceID>star_ui_newback</ResourceID>
+    <ControlNum>0</ControlNum>
+    <Control Class="Button">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>btn_close</ID>
+      <Position>364 229</Position>
+      <Rect>0 30 36 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>star_ui_ZwndYes</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <ClickSound>
+        </ClickSound>
+        <TextOffset_X>
+        </TextOffset_X>
+        <TextOffset_Y>
+        </TextOffset_Y>
+        <CustomCur>
+        </CustomCur>
+        <GlowOffset>0 0</GlowOffset>
+      </Self>
+    </Control>
+    <Control Class="Image">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>img_background</ID>
+      <Position>3 4</Position>
+      <Rect>0 221 398 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>GUI_background_img</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self />
+    </Control>
+    <Control Class="StaticText">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Caption>我是静态文本</Caption>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>st_helpContent</ID>
+      <Position>3 7</Position>
+      <Rect>0 213 400 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>
+      </ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <Caption>我是静态文本</Caption>
+        <TextMode>Normal</TextMode>
+        <AlignType>Center Center</AlignType>
+        <XOffset>0</XOffset>
+      </Self>
+    </Control>
+    <Control Class="StaticText">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Caption>我是静态文本</Caption>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>st_title</ID>
+      <Position>133 232</Position>
+      <Rect>0 25 142 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>
+      </ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <Caption>我是静态文本</Caption>
+        <TextMode>Normal</TextMode>
+        <AlignType>Center Center</AlignType>
+        <XOffset>0</XOffset>
+      </Self>
+    </Control>
+    <Self>
+      <Show>false</Show>
+    </Self>
+  </Window>
+  <Window index="0" layername="wnd_x5DayTip" Class="Window">
+    <Align>Normal Normal</Align>
+    <AppearanceType>sc_normal</AppearanceType>
+    <CanChangeSize>false</CanChangeSize>
+    <Font>
+    </Font>
+    <FontID>
+    </FontID>
+    <ID>wnd_x5DayTip</ID>
+    <Position>374 256</Position>
+    <Rect>0 263 403 0</Rect>
+    <Show>false</Show>
+    <Tile>-1 -1</Tile>
+    <TileHeadTail>0 0</TileHeadTail>
+    <TileModeAdv>tilemode_null</TileModeAdv>
+    <TileSize>16 16</TileSize>
+    <ZLevel>z_9</ZLevel>
+    <ResourceID>star_ui_newback</ResourceID>
+    <ControlNum>0</ControlNum>
+    <Control Class="Button">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>btn_close</ID>
+      <Position>364 229</Position>
+      <Rect>0 30 36 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>star_ui_ZwndYes</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <ClickSound>
+        </ClickSound>
+        <TextOffset_X>
+        </TextOffset_X>
+        <TextOffset_Y>
+        </TextOffset_Y>
+        <CustomCur>
+        </CustomCur>
+        <GlowOffset>0 0</GlowOffset>
+      </Self>
+    </Control>
+    <Control Class="Image">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>img_background</ID>
+      <Position>3 4</Position>
+      <Rect>0 221 398 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>GUI_background_img</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self />
+    </Control>
+    <Control Class="StaticText">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Caption>我是静态文本</Caption>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>st_title</ID>
+      <Position>129 224</Position>
+      <Rect>0 25 142 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>
+      </ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <Caption>我是静态文本</Caption>
+        <TextMode>Normal</TextMode>
+        <AlignType>Center Center</AlignType>
+        <XOffset>0</XOffset>
+      </Self>
+    </Control>
+    <Self>
+      <Show>false</Show>
+    </Self>
+  </Window>
+  <Window index="0" layername="wnd_amusement_park" Class="Window">
+    <Align>Normal Normal</Align>
+    <AppearanceType>sc_normal</AppearanceType>
+    <CanChangeSize>false</CanChangeSize>
+    <Font>
+    </Font>
+    <FontID>
+    </FontID>
+    <ID>wnd_amusement_park</ID>
+    <Position>0 0</Position>
+    <Rect>0 697 1024 0</Rect>
+    <Show>False</Show>
+    <Tile>-1 -1</Tile>
+    <TileHeadTail>0 0</TileHeadTail>
+    <TileModeAdv>tilemode_null</TileModeAdv>
+    <TileSize>16 16</TileSize>
+    <ZLevel>z_8</ZLevel>
+    <ResourceID>
+    </ResourceID>
+    <ControlNum>0</ControlNum>
+    <Control Class="Button">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>btn_conduct</ID>
+      <Position>38 263</Position>
+      <Rect>0 301 286 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>uir_xiari_zaxigua_01</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <ClickSound>
+        </ClickSound>
+        <TextOffset_X>
+        </TextOffset_X>
+        <TextOffset_Y>
+        </TextOffset_Y>
+        <CustomCur>
+        </CustomCur>
+        <GlowOffset>0 0</GlowOffset>
+      </Self>
+    </Control>
+    <Control Class="Button">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>btn_help</ID>
+      <Position>958 650</Position>
+      <Rect>0 31 35 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>star_ui_ZwndYes</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <ClickSound>
+        </ClickSound>
+        <TextOffset_X>
+        </TextOffset_X>
+        <TextOffset_Y>
+        </TextOffset_Y>
+        <CustomCur>
+        </CustomCur>
+        <GlowOffset>0 0</GlowOffset>
+      </Self>
+    </Control>
+    <Control Class="Image">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>img_name</ID>
+      <Position>502 639</Position>
+      <Rect>0 37 200 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>GUI_background_img</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self />
+    </Control>
+    <Control Class="RichEditR">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Caption>我是富文本</Caption>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>rt_intro</ID>
+      <Position>67 591</Position>
+      <Rect>0 52 303 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>UniversalWnd</ResourceID>
+      <ScrollAlways>0</ScrollAlways>
+      <ScrollEndButtonSize>0</ScrollEndButtonSize>
+      <ScrollFixSize>31</ScrollFixSize>
+      <ScrollHeadTailSize>15 15</ScrollHeadTailSize>
+      <ScrollUpDownSize>-3</ScrollUpDownSize>
+      <ScrollVertical>1</ScrollVertical>
+      <ScrollBack>uir_tongyong_hkBackPic</ScrollBack>
+      <ScrollRes>uir_tongyong_hk</ScrollRes>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <Caption>我是富文本</Caption>
+        <AlignType>Center Center</AlignType>
+        <MaxInputLen>32</MaxInputLen>
+        <Editible>false</Editible>
+        <VMiddle>false</VMiddle>
+        <SingleLineCenter>false</SingleLineCenter>
+        <XBeg>2</XBeg>
+        <XEnd>-2</XEnd>
+        <YBeg>2</YBeg>
+        <YEnd>-2</YEnd>
+        <ScrollLeft>false</ScrollLeft>
+        <ScrollWidth>7</ScrollWidth>
+        <CursorUir>
+        </CursorUir>
+        <LineSpan>0</LineSpan>
+      </Self>
+    </Control>
+    <Control Class="StaticText">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Caption>时间</Caption>
+      <Font>
+      </Font>
+      <FontID>uir_tongyong_bai13b</FontID>
+      <ID>st_time</ID>
+      <Position>9 659</Position>
+      <Rect>0 27 287 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>
+      </ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <Caption>时间</Caption>
+        <TextMode>Normal</TextMode>
+        <AlignType>Center Center</AlignType>
+        <XOffset>0</XOffset>
+      </Self>
+    </Control>
+    <Control Class="Window">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>wnd_Self_Rewards</ID>
+      <Position>55 35</Position>
+      <Rect>0 147 390 0</Rect>
+      <Show>True</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>
+      </ResourceID>
+      <ControlNum>0</ControlNum>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_box_reward_0</ID>
+        <Position>8 43</Position>
+        <Rect>0 59 68 0</Rect>
+        <Show>False</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_2</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="EffectWnd">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>effect_Reward</ID>
+          <Position>44 32</Position>
+          <Rect>0 34 63 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_1</ZLevel>
+          <ScrollAlways>0</ScrollAlways>
+          <ScrollEndButtonSize>0</ScrollEndButtonSize>
+          <ScrollFixSize>42</ScrollFixSize>
+          <ScrollHeadTailSize>20 20</ScrollHeadTailSize>
+          <ScrollUpDownSize>23</ScrollUpDownSize>
+          <ScrollVertical>1</ScrollVertical>
+          <ScrollBack>NewScrBar</ScrollBack>
+          <ScrollRes>NewScrBarBackPic</ScrollRes>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <EffectResID>ui_effect\ui_effect2019\ui_effect_chuxianhly_01.spe</EffectResID>
+          </Self>
+        </Control>
+        <Control Class="Button">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>btn_Reward</ID>
+          <Position>6 1</Position>
+          <Rect>0 49 62 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_cxhly_baoxiang01</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <ClickSound>
+            </ClickSound>
+            <TextOffset_X>
+            </TextOffset_X>
+            <TextOffset_Y>
+            </TextOffset_Y>
+            <CustomCur>
+            </CustomCur>
+            <GlowOffset>0 0</GlowOffset>
+          </Self>
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>300</Caption>
+          <Font>
+          </Font>
+          <FontID>nurb_task_suiji</FontID>
+          <ID>st_RewardNum</ID>
+          <Position>9 -96</Position>
+          <Rect>0 19 62 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>
+          </ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>300</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Self>
+          <Show>False</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_box_reward_1</ID>
+        <Position>91 45</Position>
+        <Rect>0 55 65 0</Rect>
+        <Show>False</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_2</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="EffectWnd">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>effect_Reward</ID>
+          <Position>39 31</Position>
+          <Rect>0 44 52 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_1</ZLevel>
+          <ScrollAlways>0</ScrollAlways>
+          <ScrollEndButtonSize>0</ScrollEndButtonSize>
+          <ScrollFixSize>42</ScrollFixSize>
+          <ScrollHeadTailSize>20 20</ScrollHeadTailSize>
+          <ScrollUpDownSize>23</ScrollUpDownSize>
+          <ScrollVertical>1</ScrollVertical>
+          <ScrollBack>NewScrBar</ScrollBack>
+          <ScrollRes>NewScrBarBackPic</ScrollRes>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <EffectResID>ui_effect\ui_effect2019\ui_effect_chuxianhly_02.spe</EffectResID>
+          </Self>
+        </Control>
+        <Control Class="Button">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>btn_Reward</ID>
+          <Position>-82 3</Position>
+          <Rect>0 45 58 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_cxhly_baoxiang01</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <ClickSound>
+            </ClickSound>
+            <TextOffset_X>
+            </TextOffset_X>
+            <TextOffset_Y>
+            </TextOffset_Y>
+            <CustomCur>
+            </CustomCur>
+            <GlowOffset>0 0</GlowOffset>
+          </Self>
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>700</Caption>
+          <Font>
+          </Font>
+          <FontID>nurb_task_suiji</FontID>
+          <ID>st_RewardNum</ID>
+          <Position>-69 -92</Position>
+          <Rect>0 19 62 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>
+          </ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>700</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Self>
+          <Show>False</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_box_reward_2</ID>
+        <Position>146 45</Position>
+        <Rect>0 52 65 0</Rect>
+        <Show>False</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_2</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="EffectWnd">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>effect_Reward</ID>
+          <Position>40 28</Position>
+          <Rect>0 41 50 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_1</ZLevel>
+          <ScrollAlways>0</ScrollAlways>
+          <ScrollEndButtonSize>0</ScrollEndButtonSize>
+          <ScrollFixSize>42</ScrollFixSize>
+          <ScrollHeadTailSize>20 20</ScrollHeadTailSize>
+          <ScrollUpDownSize>23</ScrollUpDownSize>
+          <ScrollVertical>1</ScrollVertical>
+          <ScrollBack>NewScrBar</ScrollBack>
+          <ScrollRes>NewScrBarBackPic</ScrollRes>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <EffectResID>ui_effect\ui_effect2019\ui_effect_chuxianhly_02.spe</EffectResID>
+          </Self>
+        </Control>
+        <Control Class="Button">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>btn_Reward</ID>
+          <Position>4 1</Position>
+          <Rect>0 45 58 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_cxhly_baoxiang01</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <ClickSound>
+            </ClickSound>
+            <TextOffset_X>
+            </TextOffset_X>
+            <TextOffset_Y>
+            </TextOffset_Y>
+            <CustomCur>
+            </CustomCur>
+            <GlowOffset>0 0</GlowOffset>
+          </Self>
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>1000</Caption>
+          <Font>
+          </Font>
+          <FontID>nurb_task_suiji</FontID>
+          <ID>st_RewardNum</ID>
+          <Position>5 -92</Position>
+          <Rect>0 19 62 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>
+          </ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>1000</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Self>
+          <Show>False</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_box_reward_3</ID>
+        <Position>220 43</Position>
+        <Rect>0 59 68 0</Rect>
+        <Show>False</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_2</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="EffectWnd">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>effect_Reward</ID>
+          <Position>44 32</Position>
+          <Rect>0 34 63 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_1</ZLevel>
+          <ScrollAlways>0</ScrollAlways>
+          <ScrollEndButtonSize>0</ScrollEndButtonSize>
+          <ScrollFixSize>42</ScrollFixSize>
+          <ScrollHeadTailSize>20 20</ScrollHeadTailSize>
+          <ScrollUpDownSize>23</ScrollUpDownSize>
+          <ScrollVertical>1</ScrollVertical>
+          <ScrollBack>NewScrBar</ScrollBack>
+          <ScrollRes>NewScrBarBackPic</ScrollRes>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <EffectResID>ui_effect\ui_effect2019\ui_effect_chuxianhly_01.spe</EffectResID>
+          </Self>
+        </Control>
+        <Control Class="Button">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>btn_Reward</ID>
+          <Position>6 1</Position>
+          <Rect>0 49 62 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_cxhly_baoxiang01</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <ClickSound>
+            </ClickSound>
+            <TextOffset_X>
+            </TextOffset_X>
+            <TextOffset_Y>
+            </TextOffset_Y>
+            <CustomCur>
+            </CustomCur>
+            <GlowOffset>0 0</GlowOffset>
+          </Self>
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>300</Caption>
+          <Font>
+          </Font>
+          <FontID>nurb_task_suiji</FontID>
+          <ID>st_RewardNum</ID>
+          <Position>9 -96</Position>
+          <Rect>0 19 62 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>
+          </ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>300</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Self>
+          <Show>False</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_box_reward_4</ID>
+        <Position>294 41</Position>
+        <Rect>0 59 68 0</Rect>
+        <Show>False</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_2</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="EffectWnd">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>effect_Reward</ID>
+          <Position>44 32</Position>
+          <Rect>0 34 63 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_1</ZLevel>
+          <ScrollAlways>0</ScrollAlways>
+          <ScrollEndButtonSize>0</ScrollEndButtonSize>
+          <ScrollFixSize>42</ScrollFixSize>
+          <ScrollHeadTailSize>20 20</ScrollHeadTailSize>
+          <ScrollUpDownSize>23</ScrollUpDownSize>
+          <ScrollVertical>1</ScrollVertical>
+          <ScrollBack>NewScrBar</ScrollBack>
+          <ScrollRes>NewScrBarBackPic</ScrollRes>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <EffectResID>ui_effect\ui_effect2019\ui_effect_chuxianhly_01.spe</EffectResID>
+          </Self>
+        </Control>
+        <Control Class="Button">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>btn_Reward</ID>
+          <Position>6 1</Position>
+          <Rect>0 49 62 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_cxhly_baoxiang01</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <ClickSound>
+            </ClickSound>
+            <TextOffset_X>
+            </TextOffset_X>
+            <TextOffset_Y>
+            </TextOffset_Y>
+            <CustomCur>
+            </CustomCur>
+            <GlowOffset>0 0</GlowOffset>
+          </Self>
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>300</Caption>
+          <Font>
+          </Font>
+          <FontID>nurb_task_suiji</FontID>
+          <ID>st_RewardNum</ID>
+          <Position>9 -96</Position>
+          <Rect>0 19 62 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>
+          </ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>300</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Self>
+          <Show>False</Show>
+        </Self>
+      </Control>
+      <Control Class="Image">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>img_MyPro</ID>
+        <Position>8 28</Position>
+        <Rect>0 14 352 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>uir_cxhly_grjdt</ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self />
+      </Control>
+      <Control Class="Image">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>img_MyProBg</ID>
+        <Position>6 30</Position>
+        <Rect>0 14 353 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>uir_cxhly_grjdtdb</ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self />
+      </Control>
+      <Control Class="Image">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>img_Tips</ID>
+        <Position>218 101</Position>
+        <Rect>0 21 21 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ToolTips>str_ui_SummerVit_MyBoxTips</ToolTips>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>uir_zbw_wenhao</ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self />
+      </Control>
+      <Control Class="StaticText">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Caption>我是静态文本</Caption>
+        <Font>
+        </Font>
+        <FontID>uir_tongyong_bai13b</FontID>
+        <ID>st_MyPeriodValue</ID>
+        <Position>129 98</Position>
+        <Rect>0 26 69 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self>
+          <Caption>我是静态文本</Caption>
+          <TextMode>Normal</TextMode>
+          <AlignType>Center Center</AlignType>
+          <XOffset>0</XOffset>
+        </Self>
+      </Control>
+      <Control Class="StaticText">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Caption>str_ui_SummerVit_MyPeriodTitle</Caption>
+        <Font>
+        </Font>
+        <FontID>uir_cxhly_zt02</FontID>
+        <ID>st_my_ticket</ID>
+        <Position>3 99</Position>
+        <Rect>0 28 114 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self>
+          <Caption>str_ui_SummerVit_MyPeriodTitle</Caption>
+          <TextMode>Normal</TextMode>
+          <AlignType>Left Center</AlignType>
+          <XOffset>0</XOffset>
+        </Self>
+      </Control>
+      <Self>
+        <Show>True</Show>
+      </Self>
+    </Control>
+    <Control Class="Window">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>wnd_single_lottery</ID>
+      <Position>668 207</Position>
+      <Rect>0 366 330 0</Rect>
+      <Show>True</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>uir_gzqd_ct_dbj</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Control Class="RichEditR">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Caption>兑换次数</Caption>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>rt_exchange_count</ID>
+        <Position>26 70</Position>
+        <Rect>0 27 224 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>UniversalWnd</ResourceID>
+        <ScrollAlways>0</ScrollAlways>
+        <ScrollEndButtonSize>0</ScrollEndButtonSize>
+        <ScrollFixSize>31</ScrollFixSize>
+        <ScrollHeadTailSize>15 15</ScrollHeadTailSize>
+        <ScrollUpDownSize>-3</ScrollUpDownSize>
+        <ScrollVertical>1</ScrollVertical>
+        <ScrollBack>uir_tongyong_hkBackPic</ScrollBack>
+        <ScrollRes>NewScrBarBackPic</ScrollRes>
+        <ControlNum>0</ControlNum>
+        <Self>
+          <Caption>兑换次数</Caption>
+          <AlignType>Center Center</AlignType>
+          <MaxInputLen>32</MaxInputLen>
+          <Editible>false</Editible>
+          <VMiddle>false</VMiddle>
+          <SingleLineCenter>false</SingleLineCenter>
+          <XBeg>2</XBeg>
+          <XEnd>-2</XEnd>
+          <YBeg>2</YBeg>
+          <YEnd>-2</YEnd>
+          <ScrollLeft>false</ScrollLeft>
+          <ScrollWidth>7</ScrollWidth>
+          <CursorUir>
+          </CursorUir>
+          <LineSpan>0</LineSpan>
+        </Self>
+      </Control>
+      <Control Class="RichEditR">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Caption>我是富文本</Caption>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>rt_lottery_rule</ID>
+        <Position>5 176</Position>
+        <Rect>0 118 319 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>UniversalWnd</ResourceID>
+        <ScrollAlways>0</ScrollAlways>
+        <ScrollEndButtonSize>0</ScrollEndButtonSize>
+        <ScrollFixSize>31</ScrollFixSize>
+        <ScrollHeadTailSize>15 15</ScrollHeadTailSize>
+        <ScrollUpDownSize>-3</ScrollUpDownSize>
+        <ScrollVertical>1</ScrollVertical>
+        <ScrollBack>uir_tongyong_hkBackPic</ScrollBack>
+        <ScrollRes>uir_tongyong_hk</ScrollRes>
+        <ControlNum>0</ControlNum>
+        <Self>
+          <Caption>我是富文本</Caption>
+          <AlignType>Center Center</AlignType>
+          <MaxInputLen>32</MaxInputLen>
+          <Editible>false</Editible>
+          <VMiddle>false</VMiddle>
+          <SingleLineCenter>false</SingleLineCenter>
+          <XBeg>2</XBeg>
+          <XEnd>-2</XEnd>
+          <YBeg>2</YBeg>
+          <YEnd>-2</YEnd>
+          <ScrollLeft>false</ScrollLeft>
+          <ScrollWidth>7</ScrollWidth>
+          <CursorUir>
+          </CursorUir>
+          <LineSpan>0</LineSpan>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>True</CanChangeSize>
+        <CanRePosition>False</CanRePosition>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wndTicketHelp</ID>
+        <Position>-433 40</Position>
+        <Rect>0 217 411 0</Rect>
+        <Show>False</Show>
+        <ThroughEvent>True</ThroughEvent>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>33 21</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ToolTipsWidth>200</ToolTipsWidth>
+        <ResourceID>uir_tongyong_tips_xia</ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="RichEditR">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>我是富文本</Caption>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>rt_0</ID>
+          <Position>14 135</Position>
+          <Rect>0 31 378 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>UniversalWnd</ResourceID>
+          <ScrollAlways>0</ScrollAlways>
+          <ScrollEndButtonSize>0</ScrollEndButtonSize>
+          <ScrollFixSize>31</ScrollFixSize>
+          <ScrollHeadTailSize>15 15</ScrollHeadTailSize>
+          <ScrollUpDownSize>-3</ScrollUpDownSize>
+          <ScrollVertical>1</ScrollVertical>
+          <ScrollBack>uir_tongyong_hkBackPic</ScrollBack>
+          <ScrollRes>uir_tongyong_hk</ScrollRes>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>我是富文本</Caption>
+            <AlignType>Center Center</AlignType>
+            <MaxInputLen>32</MaxInputLen>
+            <Editible>false</Editible>
+            <VMiddle>false</VMiddle>
+            <SingleLineCenter>false</SingleLineCenter>
+            <XBeg>2</XBeg>
+            <XEnd>-2</XEnd>
+            <YBeg>2</YBeg>
+            <YEnd>-2</YEnd>
+            <ScrollLeft>false</ScrollLeft>
+            <ScrollWidth>7</ScrollWidth>
+            <CursorUir>
+            </CursorUir>
+            <LineSpan>0</LineSpan>
+          </Self>
+        </Control>
+        <Control Class="RichEditR">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>我是富文本</Caption>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>rt_1</ID>
+          <Position>18 98</Position>
+          <Rect>0 31 378 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>UniversalWnd</ResourceID>
+          <ScrollAlways>0</ScrollAlways>
+          <ScrollEndButtonSize>0</ScrollEndButtonSize>
+          <ScrollFixSize>31</ScrollFixSize>
+          <ScrollHeadTailSize>15 15</ScrollHeadTailSize>
+          <ScrollUpDownSize>-3</ScrollUpDownSize>
+          <ScrollVertical>1</ScrollVertical>
+          <ScrollBack>uir_tongyong_hkBackPic</ScrollBack>
+          <ScrollRes>uir_tongyong_hk</ScrollRes>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>我是富文本</Caption>
+            <AlignType>Center Center</AlignType>
+            <MaxInputLen>32</MaxInputLen>
+            <Editible>false</Editible>
+            <VMiddle>false</VMiddle>
+            <SingleLineCenter>false</SingleLineCenter>
+            <XBeg>2</XBeg>
+            <XEnd>-2</XEnd>
+            <YBeg>2</YBeg>
+            <YEnd>-2</YEnd>
+            <ScrollLeft>false</ScrollLeft>
+            <ScrollWidth>7</ScrollWidth>
+            <CursorUir>
+            </CursorUir>
+            <LineSpan>0</LineSpan>
+          </Self>
+        </Control>
+        <Control Class="RichEditR">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>我是富文本</Caption>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>rt_2</ID>
+          <Position>19 36</Position>
+          <Rect>0 31 378 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>UniversalWnd</ResourceID>
+          <ScrollAlways>0</ScrollAlways>
+          <ScrollEndButtonSize>0</ScrollEndButtonSize>
+          <ScrollFixSize>31</ScrollFixSize>
+          <ScrollHeadTailSize>15 15</ScrollHeadTailSize>
+          <ScrollUpDownSize>-3</ScrollUpDownSize>
+          <ScrollVertical>1</ScrollVertical>
+          <ScrollBack>uir_tongyong_hkBackPic</ScrollBack>
+          <ScrollRes>uir_tongyong_hk</ScrollRes>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>我是富文本</Caption>
+            <AlignType>Center Center</AlignType>
+            <MaxInputLen>32</MaxInputLen>
+            <Editible>false</Editible>
+            <VMiddle>false</VMiddle>
+            <SingleLineCenter>false</SingleLineCenter>
+            <XBeg>2</XBeg>
+            <XEnd>-2</XEnd>
+            <YBeg>2</YBeg>
+            <YEnd>-2</YEnd>
+            <ScrollLeft>false</ScrollLeft>
+            <ScrollWidth>7</ScrollWidth>
+            <CursorUir>
+            </CursorUir>
+            <LineSpan>0</LineSpan>
+          </Self>
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>str_ui_PetBumpCard_Get_Coin_Task_title</Caption>
+          <Font>
+          </Font>
+          <FontID>nurb_wutuanr_zy15</FontID>
+          <ID>st_title</ID>
+          <Position>108 180</Position>
+          <Rect>0 20 179 0</Rect>
+          <Show>true</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>
+          </ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>str_ui_PetBumpCard_Get_Coin_Task_title</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Self>
+          <Show>False</Show>
+        </Self>
+      </Control>
+      <Control Class="Button">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>btn_exchange</ID>
+        <Position>14 326</Position>
+        <Rect>0 30 100 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>star_ui_ZwndYes</ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self>
+          <ClickSound>
+          </ClickSound>
+          <TextOffset_X>
+          </TextOffset_X>
+          <TextOffset_Y>
+          </TextOffset_Y>
+          <CustomCur>
+          </CustomCur>
+          <GlowOffset>0 0</GlowOffset>
+        </Self>
+      </Control>
+      <Control Class="Image">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>img_explaine</ID>
+        <Position>273 70</Position>
+        <Rect>0 23 22 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>GUI_background_img</ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self />
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wndItemReward0</ID>
+        <Position>40 109</Position>
+        <Rect>0 69 63 0</Rect>
+        <Show>False</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="Button">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>str_ui_x5_button_small_font</FontID>
+          <ID>btnTryOn</ID>
+          <Position>38 17</Position>
+          <Rect>0 26 26 0</Rect>
+          <Show>True</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>20 20</TileSize>
+          <ZLevel>z_7</ZLevel>
+          <ResourceID>nurb_yymhzhujieb2j02_07</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <ClickSound>
+            </ClickSound>
+            <TextOffset_X>
+            </TextOffset_X>
+            <TextOffset_Y>6</TextOffset_Y>
+            <CustomCur>
+            </CustomCur>
+            <GlowOffset>0 0</GlowOffset>
+          </Self>
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>12546</Caption>
+          <Font>
+          </Font>
+          <FontID>uir_zzqpws_pmms_10baib</FontID>
+          <ID>stCount</ID>
+          <Position>2 16</Position>
+          <Rect>0 18 46 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_3</ZLevel>
+          <ResourceID>
+          </ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>12546</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>imgNum</ID>
+          <Position>3 19</Position>
+          <Rect>0 11 45 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_2</ZLevel>
+          <ResourceID>uir_zzqj_ej_djzj_tbk_xxbj</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>
+          </AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>imgItem</ID>
+          <Position>6 4</Position>
+          <Rect>0 57 57 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_1</ZLevel>
+          <ResourceID>3084880</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Self>
+          <Show>False</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wndItemReward1</ID>
+        <Position>127 108</Position>
+        <Rect>0 69 63 0</Rect>
+        <Show>False</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="Button">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>str_ui_x5_button_small_font</FontID>
+          <ID>btnTryOn</ID>
+          <Position>38 17</Position>
+          <Rect>0 26 26 0</Rect>
+          <Show>True</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>20 20</TileSize>
+          <ZLevel>z_7</ZLevel>
+          <ResourceID>nurb_yymhzhujieb2j02_07</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <ClickSound>
+            </ClickSound>
+            <TextOffset_X>
+            </TextOffset_X>
+            <TextOffset_Y>6</TextOffset_Y>
+            <CustomCur>
+            </CustomCur>
+            <GlowOffset>0 0</GlowOffset>
+          </Self>
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>12546</Caption>
+          <Font>
+          </Font>
+          <FontID>uir_zzqpws_pmms_10baib</FontID>
+          <ID>stCount</ID>
+          <Position>2 16</Position>
+          <Rect>0 18 46 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_3</ZLevel>
+          <ResourceID>
+          </ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>12546</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>imgNum</ID>
+          <Position>3 19</Position>
+          <Rect>0 11 45 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_2</ZLevel>
+          <ResourceID>uir_zzqj_ej_djzj_tbk_xxbj</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>
+          </AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>imgItem</ID>
+          <Position>6 4</Position>
+          <Rect>0 57 57 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_1</ZLevel>
+          <ResourceID>3084880</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Self>
+          <Show>False</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wndItemReward2</ID>
+        <Position>209 108</Position>
+        <Rect>0 69 63 0</Rect>
+        <Show>False</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="Button">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>str_ui_x5_button_small_font</FontID>
+          <ID>btnTryOn</ID>
+          <Position>38 17</Position>
+          <Rect>0 26 26 0</Rect>
+          <Show>True</Show>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>20 20</TileSize>
+          <ZLevel>z_7</ZLevel>
+          <ResourceID>nurb_yymhzhujieb2j02_07</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <ClickSound>
+            </ClickSound>
+            <TextOffset_X>
+            </TextOffset_X>
+            <TextOffset_Y>6</TextOffset_Y>
+            <CustomCur>
+            </CustomCur>
+            <GlowOffset>0 0</GlowOffset>
+          </Self>
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Caption>12546</Caption>
+          <Font>
+          </Font>
+          <FontID>uir_zzqpws_pmms_10baib</FontID>
+          <ID>stCount</ID>
+          <Position>2 16</Position>
+          <Rect>0 18 46 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_3</ZLevel>
+          <ResourceID>
+          </ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>12546</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>imgNum</ID>
+          <Position>3 19</Position>
+          <Rect>0 11 45 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_2</ZLevel>
+          <ResourceID>uir_zzqj_ej_djzj_tbk_xxbj</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>
+          </AppearanceType>
+          <CanChangeSize>false</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>imgItem</ID>
+          <Position>6 4</Position>
+          <Rect>0 57 57 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>True</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_1</ZLevel>
+          <ResourceID>3084880</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Self>
+          <Show>False</Show>
+        </Self>
+      </Control>
+      <Self>
+        <Show>True</Show>
+      </Self>
+    </Control>
+    <Control Class="Window">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>wnd_team_lottery</ID>
+      <Position>359 264</Position>
+      <Rect>0 299 269 0</Rect>
+      <Show>True</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>uir_gzqd_ct_dbj</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Control Class="StaticText">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Caption>我是静态文本</Caption>
+        <Font>
+        </Font>
+        <FontID>uir_tongyong_bai13b</FontID>
+        <ID>st_team_time</ID>
+        <Position>42 69</Position>
+        <Rect>0 54 193 0</Rect>
+        <Show>true</Show>
+        <ThroughEvent>True</ThroughEvent>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self>
+          <Caption>我是静态文本</Caption>
+          <TextMode>Normal</TextMode>
+          <AlignType>Center Center</AlignType>
+          <XOffset>0</XOffset>
+        </Self>
+      </Control>
+      <Control Class="Button">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>false</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>btn_team_lottery</ID>
+        <Position>1 -300</Position>
+        <Rect>0 299 269 0</Rect>
+        <Show>true</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_0</ZLevel>
+        <ResourceID>uir_xiari_zaxigua_01</ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self>
+          <ClickSound>
+          </ClickSound>
+          <TextOffset_X>
+          </TextOffset_X>
+          <TextOffset_Y>
+          </TextOffset_Y>
+          <CustomCur>
+          </CustomCur>
+          <GlowOffset>0 0</GlowOffset>
+        </Self>
+      </Control>
+      <Self>
+        <Show>True</Show>
+      </Self>
+    </Control>
+    <Self>
+      <Show>False</Show>
+    </Self>
+  </Window>
+  <Window index="0" layername="wnd_exchangeReward" Class="Window">
+    <Align>Normal Normal</Align>
+    <AppearanceType>
+    </AppearanceType>
+    <CanChangeSize>true</CanChangeSize>
+    <Font>
+    </Font>
+    <FontID>
+    </FontID>
+    <ID>wnd_exchangeReward</ID>
+    <Position>179 182</Position>
+    <Rect>0 322 682 0</Rect>
+    <Show>True</Show>
+    <Tile>-1 -1</Tile>
+    <TileHeadTail>100 50</TileHeadTail>
+    <TileModeAdv>
+    </TileModeAdv>
+    <TileSize>165 91</TileSize>
+    <ZLevel>Normal</ZLevel>
+    <ResourceID>star_ui_Zwnd</ResourceID>
+    <ControlNum>0</ControlNum>
+    <Control Class="EffectWnd">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>effect_Reward</ID>
+      <Position>570 214</Position>
+      <Rect>0 34 63 0</Rect>
+      <Show>true</Show>
+      <ThroughEvent>True</ThroughEvent>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_1</ZLevel>
+      <ScrollAlways>0</ScrollAlways>
+      <ScrollEndButtonSize>0</ScrollEndButtonSize>
+      <ScrollFixSize>42</ScrollFixSize>
+      <ScrollHeadTailSize>20 20</ScrollHeadTailSize>
+      <ScrollUpDownSize>23</ScrollUpDownSize>
+      <ScrollVertical>1</ScrollVertical>
+      <ScrollBack>NewScrBar</ScrollBack>
+      <ScrollRes>NewScrBarBackPic</ScrollRes>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <EffectResID>ui_effect\ui_effect2019\ui_effect_chuxianhly_01.spe</EffectResID>
+      </Self>
+    </Control>
+    <Control Class="Window">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>True</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>wnd_rewards</ID>
+      <Position>28 68</Position>
+      <Rect>0 154 608 0</Rect>
+      <Show>True</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>10 10</TileSize>
+      <ZLevel>z_1</ZLevel>
+      <ResourceID>
+      </ResourceID>
+      <ControlNum>0</ControlNum>
+      <Control Class="Button">
+        <Align>Normal Normal</Align>
+        <AppearanceType>
+        </AppearanceType>
+        <CanChangeSize>False</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>btn_next</ID>
+        <Position>579 51</Position>
+        <Rect>0 24 26 0</Rect>
+        <Show>True</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>100 50</TileHeadTail>
+        <TileModeAdv>
+        </TileModeAdv>
+        <TileSize>15 15</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>uir_tongyong_fye4</ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self>
+          <ClickSound>
+          </ClickSound>
+          <TextOffset_X>
+          </TextOffset_X>
+          <TextOffset_Y>
+          </TextOffset_Y>
+          <CustomCur>
+          </CustomCur>
+          <GlowOffset>0 0</GlowOffset>
+        </Self>
+      </Control>
+      <Control Class="Button">
+        <Align>Normal Normal</Align>
+        <AppearanceType>
+        </AppearanceType>
+        <CanChangeSize>False</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>btn_pre</ID>
+        <Position>2 51</Position>
+        <Rect>0 23 26 0</Rect>
+        <Show>True</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>100 50</TileHeadTail>
+        <TileModeAdv>
+        </TileModeAdv>
+        <TileSize>15 15</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>uir_tongyong_fye3</ResourceID>
+        <ControlNum>0</ControlNum>
+        <Self>
+          <ClickSound>
+          </ClickSound>
+          <TextOffset_X>
+          </TextOffset_X>
+          <TextOffset_Y>
+          </TextOffset_Y>
+          <CustomCur>
+          </CustomCur>
+          <GlowOffset>0 0</GlowOffset>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>False</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_reward_item_0</ID>
+        <Position>33 8</Position>
+        <Rect>0 108 87 0</Rect>
+        <Show>True</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>
+          </AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>str_res_ui_teachingwnd_02</Caption>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>itemicon</ID>
+          <Position>10 -110</Position>
+          <Rect>0 95 95 0</Rect>
+          <Show>True</Show>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_4</ZLevel>
+          <ResourceID>2012789</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>1</Caption>
+          <Font>
+          </Font>
+          <FontID>str_magic_hang_view_rewards_font</FontID>
+          <GlowInfo>1</GlowInfo>
+          <ID>stitemnum</ID>
+          <Position>2 -109</Position>
+          <Rect>0 16 83 0</Rect>
+          <Show>True</Show>
+          <TextColor>0.647 0.823 1 1</TextColor>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_3</ZLevel>
+          <ResourceID>UniversalWnd</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>1</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>img_bk</ID>
+          <Position>1 -111</Position>
+          <Rect>0 109 85 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>False</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_jianlididi</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Self>
+          <Show>True</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>False</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_reward_item_1</ID>
+        <Position>124 8</Position>
+        <Rect>0 108 87 0</Rect>
+        <Show>True</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>
+          </AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>str_res_ui_teachingwnd_02</Caption>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>itemicon</ID>
+          <Position>10 -110</Position>
+          <Rect>0 95 95 0</Rect>
+          <Show>True</Show>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_4</ZLevel>
+          <ResourceID>2012789</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>1</Caption>
+          <Font>
+          </Font>
+          <FontID>str_magic_hang_view_rewards_font</FontID>
+          <GlowInfo>1</GlowInfo>
+          <ID>stitemnum</ID>
+          <Position>2 -109</Position>
+          <Rect>0 16 83 0</Rect>
+          <Show>True</Show>
+          <TextColor>0.647 0.823 1 1</TextColor>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_3</ZLevel>
+          <ResourceID>UniversalWnd</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>1</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>img_bk</ID>
+          <Position>1 -111</Position>
+          <Rect>0 109 85 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>False</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_jianlididi</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Self>
+          <Show>True</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>False</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_reward_item_2</ID>
+        <Position>215 8</Position>
+        <Rect>0 108 87 0</Rect>
+        <Show>True</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>
+          </AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>str_res_ui_teachingwnd_02</Caption>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>itemicon</ID>
+          <Position>10 -110</Position>
+          <Rect>0 95 95 0</Rect>
+          <Show>True</Show>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_4</ZLevel>
+          <ResourceID>2012789</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>1</Caption>
+          <Font>
+          </Font>
+          <FontID>str_magic_hang_view_rewards_font</FontID>
+          <GlowInfo>1</GlowInfo>
+          <ID>stitemnum</ID>
+          <Position>2 -109</Position>
+          <Rect>0 16 83 0</Rect>
+          <Show>True</Show>
+          <TextColor>0.647 0.823 1 1</TextColor>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_3</ZLevel>
+          <ResourceID>UniversalWnd</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>1</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>img_bk</ID>
+          <Position>1 -111</Position>
+          <Rect>0 109 85 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>False</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_jianlididi</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Self>
+          <Show>True</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>False</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_reward_item_3</ID>
+        <Position>306 8</Position>
+        <Rect>0 108 87 0</Rect>
+        <Show>True</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>
+          </AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>str_res_ui_teachingwnd_02</Caption>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>itemicon</ID>
+          <Position>10 -110</Position>
+          <Rect>0 95 95 0</Rect>
+          <Show>True</Show>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_4</ZLevel>
+          <ResourceID>2012789</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>1</Caption>
+          <Font>
+          </Font>
+          <FontID>str_magic_hang_view_rewards_font</FontID>
+          <GlowInfo>1</GlowInfo>
+          <ID>stitemnum</ID>
+          <Position>2 -109</Position>
+          <Rect>0 16 83 0</Rect>
+          <Show>True</Show>
+          <TextColor>0.647 0.823 1 1</TextColor>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_3</ZLevel>
+          <ResourceID>UniversalWnd</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>1</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>img_bk</ID>
+          <Position>1 -111</Position>
+          <Rect>0 109 85 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>False</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_jianlididi</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Self>
+          <Show>True</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>False</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_reward_item_4</ID>
+        <Position>397 8</Position>
+        <Rect>0 108 87 0</Rect>
+        <Show>True</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>
+          </AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>str_res_ui_teachingwnd_02</Caption>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>itemicon</ID>
+          <Position>10 -110</Position>
+          <Rect>0 95 95 0</Rect>
+          <Show>True</Show>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_4</ZLevel>
+          <ResourceID>2012789</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>1</Caption>
+          <Font>
+          </Font>
+          <FontID>str_magic_hang_view_rewards_font</FontID>
+          <GlowInfo>1</GlowInfo>
+          <ID>stitemnum</ID>
+          <Position>2 -109</Position>
+          <Rect>0 16 83 0</Rect>
+          <Show>True</Show>
+          <TextColor>0.647 0.823 1 1</TextColor>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_3</ZLevel>
+          <ResourceID>UniversalWnd</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>1</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>img_bk</ID>
+          <Position>1 -111</Position>
+          <Rect>0 109 85 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>False</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_jianlididi</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Self>
+          <Show>True</Show>
+        </Self>
+      </Control>
+      <Control Class="Window">
+        <Align>Normal Normal</Align>
+        <AppearanceType>sc_normal</AppearanceType>
+        <CanChangeSize>False</CanChangeSize>
+        <Font>
+        </Font>
+        <FontID>
+        </FontID>
+        <ID>wnd_reward_item_5</ID>
+        <Position>488 8</Position>
+        <Rect>0 108 87 0</Rect>
+        <Show>True</Show>
+        <Tile>-1 -1</Tile>
+        <TileHeadTail>0 0</TileHeadTail>
+        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TileSize>16 16</TileSize>
+        <ZLevel>z_1</ZLevel>
+        <ResourceID>
+        </ResourceID>
+        <ControlNum>0</ControlNum>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>
+          </AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>str_res_ui_teachingwnd_02</Caption>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>itemicon</ID>
+          <Position>10 -110</Position>
+          <Rect>0 95 95 0</Rect>
+          <Show>True</Show>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_4</ZLevel>
+          <ResourceID>2012789</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Control Class="StaticText">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Caption>1</Caption>
+          <Font>
+          </Font>
+          <FontID>uir_tongyong_bai12b</FontID>
+          <GlowInfo>1</GlowInfo>
+          <ID>stitemnum</ID>
+          <Position>2 -109</Position>
+          <Rect>0 16 83 0</Rect>
+          <Show>True</Show>
+          <TextColor>0.647 0.823 1 1</TextColor>
+          <ThroughEvent>true</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>100 50</TileHeadTail>
+          <TileModeAdv>
+          </TileModeAdv>
+          <TileSize>15 15</TileSize>
+          <ZLevel>z_3</ZLevel>
+          <ResourceID>UniversalWnd</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self>
+            <Caption>1</Caption>
+            <TextMode>Normal</TextMode>
+            <AlignType>Center Center</AlignType>
+            <XOffset>0</XOffset>
+          </Self>
+        </Control>
+        <Control Class="Image">
+          <Align>Normal Normal</Align>
+          <AppearanceType>sc_normal</AppearanceType>
+          <CanChangeSize>False</CanChangeSize>
+          <Font>
+          </Font>
+          <FontID>
+          </FontID>
+          <ID>img_bk</ID>
+          <Position>1 -111</Position>
+          <Rect>0 109 85 0</Rect>
+          <Show>true</Show>
+          <ThroughEvent>False</ThroughEvent>
+          <Tile>-1 -1</Tile>
+          <TileHeadTail>0 0</TileHeadTail>
+          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TileSize>16 16</TileSize>
+          <ZLevel>z_0</ZLevel>
+          <ResourceID>uir_jianlididi</ResourceID>
+          <ControlNum>0</ControlNum>
+          <Self />
+        </Control>
+        <Self>
+          <Show>True</Show>
+        </Self>
+      </Control>
+      <Self>
+        <Show>True</Show>
+      </Self>
+    </Control>
+    <Control Class="RichEditR">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Caption>恭喜你 获得了X倍奖励 : </Caption>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>rt_describe_rarity</ID>
+      <Position>49 232</Position>
+      <Rect>0 32 204 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>z_0</ZLevel>
+      <ResourceID>UniversalWnd</ResourceID>
+      <ScrollAlways>0</ScrollAlways>
+      <ScrollEndButtonSize>0</ScrollEndButtonSize>
+      <ScrollFixSize>31</ScrollFixSize>
+      <ScrollHeadTailSize>15 15</ScrollHeadTailSize>
+      <ScrollUpDownSize>-3</ScrollUpDownSize>
+      <ScrollVertical>1</ScrollVertical>
+      <ScrollBack>uir_tongyong_hkBackPic</ScrollBack>
+      <ScrollRes>uir_tongyong_hk</ScrollRes>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <Caption>恭喜你 获得了X倍奖励 : </Caption>
+        <AlignType>Center Center</AlignType>
+        <MaxInputLen>32</MaxInputLen>
+        <Editible>false</Editible>
+        <VMiddle>false</VMiddle>
+        <SingleLineCenter>false</SingleLineCenter>
+        <XBeg>2</XBeg>
+        <XEnd>-2</XEnd>
+        <YBeg>2</YBeg>
+        <YEnd>-2</YEnd>
+        <ScrollLeft>false</ScrollLeft>
+        <ScrollWidth>7</ScrollWidth>
+        <CursorUir>
+        </CursorUir>
+        <LineSpan>0</LineSpan>
+      </Self>
+    </Control>
+    <Control Class="Button">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>False</CanChangeSize>
+      <Caption>str_ui_newftxml_caption_qd</Caption>
+      <Font>
+      </Font>
+      <FontID>str_ui_myroomxml_font_15</FontID>
+      <ID>btn_confirm</ID>
+      <Position>301 22</Position>
+      <Rect>0 32 94 0</Rect>
+      <Show>True</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>100 50</TileHeadTail>
+      <TileModeAdv>horizon_headtail</TileModeAdv>
+      <TileSize>20 20</TileSize>
+      <ZLevel>Normal</ZLevel>
+      <ResourceID>Zstarui_BThomeYes</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self>
+        <ClickSound>
+        </ClickSound>
+        <TextOffset_X>
+        </TextOffset_X>
+        <TextOffset_Y>6</TextOffset_Y>
+        <CustomCur>
+        </CustomCur>
+        <GlowOffset>0 0</GlowOffset>
+      </Self>
+    </Control>
+    <Control Class="Image">
+      <Align>Normal Normal</Align>
+      <AppearanceType>sc_normal</AppearanceType>
+      <CanChangeSize>false</CanChangeSize>
+      <Font>
+      </Font>
+      <FontID>
+      </FontID>
+      <ID>img_bg</ID>
+      <Position>15 17</Position>
+      <Rect>0 295 650 0</Rect>
+      <Show>true</Show>
+      <Tile>-1 -1</Tile>
+      <TileHeadTail>0 0</TileHeadTail>
+      <TileModeAdv>vertical_headtail</TileModeAdv>
+      <TileSize>16 16</TileSize>
+      <ZLevel>Bottom</ZLevel>
+      <ResourceID>NewSJWndimage</ResourceID>
+      <ControlNum>0</ControlNum>
+      <Self />
+    </Control>
+    <Self>
+      <Show>True</Show>
+    </Self>
+  </Window>
+</Windows>
