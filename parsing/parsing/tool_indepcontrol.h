@@ -124,4 +124,19 @@ void printonfunown(ofstream& out, string globleclassname)
 		}
 	}
 }
- 
+void printonfundef(ofstream& out, string globleclassname)
+{
+	for (size_t i = 0; i < indeps.size(); i++)
+	{
+		//实现将所有onbtn函数声明输出::不需要加结尾的分号，可重用于定义部分
+		//类似void CUIAmusementParkHelp::OnBtnClose(H3D_CLIENT::IUIWnd* wnd)
+		if (indeps[i].Isonclick)
+		{
+			out << "void " << globleclassname << "::" << indeps[i].onclickname
+				<< "(H3D_CLIENT::IUIWnd* wnd)" << endl;
+			out << "{" << endl;
+			out << "\t" <<"//这里写下你的代码"<< endl;
+			out << "}" << endl;
+		}
+	}
+}

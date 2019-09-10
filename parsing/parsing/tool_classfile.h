@@ -77,6 +77,13 @@ void output_classfile(ofstream& out, string _hname) {
 	out << "\t" << "Show();" << endl;
 	out << "}" << endl;
 	
-	
+	//onbtnº¯Êý
+	printonfundef(out, "CUI" + formalIfdef(_hname));
+
+
+	//initUIº¯Êý
+
+
+	//updateº¯Êý
 }
 
