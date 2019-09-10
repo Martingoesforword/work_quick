@@ -99,6 +99,7 @@ void output_headfile(ofstream& out,string _hname) {
 		
 	*/
 	out << "private:" << endl;  
+	out << "\t" <<"H3D_CLIENT::IUIWnd*   "<<_hname<<";" << endl;
 	printdefown(out);
  
 

@@ -85,11 +85,13 @@ void print_stct(ofstream& out)
 
 			/*
 		类似
+		private:
 			std::vector<AmusementBoxRewrad>			m_box_reward_vec;
 		根据结构体定义生成结构体vector
-		*/	
-		out << "std::vector<" << all_stcts[i].name << ">" << "   "
-			<< all_stcts[i].name << "_vec;" << endl;
+		*/	 
+		out << "private:" << endl;
+		out << "\t" << all_stcts[i].name << "   "
+			<< all_stcts[i].name << "_arr[" << "MAX_" << all_stcts[i].name << "];" << endl;
 	}
 	 
 	

@@ -14,9 +14,7 @@ struct stct_indepinfo
 	string onclickname;
 };
 
-vector< stct_indepinfo> indeps;
-  
-
+vector< stct_indepinfo> indeps; 
 
 //parentconbinename为类似 （wnd_amusement_park_list） ,表示window树结构
 void add(string conclassname, string id,string parentconbinename,bool isonclick = false)

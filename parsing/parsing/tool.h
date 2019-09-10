@@ -71,7 +71,6 @@ string formalIfdef(string hname)
 		{
 			i += 1;
 			two.push_back(one[i] - 32);
-			i += 1;
 		}
 	}
 	return two;
@@ -81,6 +80,7 @@ string formalIfdef(string hname)
 //将类似btn_close转化为close
 string formalId(string id)
 {
+	if (id.empty()) return "";
 	string ret = id.substr(id.find_first_of("_") + 1, id.size());
 	return ret;
 }
