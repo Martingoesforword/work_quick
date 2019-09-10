@@ -15,7 +15,8 @@ bool isListWnd(string name)
 //将wnd_amusementPark和wnd_listTable合并为wnd_amusementPark_listTable
 string conbineWndTree(string comeinParent, string nowWnd)
 {
-	return comeinParent +"_"+ formalId(nowWnd);
+	if(comeinParent.empty()) return formalDeleteOne(nowWnd);
+	else return comeinParent +"_"+ formalDeleteOne(nowWnd);
 }
 
 bool isEmpty(stct_window& window)
@@ -90,11 +91,10 @@ void analysis_all(string parentconbinename
 
 //分析独立控件
 void analysis_stct_window_all(stct_window& window)
-{
-	string comeinParent = window.id;
+{ 
 	//顶层窗口在最终输出时再添加
 
 	//以下添加独立的窗口（非列表）
-	analysis_all(comeinParent, window);
+	analysis_all("", window);
 	 
 }

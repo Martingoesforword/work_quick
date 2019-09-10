@@ -19,26 +19,29 @@ vector< stct_indepinfo> indeps;
 //parentconbinename为类似 （wnd_amusement_park_list） ,表示window树结构
 void add(string conclassname, string id,string parentconbinename,bool isonclick = false)
 {
+	string p = "";
+	if (!parentconbinename.empty()) p = "_";
 	if (!conclassname.compare(H9D_BTN_CLASS))
 	{
 		stct_indepinfo indep;
 		indep.type = H9D_BTN;
 		indep.idname = id;
-		indep.name = "btn_" + formalId(parentconbinename) + "_" + formalId(id);
+		indep.name = "btn_" + formalDeleteOne(parentconbinename) + p + formalDeleteOne(id);
 		indep.parentname = parentconbinename;
 		if (isonclick)
 		{
 			indep.Isonclick = true;
-			indep.onclickname = "on_btn_" + formalId(parentconbinename) + "_" + formalId(id);
+			indep.onclickname = "onBtn"+ formalFirstUpDeleteOne(id);
 		}
 		indeps.push_back(indep);
 	}
 	else if(!conclassname.compare(H9D_IMG_CLASS))
 	{
 		stct_indepinfo indep;
+		
 		indep.type = H9D_IMG;
 		indep.idname = id;
-		indep.name = "img_" + formalId(parentconbinename) + "_" + formalId(id);
+		indep.name = "img_" + formalDeleteOne(parentconbinename) + p + formalDeleteOne(id);
 		indep.parentname = parentconbinename; 
 		indep.Isonclick = false;
 		indeps.push_back(indep);
@@ -48,7 +51,7 @@ void add(string conclassname, string id,string parentconbinename,bool isonclick 
 		stct_indepinfo indep;
 		indep.type = H9D_ST;
 		indep.idname = id;
-		indep.name = "st_" + formalId(parentconbinename) + "_" + formalId(id);
+		indep.name = "st_" + formalDeleteOne(parentconbinename) + p + formalDeleteOne(id);
 		indep.parentname = parentconbinename;
 		indep.Isonclick = false;
 		indeps.push_back(indep);
@@ -58,7 +61,7 @@ void add(string conclassname, string id,string parentconbinename,bool isonclick 
 		stct_indepinfo indep;
 		indep.type = H9D_WND;
 		indep.idname = id;
-		indep.name = "wnd_" + formalId(parentconbinename) + "_" + formalId(id);
+		indep.name = "wnd_" + formalDeleteOne(parentconbinename) + p + formalDeleteOne(id);
 		indep.parentname = parentconbinename;
 		indep.Isonclick = false;  
 		indeps.push_back(indep);
@@ -68,14 +71,14 @@ void add(string conclassname, string id,string parentconbinename,bool isonclick 
 		stct_indepinfo indep;
 		indep.type = H9D_SCR;
 		indep.idname = id;
-		indep.name = "scr_" + formalId(parentconbinename) + "_" + formalId(id);
+		indep.name = "scr_" + formalDeleteOne(parentconbinename) + p + formalDeleteOne(id);
 		indep.parentname = parentconbinename;
 		indep.Isonclick = false;
 		indeps.push_back(indep);
 	}
 }
 
-void printdefown(ofstream& out)
+void printmemberdef(ofstream& out)
 {
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
@@ -83,7 +86,7 @@ void printdefown(ofstream& out)
 		out << "\t" << indeps[i].type << "   " << indeps[i].name << ";" << endl;
 	}
 }
-void printinitown(ofstream& out,string globleclassname)
+void printinitdef(ofstream& out,string globleclassname)
 {
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
@@ -111,7 +114,7 @@ void printinitown(ofstream& out,string globleclassname)
 		
 	}
 }
-void printonfunown(ofstream& out, string globleclassname)
+void printonfunsign(ofstream& out, string globleclassname)
 {
 	for (size_t i = 0; i < indeps.size(); i++)
 	{

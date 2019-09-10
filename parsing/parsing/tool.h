@@ -55,9 +55,9 @@ string returnOutputType(string id)
 	return "";
 }
 
-//将类似wnd_amusement_park转化为UIAmusementPark
+//将类似wnd_amusement_park转化为AmusementPark
 //要求：结尾不可为_
-string formalIfdef(string hname)
+string formalFirstUpDeleteOne(string hname)
 {
 	string one = hname.substr(hname.find_first_of("_"), hname.size());
 	string two = "";
@@ -76,9 +76,50 @@ string formalIfdef(string hname)
 	return two;
 }
 
+//将类似wnd_amusement_park转化为WND_AMUSEMENT_PARK
+//要求：结尾不可为_
+string formalAllUp(string hname)
+{
+	string one = hname;
+	string two = "";
+	for (int i = 0; i < one.size(); i++)
+	{
+		if (one[i] != '_')
+		{
+			two.push_back(one[i]-32);
+		} 
+		else
+		{
+			two.push_back(one[i]);
+		}
+	}
+	return two;
+}
+
+//将类似wnd_amusement_park转化为WndAmusementPark
+//要求：结尾不可为_
+string formalFirstUp(string hname)
+{
+	string one = hname;
+	string two = "";
+	for (int i = 0; i < one.size(); i++)
+	{
+		if (one[i] != '_')
+		{
+			two.push_back(one[i]);
+		}
+		else
+		{
+			i += 1;
+			two.push_back(one[i] - 32);
+		}
+	}
+	return two;
+}
+
 //实现
 //将类似btn_close转化为close
-string formalId(string id)
+string formalDeleteOne(string id)
 {
 	if (id.empty()) return "";
 	string ret = id.substr(id.find_first_of("_") + 1, id.size());

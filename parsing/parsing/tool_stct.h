@@ -30,18 +30,21 @@ void format_stct(stct_list& dec12, string name, vector<stct_item>& items) {
 void print_stct(ofstream& out)
 {
 	/*enum {MaxTipsNum = 3, MaxBoxReward = 5};*/
+
+	out << "//结构体最大宽度定义" << endl;
 	out << "enum" << endl;
 	out << "{" << endl;
 
+	
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
 		if (i == 0)
 		{
-			out << "\t" << "MAX_" << all_stcts[i].name << " = " << all_stcts[i].num << endl;
+			out << "\t" << "MAX_" << formalAllUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num<< endl;
 		}
 		else
 		{
-			out << "\t, " << "MAX_" << all_stcts[i].name << " = " << all_stcts[i].num << endl;
+			out << "\t, " << "MAX_" << formalAllUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num<< endl;
 		}
 	}
 	out << "}" << endl;

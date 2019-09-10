@@ -20,8 +20,8 @@ void output_headfile(ofstream& out,string _hname) {
 	#ifndef UIAmusementHelp_h
 	#define UIAmusementHelp_h
 	*/
-	out << "#ifndef UI"<< formalIfdef(_hname)<<"_H" << endl;
-	out << "#define UI" << formalIfdef(_hname)<<"_H" << endl;
+	out << "#ifndef UI"<< formalFirstUpDeleteOne(_hname)<<"_H" << endl;
+	out << "#define UI" << formalFirstUpDeleteOne(_hname)<<"_H" << endl;
 	/*
 	ÀàËÆ
 	#include "../../../UIBase.h"
@@ -35,12 +35,12 @@ void output_headfile(ofstream& out,string _hname) {
 	class CUIAmusementHelp:  public CUIBase
 	{ 
 	*/
-	out << "class " << "CUI" << formalIfdef(_hname) << ": public CUIBase" << endl;
+	out << "class " << "CUI" << formalFirstUpDeleteOne(_hname) << ": public CUIBase" << endl;
 	out << "{" << endl;
 
 	/*
 	ÀàËÆ
-	tool_enum {MaxTipsNum = 3, MaxBoxReward = 5};
+	enum {MaxTipsNum = 3, MaxBoxReward = 5};
 	struct AmusementBoxRewrad
 	{
 		H3D_CLIENT::IUIWnd*			wnd_boxReward;
@@ -78,8 +78,8 @@ void output_headfile(ofstream& out,string _hname) {
 		bool IsShow();
 	*/
 	out << "public:" << endl;
-	out << "\t" << "CUI" << formalIfdef(_hname) <<"();"<< endl;
-	out << "\t" << "~CUI" << formalIfdef(_hname) << "();" << endl;
+	out << "\t" << "CUI" << formalFirstUpDeleteOne(_hname) <<"();"<< endl;
+	out << "\t" << "~CUI" << formalFirstUpDeleteOne(_hname) << "();" << endl;
 	out << "\t" << "void ShowWnd();" << endl;
 	out << "protected:" << endl;
 	out << "\t" << "virtual void OnShow();" << endl;
@@ -100,7 +100,7 @@ void output_headfile(ofstream& out,string _hname) {
 	*/
 	out << "private:" << endl;  
 	out << "\t" <<"H3D_CLIENT::IUIWnd*   "<<_hname<<";" << endl;
-	printdefown(out);
+	printmemberdef(out);
  
 
 
@@ -113,7 +113,7 @@ void output_headfile(ofstream& out,string _hname) {
 		void OnBtnJumpWeb(H3D_CLIENT::IUIWnd* wnd);
 	*/
 	out << "private:" << endl;
-	printonfunown(out, "CUI" + formalIfdef(_hname));
+	printonfunsign(out, "CUI" + formalFirstUpDeleteOne(_hname));
 
 
 	/*
