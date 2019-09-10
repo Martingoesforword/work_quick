@@ -74,6 +74,7 @@ string formalIfdef(string hname)
 			i += 1;
 		}
 	}
+	return two;
 }
 
 //й╣ож

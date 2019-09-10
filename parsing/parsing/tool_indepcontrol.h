@@ -21,7 +21,7 @@ vector< stct_indepinfo> indeps;
 //parentconbinename为类似 （wnd_amusement_park_list） ,表示window树结构
 void add(string conclassname, string id,string parentconbinename,bool isonclick = false)
 {
-	if (conclassname.compare(H9D_BTN_CLASS))
+	if (!conclassname.compare(H9D_BTN_CLASS))
 	{
 		stct_indepinfo indep;
 		indep.type = H9D_BTN;
@@ -35,7 +35,7 @@ void add(string conclassname, string id,string parentconbinename,bool isonclick 
 		}
 		indeps.push_back(indep);
 	}
-	else if(conclassname.compare(H9D_IMG_CLASS))
+	else if(!conclassname.compare(H9D_IMG_CLASS))
 	{
 		stct_indepinfo indep;
 		indep.type = H9D_IMG;
@@ -45,7 +45,7 @@ void add(string conclassname, string id,string parentconbinename,bool isonclick 
 		indep.Isonclick = false;
 		indeps.push_back(indep);
 	}
-	else if (conclassname.compare(H9D_ST_CLASS))
+	else if (!conclassname.compare(H9D_ST_CLASS))
 	{
 		stct_indepinfo indep;
 		indep.type = H9D_ST;
@@ -55,7 +55,7 @@ void add(string conclassname, string id,string parentconbinename,bool isonclick 
 		indep.Isonclick = false;
 		indeps.push_back(indep);
 	}
-	else if (conclassname.compare(H9D_WND_CLASS))
+	else if (!conclassname.compare(H9D_WND_CLASS))
 	{
 		stct_indepinfo indep;
 		indep.type = H9D_WND;
@@ -67,15 +67,15 @@ void add(string conclassname, string id,string parentconbinename,bool isonclick 
 	}
 }
 
-void printdefown(ostream& out)
+void printdefown(ofstream& out)
 {
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
 		//实现将所有定义输出 
-		out << "\t" << indeps[i].type << "   " << indeps[i].name << ";";
+		out << "\t" << indeps[i].type << "   " << indeps[i].name << ";" << endl;
 	}
 }
-void printinitown(ostream& out,string globleclassname)
+void printinitown(ofstream& out,string globleclassname)
 {
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
@@ -103,7 +103,7 @@ void printinitown(ostream& out,string globleclassname)
 		
 	}
 }
-void printonfunown(ostream& out, string globleclassname)
+void printonfunown(ofstream& out, string globleclassname)
 {
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
@@ -112,7 +112,7 @@ void printonfunown(ostream& out, string globleclassname)
 		if (indeps[i].Isonclick)
 		{
 			out << "\t" << "void " << globleclassname << "::" << indeps[i].onclickname
-				<< "(H3D_CLIENT::IUIWnd* wnd);";
+				<< "(H3D_CLIENT::IUIWnd* wnd);" << endl;
 		}
 	}
 }

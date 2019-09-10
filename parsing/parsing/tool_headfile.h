@@ -13,15 +13,15 @@ author :matin
 
 //_hname 需要类似为UIAmusementPark（取wnd_amusement_park这个顶层窗口的wnd之后的部分，并转化格式）、
 //
-void output_headfile(ostream out,string _hname) {
+void output_headfile(ofstream& out,string _hname) {
 
 	/*
 	类似
 	#ifndef UIAmusementHelp_h
 	#define UIAmusementHelp_h
 	*/
-	out << "#ifndef UI"<< formalIfdef(_hname) << endl;
-
+	out << "#ifndef UI"<< formalIfdef(_hname)<<"_H" << endl;
+	out << "#define UI" << formalIfdef(_hname)<<"_H" << endl;
 	/*
 	类似
 	#include "../../../UIBase.h"

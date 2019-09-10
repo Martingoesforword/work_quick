@@ -56,7 +56,15 @@ void analysis_indep(string parentconbinename
 
 		if (type != "")
 		{
-			add(type, xcons[i].id, parentconbinename);
+			if (type == H9D_BTN_CLASS)
+			{
+				add(type, xcons[i].id, parentconbinename,true);
+			}
+			else
+			{
+				add(type, xcons[i].id, parentconbinename);
+
+			}
 			if (type == H9D_WND_CLASS)
 			{ 
 				//这里需要判断是列表窗口还是普通窗口

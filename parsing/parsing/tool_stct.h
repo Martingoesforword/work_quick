@@ -27,7 +27,7 @@ void format_stct(stct_list& dec12, string name, vector<stct_item>& items) {
 	format_stct_name(dec12, name);
 	dec12.items = items;
 }
-void print_stct(ostream& out)
+void print_stct(ofstream& out)
 {
 	/*enum {MaxTipsNum = 3, MaxBoxReward = 5};*/
 	out << "enum" << endl;
@@ -103,9 +103,4 @@ void addlist(vector< stct_item>& items, string name, int num)
 	format_stct(dec, name, items);
 	dec.num = num;
 	all_stcts.push_back(dec); 
-}
-int main() {
-	 
-	 
-}
-
+} 
