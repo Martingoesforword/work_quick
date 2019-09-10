@@ -2,6 +2,7 @@
 #include "tool_includeHelper.h"
 #include "tool_indepcontrol.h"
 #include "tool_stct.h"
+#include "tool.h"
 /*
 author :matin
 此文件提供某些较简单文本结构的构建
@@ -9,26 +10,6 @@ author :matin
 此文件提供总体头文件的输出
 */  
 
-//将类似wnd_amusement_park转化为UIAmusementPark
-//要求：结尾不可为_
-string formalIfdef(string hname)
-{
-	string one = hname.substr(hname.find_first_of("_"), hname.size());
-	string two = "UI";
-	for (int i = 0; i < one.size(); i++)
-	{ 
-		if (one[i] != '_')
-		{
-			two.push_back(one[i]);
-		}
-		else
-		{
-			i+=1;
-			two.push_back(one[i]-32);
-			i += 1;
-		}
-	}
-}
 
 //_hname 需要类似为UIAmusementPark（取wnd_amusement_park这个顶层窗口的wnd之后的部分，并转化格式）、
 //
@@ -39,7 +20,7 @@ void output_headfile(ostream out,string _hname) {
 	#ifndef UIAmusementHelp_h
 	#define UIAmusementHelp_h
 	*/
-	out << "#ifndef "<< formalIfdef(_hname) << endl;
+	out << "#ifndef UI"<< formalIfdef(_hname) << endl;
 
 	/*
 	类似
@@ -47,17 +28,19 @@ void output_headfile(ostream out,string _hname) {
 	需要后面相关处理
 	*/
 	out << "#include \"UIBase.h\"" << endl;
+	out << "#include <vector>" << endl;
 
 	/*
 	类似
 	class CUIAmusementHelp:  public CUIBase
 	{ 
 	*/
-	out << "class " << "C" << formalIfdef(_hname) << ": public CUIBase" << endl;
+	out << "class " << "CUI" << formalIfdef(_hname) << ": public CUIBase" << endl;
 	out << "{" << endl;
 
 	/*
 	类似
+	tool_enum {MaxTipsNum = 3, MaxBoxReward = 5};
 	struct AmusementBoxRewrad
 	{
 		H3D_CLIENT::IUIWnd*			wnd_boxReward;
@@ -74,9 +57,12 @@ void output_headfile(ostream out,string _hname) {
 		}
 
 	};
-	tool_enum {MaxTipsNum = 3, MaxBoxReward = 5};
-	*/
-	print_stct(out);
+	
+	类似
+		std::vector<AmusementBoxRewrad>			m_box_reward_vec;
+	根据结构体定义生成结构体vector
+	*/ 
+	print_stct(out); 
 
 	/*
 	类似
@@ -92,8 +78,8 @@ void output_headfile(ostream out,string _hname) {
 		bool IsShow();
 	*/
 	out << "public:" << endl;
-	out << "\t" << "C" << formalIfdef(_hname) <<"();"<< endl;
-	out << "\t" << "~C" << formalIfdef(_hname) << "();" << endl;
+	out << "\t" << "CUI" << formalIfdef(_hname) <<"();"<< endl;
+	out << "\t" << "~CUI" << formalIfdef(_hname) << "();" << endl;
 	out << "\t" << "void ShowWnd();" << endl;
 	out << "protected:" << endl;
 	out << "\t" << "virtual void OnShow();" << endl;
@@ -116,12 +102,6 @@ void output_headfile(ostream out,string _hname) {
 	printdefown(out);
  
 
-	/*
-	类似
-		std::vector<AmusementBoxRewrad>			m_box_reward_vec;
-	根据结构体定义生成结构体vector
-	*/
-	printdefown(out);
 
 
 
@@ -132,7 +112,7 @@ void output_headfile(ostream out,string _hname) {
 		void OnBtnJumpWeb(H3D_CLIENT::IUIWnd* wnd);
 	*/
 	out << "private:" << endl;
-	
+	printonfunown(out, "CUI" + formalIfdef(_hname));
 
 
 	/*

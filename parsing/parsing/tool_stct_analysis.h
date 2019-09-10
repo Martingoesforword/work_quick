@@ -3,6 +3,7 @@
 #include "tool_xml_get.h"
 #include "tool_indepcontrol.h"
 #include "tool.h"
+#include "tool_stct.h"
 
 
 
@@ -25,11 +26,23 @@ bool isEmpty(stct_window& window)
 }
 
 //列表窗口需要分析出来结构体数组及其大小
+//node表示当前的list窗口，parentconbinename表示wnd_amusementPark_list_person
 void analysis_listWindow(string parentconbinename
 	, stct_window& node) 
 {
-	//生成结构体定义列表
+	vector<stct_item> items;
 
+	vector<stct_window>& cons = node.cons;
+	for (size_t i = 0; i < cons.size(); i++)
+	{
+		stct_item content;
+		content.type = returnOutputType( returnType(cons[i].id));
+		content.name = cons[i].id;
+		items.push_back(content);
+	}
+
+	//生成结构体定义列表
+	addlist(items, formalListName(parentconbinename));
 	//生成结构体
 }
 
