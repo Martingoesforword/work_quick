@@ -32,7 +32,7 @@ void analysis_listWindow(string parentconbinename
 {
 	vector<stct_item> items;
 
-	vector<stct_window>& cons = node.cons;
+	vector<stct_window>& cons = node.cons[0].cons;
 	for (size_t i = 0; i < cons.size(); i++)
 	{
 		stct_item content;
@@ -42,7 +42,7 @@ void analysis_listWindow(string parentconbinename
 	}
 
 	//生成结构体定义列表
-	addlist(items, formalListName(parentconbinename));
+	addlist(items, formalListName(parentconbinename), node.cons.size());
 	//生成结构体
 }
 

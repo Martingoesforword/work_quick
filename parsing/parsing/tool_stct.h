@@ -3,11 +3,13 @@
 using namespace std;
 #define STCT_STRING "stct_"
 struct stct_item {
+	
 	string type;
 	string name;
 };
 struct stct_list
 {
+	int num;
 	string name;
 	vector<stct_item> items;
 
@@ -93,12 +95,13 @@ void print_stct(ostream& out)
 	
 
 }
-void addlist(vector< stct_item>& items,string name)
+void addlist(vector< stct_item>& items, string name, int num)
 {
 	stct_list dec; 
 	//类型判断items  
 	//格式化vector
 	format_stct(dec, name, items);
+	dec.num = num;
 	all_stcts.push_back(dec); 
 }
 int main() {
