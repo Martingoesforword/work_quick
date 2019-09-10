@@ -133,7 +133,7 @@
         </Font>
         <FontID>
         </FontID>
-        <ID>wnd_list</ID>
+        <ID>wnd_list_chatmember</ID>
         <Position>14 20</Position>
         <Rect>0 270 573 0</Rect>
         <Show>false</Show>

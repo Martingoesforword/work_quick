@@ -17,7 +17,7 @@ bool isListWnd(string name)
 //将wnd_amusementPark和wnd_listTable合并为wnd_amusementPark_listTable
 string conbineWndTree(string comeinParent, string nowWnd)
 {
-	return comeinParent + formalId(nowWnd);
+	return comeinParent +"_"+ formalId(nowWnd);
 }
 
 bool isEmpty(stct_window& window)
@@ -62,14 +62,13 @@ void analysis_indep(string parentconbinename
 			}
 			else
 			{
-				add(type, xcons[i].id, parentconbinename);
-
+				add(type, xcons[i].id, parentconbinename); 
 			}
 			if (type == H9D_WND_CLASS)
 			{ 
 				//这里需要判断是列表窗口还是普通窗口
 				//列表窗口类似wnd_list_persons
-				if (isListWnd(xcons[i].id))
+				if (isListWnd(node.id))
 				{
 					//列表窗口执行以下
 					analysis_listWindow(conbineWndTree(parentconbinename, xcons[i].id), xcons[i]);

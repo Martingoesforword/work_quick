@@ -65,6 +65,16 @@ void add(string conclassname, string id,string parentconbinename,bool isonclick 
 		indep.Isonclick = false;  
 		indeps.push_back(indep);
 	}
+	else if (!conclassname.compare(H9D_SCR_CLASS))
+	{
+		stct_indepinfo indep;
+		indep.type = H9D_SCR;
+		indep.idname = id;
+		indep.name = "scr_" + formalId(parentconbinename) + "_" + formalId(id);
+		indep.parentname = parentconbinename;
+		indep.Isonclick = false;
+		indeps.push_back(indep);
+	}
 }
 
 void printdefown(ofstream& out)
