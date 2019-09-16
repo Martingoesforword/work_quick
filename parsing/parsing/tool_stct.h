@@ -64,7 +64,7 @@ void print_stct(ofstream& out)
 				effect_Reward = NULL;
 			}
 
-		}; 
+		}
 		*/
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
@@ -84,7 +84,7 @@ void print_stct(ofstream& out)
 			out << "\t\t" << items[i].name << "= NULL;" << endl;
 		}
 		out << "\t" << "}" << endl;
-		out << "};" << endl;  
+		out << "}" << endl;  
 
 			/*
 		ÀàËÆ

@@ -7,3 +7,35 @@
 /parsing/tinyxml/docs
 /parsing/tinyxml
 /parsing/Debug
+/e/##commit with检测.exe
+*.exe
+*.ipch
+*.suo
+*.db
+*.tlog
+*.log
+*.pch
+*.obj
+*.idb
+*.pdb
+*.ilk
+*.opendb
+/commit_control/testmqsql/testmqsql/Debug/0
+*.dll
+/commit_control/testmqsql/testmqsql/x64/Release/0
+*.iobj
+*.ipdb
+/commit_control/testmqsql/x64/Release/0
+/commit_control/testmqsql/x64/Debug/0
+/commit_control/testmqsql/x64/0
+/commit_control/testmqsql/0
+/commit_control/testmqsql/testmqsql/errorlines
+/commit_control/testmqsql/testmqsql/2
+/commit_control/testmqsql/testmqsql/1 (7).txt
+/commit_control/testmqsql/testmqsql/1 (6).txt
+/commit_control/testmqsql/testmqsql/1 (5).txt
+/commit_control/testmqsql/testmqsql/1 (4).txt
+/commit_control/testmqsql/testmqsql/1 (3).txt
+/commit_control/testmqsql/testmqsql/1 (2).txt
+/commit_control/testmqsql/testmqsql/1 (1).txt
+/commit_control/testmqsql/testmqsql/0
