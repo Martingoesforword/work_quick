@@ -153,19 +153,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="tool_classfile.h" />
-    <ClInclude Include="tool_headfile.h" />
-    <ClInclude Include="tool_indepcontrol.h" />
-    <ClInclude Include="tool_stct.h" />
-    <ClInclude Include="tool.h" />
-    <ClInclude Include="tool_includeHelper.h" />
-    <ClInclude Include="struct_def.h" />
+    <ClInclude Include="QWU_classfile.hpp" />
+    <ClInclude Include="QWU_headfile.hpp" />
+    <ClInclude Include="QWU_independent.hpp" />
+    <ClInclude Include="QWU_function.hpp" />
+    <ClInclude Include="QWU_include.h" />
+    <ClInclude Include="QWU_struct.h" />
     <ClInclude Include="tinystr.h" />
     <ClInclude Include="tinyxml.h" />
-    <ClInclude Include="tool_staticText.h" />
-    <ClInclude Include="tool_list.h" />
-    <ClInclude Include="tool_stct_analysis.h" />
-    <ClInclude Include="tool_xml_get.h" />
+    <ClInclude Include="QWU_enum.h" />
+    <ClInclude Include="QWU_analysis.hpp" />
+    <ClInclude Include="QWU_xml.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp" />

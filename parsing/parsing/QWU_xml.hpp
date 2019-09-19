@@ -1,7 +1,7 @@
 #pragma once
-#include "tool_includeHelper.h"
+#include "QWU_include.h"
 #include "../tinyxml/tinyxml.h" 
-#include "struct_def.h" 
+#include "QWU_struct.h" 
 //解析一个xml的某个节点
 void IterateXmlNode(string windowname, string path, stct_window& res_window);
 

@@ -1,8 +1,8 @@
 #pragma once
-#include "tool_includeHelper.h"
-#include "tool_indepcontrol.h"
-#include "tool_stct.h"
-#include "tool.h"
+#include "QWU_include.h"
+#include "QWU_independent.hpp"
+#include "QWU_struct.h"
+#include "QWU_function.hpp"
 /*
 author :matin
 此文件提供某些较简单文本结构的构建
@@ -13,6 +13,10 @@ author :matin
 
 //_hname 需要类似为UIAmusementPark（取wnd_amusement_park这个顶层窗口的wnd之后的部分，并转化格式）、
 //
+void output_classfile(ofstream& out, string _hname);
+
+
+//实现
 void output_classfile(ofstream& out, string _hname) {
 
 	/*

@@ -1,16 +1,11 @@
 #pragma once
-#include "tool_includeHelper.h"
-#include "tool_xml_get.h"
-#include "tool_indepcontrol.h"
-#include "tool.h"
-#include "tool_stct.h"
+#include "QWU_include.h"
+#include "QWU_xml.hpp"
+#include "QWU_independent.hpp"
+#include "QWU_function.hpp"
+#include "QWU_struct.h"
  
-//判断是否是列表窗口
-bool isListWnd(string name)
-{
-	if (name.substr(0, 8) == "wnd_list") return true;
-	else return false;
-}
+
 
 //将wnd_amusementPark和wnd_listTable合并为wnd_amusementPark_listTable
 string conbineWndTree(string comeinParent, string nowWnd)
@@ -29,13 +24,13 @@ bool isEmpty(stct_window& window)
 void analysis_listWindow(string parentconbinename
 	, stct_window& node) 
 {
-	vector<stct_item> items;
+	vector<stct_item_def> items;
 
 	vector<stct_window>& cons = node.cons[0].cons;
 	for (size_t i = 0; i < cons.size(); i++)
 	{
-		stct_item content;
-		content.type = returnOutputType( returnType(cons[i].id));
+		stct_item_def content;
+		content.type = analysis_ptr_type( analysis_control_name(cons[i].id));
 		content.name = cons[i].id;
 		items.push_back(content);
 	}
@@ -53,7 +48,7 @@ void analysis_all(string parentconbinename
 
 	for (size_t i = 0; i < xcons.size(); i++)
 	{
-		string type = returnType(xcons[i].id);
+		string type = analysis_control_name(xcons[i].id);
 
 		if (type != "")
 		{

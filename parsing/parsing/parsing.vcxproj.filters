@@ -16,46 +16,43 @@
     <Filter Include="tinyxml">
       <UniqueIdentifier>{a45e97f7-243c-47a0-9d50-9060f3835049}</UniqueIdentifier>
     </Filter>
+    <Filter Include="hpp">
+      <UniqueIdentifier>{4f78d4df-4b9c-4dd7-a529-0fa9d5595d09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="struct_def.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tool_xml_get.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tool_indepcontrol.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tool_list.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tool_headfile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tool_stct.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tool.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tool_classfile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tool_includeHelper.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tool_staticText.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="tinyxml.h">
       <Filter>tinyxml</Filter>
     </ClInclude>
     <ClInclude Include="tinystr.h">
       <Filter>tinyxml</Filter>
     </ClInclude>
-    <ClInclude Include="tool_stct_analysis.h">
+    <ClInclude Include="QWU_struct.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QWU_enum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QWU_include.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QWU_xml.hpp">
+      <Filter>hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="QWU_analysis.hpp">
+      <Filter>hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="QWU_classfile.hpp">
+      <Filter>hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="QWU_function.hpp">
+      <Filter>hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="QWU_headfile.hpp">
+      <Filter>hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="QWU_independent.hpp">
+      <Filter>hpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

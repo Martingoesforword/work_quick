@@ -1,32 +1,16 @@
 #pragma once
-#include "tool_includeHelper.h"
-#include "tool_staticText.h"
+#include "QWU_include.h"
+#include "QWU_enum.h"
 
-// id:list_XXXX
-bool is_list_token(string name) {
-	if (name.size() > 4 
-		&&name[0] == 'l'
-		&& name[1] == 'i'
-		&& name[2] == 's'
-		&& name[3] == 't'
-		)
-		return true;
-	else return false;
-}
-// button --- id:btnF__XXXX
-bool is_callback_fun_token(string name) {
-	if (name.size() > 4 
-		&& name[0] == 'b'
-		&& name[1] == 't'
-		&& name[2] == 'b'
-		&& name[3] == 'F'
-		)
-		return true;
-	else return false;
-}
-
-string returnType(string id)
+//判断是否是列表窗口
+bool isListWnd(string name)
 {
+	if (name.length > 8 && name.substr(0, 8) == "wnd_list") return true;
+	else return false;
+} 
+ //根据前缀获得控件名
+string analysis_control_name(string id)
+{ 
 	string before = id.substr(0, id.find_first_of("_"));
 	if (before == H9D_BTN_PREFIX) return H9D_BTN_CLASS;
 	if (before == H9D_WND_PREFIX) return H9D_WND_CLASS;
@@ -40,7 +24,9 @@ string returnType(string id)
 	return "";
 }
 
-string returnOutputType(string id)
+
+//根据控件名获得指针定义类型名
+string analysis_ptr_type(string id)
 {
 	string before = id.substr(0, id.find_first_of("_"));
 	if (before == H9D_BTN_CLASS) return H9D_BTN;

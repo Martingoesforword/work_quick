@@ -1,7 +1,7 @@
 #pragma once
-#include "tool_includeHelper.h" 
-#include "tool_staticText.h"
-#include "tool.h"
+#include "QWU_include.h" 
+#include "QWU_enum.h"
+#include "QWU_function.hpp"
  
 
 struct stct_indepinfo
