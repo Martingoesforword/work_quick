@@ -4,6 +4,7 @@
 //结构体命名前缀
 #define STCT_PREFIX "stct_"
 
+#define NEED_NOTICE "$$$$$$"
 
 
 //备注
