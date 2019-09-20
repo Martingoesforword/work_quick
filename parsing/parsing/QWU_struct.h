@@ -1,5 +1,6 @@
 #pragma once
 #include "QWU_include.h"
+#include "QWU_function.h"
 #define MAX_SUBCONTROL 200 
 #define STCT_PREFIX "stct_"
 
@@ -38,7 +39,7 @@ void format_stct_name(stct_list_def& dec12, string name) {
 	dec12.name = STCT_PREFIX;
 	dec12.name.append(name);
 }
-//
+
 void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items) {
 
 	format_stct_name(dec12, name);
@@ -57,11 +58,11 @@ void print_stct(ofstream& out)
 	{
 		if (i == 0)
 		{
-			out << "\t" << "MAX_" << formalAllUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
+			out << "\t" << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
 		}
 		else
 		{
-			out << "\t, " << "MAX_" << formalAllUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
+			out << "\t, " << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
 		}
 	}
 	out << "}" << endl;
@@ -112,12 +113,9 @@ void print_stct(ofstream& out)
 		out << "private:" << endl;
 		out << "\t" << all_stcts[i].name << "   "
 			<< all_stcts[i].name << "_arr[" << "MAX_" << all_stcts[i].name << "];" << endl;
-	}
-
-
-
+	} 
 }
-void addlist(vector< stct_item_def>& items, string name, int num)
+void add_list_vector(vector< stct_item_def>& items, string name, int num)
 {
 	stct_list_def dec;
 	//¿‡–Õ≈–∂œitems  

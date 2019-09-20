@@ -2,7 +2,7 @@
 #include "QWU_include.h"
 #include "QWU_independent.hpp"
 #include "QWU_struct.h"
-#include "QWU_function.hpp"
+#include "QWU_function.h"
 /*
 author :matin
 此文件提供某些较简单文本结构的构建
@@ -25,8 +25,8 @@ void output_headfile(ofstream& out,string _hname) {
 	#ifndef UIAmusementHelp_h
 	#define UIAmusementHelp_h
 	*/
-	out << "#ifndef UI"<< formalFirstUpDeleteOne(_hname)<<"_H" << endl;
-	out << "#define UI" << formalFirstUpDeleteOne(_hname)<<"_H" << endl;
+	out << "#ifndef UI"<< formal_toHump_deleteFirstOne(_hname)<<"_H" << endl;
+	out << "#define UI" << formal_toHump_deleteFirstOne(_hname)<<"_H" << endl;
 	/*
 	类似
 	#include "../../../UIBase.h"
@@ -40,7 +40,7 @@ void output_headfile(ofstream& out,string _hname) {
 	class CUIAmusementHelp:  public CUIBase
 	{ 
 	*/
-	out << "class " << "CUI" << formalFirstUpDeleteOne(_hname) << ": public CUIBase" << endl;
+	out << "class " << "CUI" << formal_toHump_deleteFirstOne(_hname) << ": public CUIBase" << endl;
 	out << "{" << endl;
 
 	/*
@@ -83,8 +83,8 @@ void output_headfile(ofstream& out,string _hname) {
 		bool IsShow();
 	*/
 	out << "public:" << endl;
-	out << "\t" << "CUI" << formalFirstUpDeleteOne(_hname) <<"();"<< endl;
-	out << "\t" << "~CUI" << formalFirstUpDeleteOne(_hname) << "();" << endl;
+	out << "\t" << "CUI" << formal_toHump_deleteFirstOne(_hname) <<"();"<< endl;
+	out << "\t" << "~CUI" << formal_toHump_deleteFirstOne(_hname) << "();" << endl;
 	out << "\t" << "void ShowWnd();" << endl;
 	out << "protected:" << endl;
 	out << "\t" << "virtual void OnShow();" << endl;
@@ -105,7 +105,7 @@ void output_headfile(ofstream& out,string _hname) {
 	*/
 	out << "private:" << endl;  
 	out << "\t" <<"H3D_CLIENT::IUIWnd*   "<<_hname<<";" << endl;
-	printmemberdef(out);
+	print_memberdef(out);
  
 
 
@@ -118,7 +118,7 @@ void output_headfile(ofstream& out,string _hname) {
 		void OnBtnJumpWeb(H3D_CLIENT::IUIWnd* wnd);
 	*/
 	out << "private:" << endl;
-	printonfunsign(out, "CUI" + formalFirstUpDeleteOne(_hname));
+	print_onBtnFun_declare(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 
 
 	/*

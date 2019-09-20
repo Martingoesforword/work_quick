@@ -2,7 +2,7 @@
 #include "QWU_include.h"
 #include "QWU_independent.hpp"
 #include "QWU_struct.h"
-#include "QWU_function.hpp"
+#include "QWU_function.h"
 /*
 author :matin
 此文件提供某些较简单文本结构的构建
@@ -23,20 +23,21 @@ void output_classfile(ofstream& out, string _hname) {
 	类似
 	#include  "UIAmusementParkHelp.h"  
 	*/
-	out << "#include \"UI" << formalFirstUpDeleteOne(_hname) << ".h\"" << endl; 
+	out << "#include \"UI" << formal_toHump_deleteFirstOne(_hname) << ".h\"" << endl; 
+	 
 	 
 
 	/*
 	构造函数
 
 	*/
-	out << "CUI" << formalFirstUpDeleteOne(_hname) << "::CUI" << formalFirstUpDeleteOne(_hname) << "()" << endl;
+	out << "CUI" << formal_toHump_deleteFirstOne(_hname) << "::CUI" << formal_toHump_deleteFirstOne(_hname) << "()" << endl;
 	out << "{" << endl; 
 
 	out << "\t" << _hname <<" = getWindow(L\"music_t\", L\""<< _hname <<"\");" << endl;
 	
 	//构造---init函数
-	printinitdef(out,  "CUI" + formalFirstUpDeleteOne(_hname));
+	print_initdef(out,  "CUI" + formal_toHump_deleteFirstOne(_hname));
 
 	out << "}" << endl;
 
@@ -51,38 +52,38 @@ void output_classfile(ofstream& out, string _hname) {
 	
 
 	//析构
-	out << "CUI" << formalFirstUpDeleteOne(_hname) << "::~CUI" << formalFirstUpDeleteOne(_hname) << "()" << endl;
+	out << "CUI" << formal_toHump_deleteFirstOne(_hname) << "::~CUI" << formal_toHump_deleteFirstOne(_hname) << "()" << endl;
 	out << "{" << endl;
 	out << "\t" << "//输入你自己的代码" << endl;
 	out << "}" << endl;
 
 	//IsShow
-	out << "bool CUI" << formalFirstUpDeleteOne(_hname) << "::IsShow()" << endl;
+	out << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::IsShow()" << endl;
 	out << "{" << endl;
 	out << "\t" << "return getStateWnd()->IsShow();" << endl;
 	out << "}" << endl;
 
 	//OnShow
-	out << "void CUI" << formalFirstUpDeleteOne(_hname) << "::OnShow()" << endl;
+	out << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnShow()" << endl;
 	out << "{" << endl;
 	out << "\t" << "GetWndManager()->ShowModalWnd(L\""<< _hname <<"\",L\"music_t\", NULL);" << endl;
 	out << "}" << endl;
 
 	//OnHide
-	out << "void CUI" << formalFirstUpDeleteOne(_hname) << "::OnHide()" << endl;
+	out << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnHide()" << endl;
 	out << "{" << endl;
 	out << "\t" << "GetWndManager()->HideModalWnd(false," << _hname << ");" << endl;
 	out << "}" << endl;
 
 	//ShowWnd
-	out << "void CUI" << formalFirstUpDeleteOne(_hname) << "::ShowWnd()" << endl;
+	out << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::ShowWnd()" << endl;
 	out << "{" << endl; 
 	out << "\t" << "//输入你自己的代码" << endl; 
 	out << "\t" << "Show();" << endl;
 	out << "}" << endl;
 	
 	//onbtn函数
-	printonfundef(out, "CUI" + formalFirstUpDeleteOne(_hname));
+	print_onBtnFun_def(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 
 
 	//initUI函数

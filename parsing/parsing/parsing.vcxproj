@@ -156,7 +156,7 @@
     <ClInclude Include="QWU_classfile.hpp" />
     <ClInclude Include="QWU_headfile.hpp" />
     <ClInclude Include="QWU_independent.hpp" />
-    <ClInclude Include="QWU_function.hpp" />
+    <ClInclude Include="QWU_function.h" />
     <ClInclude Include="QWU_include.h" />
     <ClInclude Include="QWU_struct.h" />
     <ClInclude Include="tinystr.h" />

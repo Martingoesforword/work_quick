@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Windows>
-  <Window index="0" layername="wnd_helpTip" Class="Window">
+  <Window index="0" layername="wnd_helptip" Class="Window">
     <Align>Normal Normal</Align>
     <AppearanceType>sc_normal</AppearanceType>
     <CanChangeSize>false</CanChangeSize>
@@ -8,7 +8,7 @@
     </Font>
     <FontID>
     </FontID>
-    <ID>wnd_helpTip</ID>
+    <ID>wnd_helptip</ID>
     <Position>259 256</Position>
     <Rect>0 395 663 0</Rect>
     <Show>false</Show>

@@ -45,14 +45,14 @@
     <ClInclude Include="QWU_classfile.hpp">
       <Filter>hpp</Filter>
     </ClInclude>
-    <ClInclude Include="QWU_function.hpp">
-      <Filter>hpp</Filter>
-    </ClInclude>
     <ClInclude Include="QWU_headfile.hpp">
       <Filter>hpp</Filter>
     </ClInclude>
     <ClInclude Include="QWU_independent.hpp">
       <Filter>hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="QWU_function.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
