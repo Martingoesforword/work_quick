@@ -13,80 +13,95 @@ author :matin
 
 //_hname 需要类似为UIAmusementPark（取wnd_amusement_park这个顶层窗口的wnd之后的部分，并转化格式）、
 //
-void output_classfile(ofstream& out, string _hname);
+void output_classfile(ofstream& out, string _hname); 
+void output_classimport_code(ofstream& out, string _hname);
+void output_construction_fun_code(ofstream& out, string _hname);
+void output_deconstruction_fun_code(ofstream& out, string _hname);
+void output_isshow_fun_code(ofstream& out, string _hname);
+void output_onshow_fun_code(ofstream& out, string _hname);
+void output_onhide_fun_code(ofstream& out, string _hname);
+void output_showwnd_fun_code(ofstream& out, string _hname);
 
 
 //实现
-void output_classfile(ofstream& out, string _hname) {
-
+void output_classimport_code(ofstream& out, string _hname)
+{
 	/*
 	类似
-	#include  "UIAmusementParkHelp.h"  
+	#include  "UIAmusementParkHelp.h"
 	*/
-	out << "#include \"UI" << formal_toHump_deleteFirstOne(_hname) << ".h\"" << endl; 
-	 
-	 
+	out << "#include \"UI" << formal_toHump_deleteFirstOne(_hname) << ".h\"" << endl;
 
-	/*
-	构造函数
-
-	*/
+}
+void output_construction_fun_code(ofstream& out, string _hname)
+{
 	out << "CUI" << formal_toHump_deleteFirstOne(_hname) << "::CUI" << formal_toHump_deleteFirstOne(_hname) << "()" << endl;
-	out << "{" << endl; 
-
-	out << "\t" << _hname <<" = getWindow(L\"music_t\", L\""<< _hname <<"\");" << endl;
 	
-	//构造---init函数
-	print_initdef(out,  "CUI" + formal_toHump_deleteFirstOne(_hname));
+	out << "{" << endl;
+	out << "\t" << _hname << " = getWindow(L\"music_t\", L\"" << _hname << "\");" << endl;
+
+	//init函数
+	print_initdef(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 
 	out << "}" << endl;
-
-	/*
-	静态语句
-	类似
-	bool CUIAmusementParkHelp::IsShow()
-	{
-		return getStateWnd()->IsShow();
-	}
-	*/
-	
-
+}
+void output_deconstruction_fun_code(ofstream& out, string _hname)
+{
 	//析构
 	out << "CUI" << formal_toHump_deleteFirstOne(_hname) << "::~CUI" << formal_toHump_deleteFirstOne(_hname) << "()" << endl;
 	out << "{" << endl;
 	out << "\t" << "//输入你自己的代码" << endl;
 	out << "}" << endl;
-
+}
+void output_isshow_fun_code(ofstream& out, string _hname)
+{
 	//IsShow
 	out << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::IsShow()" << endl;
 	out << "{" << endl;
 	out << "\t" << "return getStateWnd()->IsShow();" << endl;
 	out << "}" << endl;
-
+}
+void output_onshow_fun_code(ofstream& out, string _hname)
+{
 	//OnShow
 	out << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnShow()" << endl;
 	out << "{" << endl;
-	out << "\t" << "GetWndManager()->ShowModalWnd(L\""<< _hname <<"\",L\"music_t\", NULL);" << endl;
+	out << "\t" << "GetWndManager()->ShowModalWnd(L\"" << _hname << "\",L\"music_t\", NULL);" << endl;
 	out << "}" << endl;
-
+}
+void output_onhide_fun_code(ofstream& out, string _hname)
+{
 	//OnHide
 	out << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnHide()" << endl;
 	out << "{" << endl;
 	out << "\t" << "GetWndManager()->HideModalWnd(false," << _hname << ");" << endl;
 	out << "}" << endl;
-
+}
+void output_showwnd_fun_code(ofstream& out, string _hname)
+{
 	//ShowWnd
 	out << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::ShowWnd()" << endl;
-	out << "{" << endl; 
-	out << "\t" << "//输入你自己的代码" << endl; 
+	out << "{" << endl;
+	out << "\t" << "//输入你自己的代码" << endl;
 	out << "\t" << "Show();" << endl;
 	out << "}" << endl;
-	
+}
+
+void output_classfile(ofstream& out, string _hname) {
+
+	output_classimport_code(out, _hname);
+	output_construction_fun_code(out, _hname);
+	output_deconstruction_fun_code(out, _hname);
+	output_isshow_fun_code(out, _hname);
+	output_onshow_fun_code(out, _hname);
+	output_onhide_fun_code(out, _hname);
+	output_showwnd_fun_code(out, _hname);
+	 
 	//onbtn函数
 	print_onBtnFun_def(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 
 
-	//initUI函数
+	//init函数
 
 
 	//update函数

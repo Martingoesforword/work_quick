@@ -14,19 +14,32 @@ author :matin
 //_hname 需要类似为UIAmusementPark（取wnd_amusement_park这个顶层窗口的wnd之后的部分，并转化格式）、
 //
 void output_headfile(ofstream& out, string _hname);
-
-
+void output_idndef_code_BEGIN(ofstream& out, string _hname);
+void output_idndef_code_END(ofstream& out, string _hname);
+void output_haedimport_code(ofstream& out, string _hname);
+void output_class_def_code_BEGIN(ofstream& out, string _hname);
+void output_class_def_code_END(ofstream& out, string _hname);
+void output_fun_declare_code_RUBBISH(ofstream& out, string _hname);
+void output_mem_def_code_RUBBISH(ofstream& out, string _hname);
+ 
 
 //实现
-void output_headfile(ofstream& out,string _hname) {
-
+void output_idndef_code_BEGIN(ofstream& out, string _hname)
+{
 	/*
 	类似
 	#ifndef UIAmusementHelp_h
 	#define UIAmusementHelp_h
 	*/
-	out << "#ifndef UI"<< formal_toHump_deleteFirstOne(_hname)<<"_H" << endl;
-	out << "#define UI" << formal_toHump_deleteFirstOne(_hname)<<"_H" << endl;
+	out << "#ifndef UI" << formal_toHump_deleteFirstOne(_hname) << "_H" << endl;
+	out << "#define UI" << formal_toHump_deleteFirstOne(_hname) << "_H" << endl;
+}
+void output_idndef_code_END(ofstream& out, string _hname)
+{
+	out << "#endif" << endl;
+} 
+void output_haedimport_code(ofstream& out, string _hname)
+{ 
 	/*
 	类似
 	#include "../../../UIBase.h"
@@ -34,56 +47,25 @@ void output_headfile(ofstream& out,string _hname) {
 	*/
 	out << "#include \"UIBase.h\"" << endl;
 	out << "#include <vector>" << endl;
-
+}
+void output_class_def_code_BEGIN(ofstream& out, string _hname)
+{
 	/*
 	类似
 	class CUIAmusementHelp:  public CUIBase
-	{ 
+	{
 	*/
 	out << "class " << "CUI" << formal_toHump_deleteFirstOne(_hname) << ": public CUIBase" << endl;
 	out << "{" << endl;
-
-	/*
-	类似
-	enum {MaxTipsNum = 3, MaxBoxReward = 5};
-	struct AmusementBoxRewrad
-	{
-		H3D_CLIENT::IUIWnd*			wnd_boxReward;
-		H3D_CLIENT::IUIButton*		btn_Reward; 
-		H3D_CLIENT::IUIStaticText*	st_RewardNum;
-		H3D_CLIENT::IUIEffectWnd*	effect_Reward;
-
-		AmusementBoxRewrad()
-		{
-			wnd_boxReward = NULL;
-			btn_Reward = NULL;
-			st_RewardNum = NULL;
-			effect_Reward = NULL;
-		}
-
-	};
-	
-	类似
-		std::vector<AmusementBoxRewrad>			m_box_reward_vec;
-	根据结构体定义生成结构体vector
-	*/ 
-	print_stct(out); 
-
-	/*
-	类似
-	public:
-		CUIAmusementHelp();
-		~CUIAmusementHelp();
-		void ShowWnd();
-	protected:
-		virtual void OnShow();
-		virtual void OnHide(); 
-	private:
-		void Init();
-		bool IsShow();
-	*/
+}
+void output_class_def_code_END(ofstream& out, string _hname)
+{
+	out << "};" << endl;
+}
+void output_fun_declare_code_RUBBISH(ofstream& out, string _hname)
+{
 	out << "public:" << endl;
-	out << "\t" << "CUI" << formal_toHump_deleteFirstOne(_hname) <<"();"<< endl;
+	out << "\t" << "CUI" << formal_toHump_deleteFirstOne(_hname) << "();" << endl;
 	out << "\t" << "~CUI" << formal_toHump_deleteFirstOne(_hname) << "();" << endl;
 	out << "\t" << "void ShowWnd();" << endl;
 	out << "protected:" << endl;
@@ -92,42 +74,34 @@ void output_headfile(ofstream& out,string _hname) {
 	out << "private:" << endl;
 	out << "\t" << "void Init();" << endl;
 	out << "\t" << "bool IsShow();" << endl;
+}
+void output_mem_def_code_RUBBISH(ofstream& out, string _hname)
+{ 
+	out << "private:" << endl;
+	out << "\t" << "H3D_CLIENT::IUIWnd*   " << _hname << ";" << endl;
+}
 
-	/*
-	类似
-	private:
-		H3D_CLIENT::IUIWnd*			m_wnd_helpTip;
-		H3D_CLIENT::IUIButton*		m_btn_close;  
-		H3D_CLIENT::IUIImage*		m_img_background;
-		H3D_CLIENT::IUIStaticText*	m_st_title;
-		H3D_CLIENT::IUIStaticText*	m_st_helpContent;
-		
-	*/
-	out << "private:" << endl;  
-	out << "\t" <<"H3D_CLIENT::IUIWnd*   "<<_hname<<";" << endl;
+
+void output_headfile(ofstream& out,string _hname) {
+
+	
+	output_idndef_code_BEGIN(out, _hname);
+	output_haedimport_code(out, _hname);
+	output_class_def_code_BEGIN(out, _hname);
+	
+	//结构体及最大值枚举
+	print_stct(out);
+
+	output_fun_declare_code_RUBBISH(out, _hname); 
+	output_mem_def_code_RUBBISH(out, _hname);
+	out << "private:" << endl;
 	print_memberdef(out);
- 
-
-
-
-
-	/*
-	类似
-	private:
-		void OnBtnClose(H3D_CLIENT::IUIWnd* wnd);
-		void OnBtnJumpWeb(H3D_CLIENT::IUIWnd* wnd);
-	*/
+  
+	 
 	out << "private:" << endl;
 	print_onBtnFun_declare(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
-
-
-	/*
-	类似
-	}
-	#endif
-	*/
-	out << "};" << endl;
-	out << "#endif"<< endl;
+	 
+	output_idndef_code_END(out, _hname);
 }
  
  
