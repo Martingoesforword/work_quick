@@ -56,23 +56,23 @@ void print_stct(ofstream& out)
 {
 	/*enum {MaxTipsNum = 3, MaxBoxReward = 5};*/
 
-	out << "//结构体最大宽度定义" << endl;
-	out << "enum" << endl;
-	out << "{" << endl;
+	out << "\t" << "//结构体最大宽度定义" << endl;
+	out << "\t" << "enum" << endl;
+	out << "\t" << "{" << endl;
 
 
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
 		if (i == 0)
 		{
-			out << "\t" << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
+			out << "\t" <<  "\t" << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
 		}
 		else
 		{
-			out << "\t, " << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
+			out << "\t"<<  "\t, " << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
 		}
 	}
-	out << "}" << endl;
+	out << "\t" << "}" << endl;
 	/*
 		struct AmusementBoxRewrad
 		{
@@ -93,25 +93,25 @@ void print_stct(ofstream& out)
 		*/
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
-		out << "struct" << " " << all_stcts[i].name << endl;
-		out << "{" << endl;
+		out << "\t" << "struct" << " " << all_stcts[i].name << endl;
+		out << "\t" << "{" << endl;
 
 		auto items = all_stcts[i].items;
-		out<< "\tH3D_CLIENT::IUIWnd*   wnd_item;" <<endl;
+		out << "\t" << "\tH3D_CLIENT::IUIWnd*   wnd_item;" <<endl;
 		for (size_t i = 0; i < items.size(); i++)
 		{
-			out << "\t" << items[i].type << "   " << items[i].name << ";" << endl;
+			out << "\t" << "\t" << items[i].type << "   " << items[i].name << ";" << endl;
 		}
-		out << "\t" << "\n" << endl;
-		out << "\t" << all_stcts[i].name << "()" << endl;
-		out << "\t" << "{" << endl;
-		out << "\t\twnd_item = NULL" << endl;
+		out << "\t" << "\t" << "\n" << endl;
+		out << "\t" << "\t" << all_stcts[i].name << "()" << endl;
+		out << "\t" << "\t" << "{" << endl;
+		out << "\t" << "\t\twnd_item = NULL" << endl;
 		for (size_t i = 0; i < items.size(); i++)
 		{
-			out << "\t\t" << items[i].name << " = NULL;" << endl;
+			out << "\t" << "\t\t" << items[i].name << " = NULL;" << endl;
 		}
+		out << "\t" << "\t" << "}" << endl;
 		out << "\t" << "}" << endl;
-		out << "}" << endl;
 
 		/*
 	类似
