@@ -26,7 +26,7 @@ void add_indep_control(string conclassname, string id,string parentconbinename,b
 		stct_indepinfo indep;
 		indep.type = H9D_BTN;
 		indep.idname = id;
-		indep.name = "btn_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
+		indep.name = "m_btn_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
 		indep.parentname = parentconbinename;
 		if (isonclick)
 		{
@@ -41,7 +41,7 @@ void add_indep_control(string conclassname, string id,string parentconbinename,b
 		
 		indep.type = H9D_IMG;
 		indep.idname = id;
-		indep.name = "img_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
+		indep.name = "m_img_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
 		indep.parentname = parentconbinename; 
 		indep.Isonclick = false;
 		indeps.push_back(indep);
@@ -51,7 +51,7 @@ void add_indep_control(string conclassname, string id,string parentconbinename,b
 		stct_indepinfo indep;
 		indep.type = H9D_ST;
 		indep.idname = id;
-		indep.name = "st_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
+		indep.name = "m_st_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
 		indep.parentname = parentconbinename;
 		indep.Isonclick = false;
 		indeps.push_back(indep);
@@ -61,7 +61,7 @@ void add_indep_control(string conclassname, string id,string parentconbinename,b
 		stct_indepinfo indep;
 		indep.type = H9D_WND;
 		indep.idname = id;
-		indep.name = "wnd_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
+		indep.name = "m_wnd_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
 		indep.parentname = parentconbinename;
 		indep.Isonclick = false;  
 		indeps.push_back(indep);
@@ -71,7 +71,7 @@ void add_indep_control(string conclassname, string id,string parentconbinename,b
 		stct_indepinfo indep;
 		indep.type = H9D_SCR;
 		indep.idname = id;
-		indep.name = "scr_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
+		indep.name = "m_scr_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
 		indep.parentname = parentconbinename;
 		indep.Isonclick = false;
 		indeps.push_back(indep);

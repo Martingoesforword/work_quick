@@ -54,6 +54,9 @@
     <ClInclude Include="QWU_function.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="setting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">

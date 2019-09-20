@@ -1,8 +1,7 @@
 #pragma once
 #include "QWU_include.h"
 #include "QWU_function.h"
-#define MAX_SUBCONTROL 200 
-#define STCT_PREFIX "stct_"
+
 
 struct stct_window {
 	string id;
