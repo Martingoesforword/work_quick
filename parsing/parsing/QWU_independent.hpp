@@ -17,65 +17,29 @@ struct stct_indepinfo
 vector< stct_indepinfo> indeps; 
 
 //parentconbinename为类似 （wnd_amusement_park_list） ,表示window树结构
-void add_indep_control(string conclassname, string id,string parentconbinename,bool isonclick = false)
+void add_indep_control(string type, string id,string context_name,bool has_func = false)
 {
 	string p = "";
-	if (!parentconbinename.empty()) p = "_";
-	if (!conclassname.compare(H9D_BTN_CLASS))
+	if (context_name.find_first_of("_") != string::npos) p = "_";
+
+	stct_indepinfo indep;
+	indep.type = analysis_ptr_type(type);
+	indep.idname = id;
+	indep.name = analysis_code_prefix(type) + formal_deleteFirstOne(context_name) + p + formal_deleteFirstOne(id);
+	indep.parentname = "m_" + context_name;
+	
+	if (has_func)
 	{
-		stct_indepinfo indep;
-		indep.type = H9D_BTN;
-		indep.idname = id;
-		indep.name = "m_btn_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
-		indep.parentname = parentconbinename;
-		if (isonclick)
-		{
-			indep.Isonclick = true;
-			indep.onclickname = "onBtn"+ formal_toHump_deleteFirstOne(id);
-		}
-		indeps.push_back(indep);
+		indep.Isonclick = true;
+		indep.onclickname = "onBtn" + formal_toHump_deleteFirstOne(id);
 	}
-	else if(!conclassname.compare(H9D_IMG_CLASS))
+	else
 	{
-		stct_indepinfo indep;
-		
-		indep.type = H9D_IMG;
-		indep.idname = id;
-		indep.name = "m_img_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
-		indep.parentname = parentconbinename; 
 		indep.Isonclick = false;
-		indeps.push_back(indep);
 	}
-	else if (!conclassname.compare(H9D_ST_CLASS))
-	{
-		stct_indepinfo indep;
-		indep.type = H9D_ST;
-		indep.idname = id;
-		indep.name = "m_st_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
-		indep.parentname = parentconbinename;
-		indep.Isonclick = false;
-		indeps.push_back(indep);
-	}
-	else if (!conclassname.compare(H9D_WND_CLASS))
-	{
-		stct_indepinfo indep;
-		indep.type = H9D_WND;
-		indep.idname = id;
-		indep.name = "m_wnd_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
-		indep.parentname = parentconbinename;
-		indep.Isonclick = false;  
-		indeps.push_back(indep);
-	}
-	else if (!conclassname.compare(H9D_SCR_CLASS))
-	{
-		stct_indepinfo indep;
-		indep.type = H9D_SCR;
-		indep.idname = id;
-		indep.name = "m_scr_" + formal_deleteFirstOne(parentconbinename) + p + formal_deleteFirstOne(id);
-		indep.parentname = parentconbinename;
-		indep.Isonclick = false;
-		indeps.push_back(indep);
-	}
+	
+	indeps.push_back(indep);
+	 
 }
 
 void print_memberdef(ofstream& out)

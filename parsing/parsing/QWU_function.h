@@ -10,6 +10,9 @@ string analysis_control_name(string id);
 //根据控件名获得指针定义类型名 StaticText-> H3D_CLIENT::IUIStaticText*
 string analysis_ptr_type(string id);
 
+//根据控件名获得指针定义类型名程序用前缀 StaticText-> st
+string analysis_code_prefix(string id);
+
 //将类似wnd_amusement_park -> AmusementPark
 //要求：结尾不可为_
 string formal_toHump_deleteFirstOne(string hname);
@@ -63,7 +66,22 @@ string analysis_ptr_type(string id)
 	if (id == H9D_PRCCBR_CLASS) return H9D_PRCCBR;
 	return "";
 }
- 
+
+string analysis_code_prefix(string id)
+{
+	if (id == H9D_BTN_CLASS) return H9D_BTN_CODE;
+	if (id == H9D_WND_CLASS) return H9D_WND_CODE;
+	if (id == H9D_ST_CLASS) return H9D_ST_CODE;
+	if (id == H9D_SCR_CLASS) return H9D_SCR_CODE;
+	if (id == H9D_IMG_CLASS) return H9D_IMG_CODE;
+	if (id == H9D_CHK_CLASS) return H9D_CHK_CODE;
+	if (id == H9D_EDBX_CLASS) return H9D_EDBX_CODE;
+	if (id == H9D_EFCT_CLASS) return H9D_EFCT_CODE;
+	if (id == H9D_PRCCBR_CLASS) return H9D_PRCCBR_CODE;
+	return "";
+}
+
+
 string formal_toHump_deleteFirstOne(string hname)
 {
 	string right_str = formal_deleteFirstOne(hname);
@@ -113,6 +131,7 @@ string formal_toHump(string hname)
 string formal_deleteFirstOne(string id)
 {
 	if (id.empty()) return "";
+	if (id.find_first_of("_") == string::npos) return "";
 	string ret = id.substr(id.find_first_of("_") + 1, id.size());
 	return ret;
 }

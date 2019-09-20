@@ -44,3 +44,16 @@ string H9D_EDBX_PREFIX = "rt";
 string H9D_EFCT_PREFIX = "ew";
 string H9D_PRCCBR_PREFIX = "pb";
 #endif
+
+#ifndef LIST_H9D_CONTROL_PROGRAMMER
+#define LIST_H9D_CONTROL_PROGRAMMER
+string H9D_BTN_CODE = "m_btn_";
+string H9D_WND_CODE = "m_wnd_";
+string H9D_ST_CODE = "m_st_";
+string H9D_SCR_CODE = "m_scr_";
+string H9D_IMG_CODE = "m_img_";
+string H9D_CHK_CODE = "m_chk_";
+string H9D_EDBX_CODE = "m_rt_";
+string H9D_EFCT_CODE = "m_ew_";
+string H9D_PRCCBR_CODE = "m_pb_";
+#endif

@@ -1,7 +1,7 @@
 #pragma once
 #include "QWU_include.h"
 #include "QWU_independent.hpp"
-#include "QWU_struct.h"
+#include "QWU_struct.hpp"
 #include "QWU_function.h"
 /*
 author :matin
@@ -19,8 +19,8 @@ void output_idndef_code_END(ofstream& out, string _hname);
 void output_haedimport_code(ofstream& out, string _hname);
 void output_class_def_code_BEGIN(ofstream& out, string _hname);
 void output_class_def_code_END(ofstream& out, string _hname);
-void output_fun_declare_code_RUBBISH(ofstream& out, string _hname);
-void output_mem_def_code_RUBBISH(ofstream& out, string _hname);
+void output_func_declare_code_RUBBISH(ofstream& out, string _hname);
+void output_mem_def_code(ofstream& out, string _hname);
  
 
 //实现
@@ -62,7 +62,7 @@ void output_class_def_code_END(ofstream& out, string _hname)
 {
 	out << "};" << endl;
 }
-void output_fun_declare_code_RUBBISH(ofstream& out, string _hname)
+void output_func_declare_code_RUBBISH(ofstream& out, string _hname)
 {
 	out << "public:" << endl;
 	out << "\t" << "CUI" << formal_toHump_deleteFirstOne(_hname) << "();" << endl;
@@ -75,10 +75,11 @@ void output_fun_declare_code_RUBBISH(ofstream& out, string _hname)
 	out << "\t" << "void Init();" << endl;
 	out << "\t" << "bool IsShow();" << endl;
 }
-void output_mem_def_code_RUBBISH(ofstream& out, string _hname)
+void output_mem_def_code(ofstream& out, string _hname)
 { 
 	out << "private:" << endl;
-	out << "\t" << "H3D_CLIENT::IUIWnd*   " << _hname << ";" << endl;
+	out << "\t" << "H3D_CLIENT::IUIWnd*   " << "m_wnd" << ";" << endl;
+	print_memberdef(out);
 }
 
 
@@ -92,15 +93,13 @@ void output_headfile(ofstream& out,string _hname) {
 	//结构体及最大值枚举
 	print_stct(out);
 
-	output_fun_declare_code_RUBBISH(out, _hname); 
-	output_mem_def_code_RUBBISH(out, _hname);
-	out << "private:" << endl;
-	print_memberdef(out);
+	output_func_declare_code_RUBBISH(out, _hname); 
+	output_mem_def_code(out, _hname);  
   
 	 
 	out << "private:" << endl;
 	print_onBtnFun_declare(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
-	 
+	output_class_def_code_END(out, _hname);
 	output_idndef_code_END(out, _hname);
 }
  

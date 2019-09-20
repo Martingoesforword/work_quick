@@ -1,7 +1,7 @@
 #pragma once
 #include "QWU_include.h"
-#include "../tinyxml/tinyxml.h" 
-#include "QWU_struct.h" 
+#include "tinyxml.h" 
+#include "QWU_struct.hpp" 
 //解析一个xml的某个节点
 void IterateXmlNode(string windowname, string path, stct_window& res_window);
 
@@ -64,7 +64,7 @@ void deal_window(stct_window *res, TiXmlElement* xml, bool isWindow)
 				TiXmlElement* control = (TiXmlElement*)node;
 				stct_window control_res;
 				deal_window(&control_res, control, false);
-				res->cons.push_back(control_res);
+				res->subs.push_back(control_res);
 			}
 			else if (!conclassname.compare("Window"))
 			{
@@ -72,7 +72,7 @@ void deal_window(stct_window *res, TiXmlElement* xml, bool isWindow)
 				TiXmlElement* control = (TiXmlElement*)node;
 				stct_window control_res;
 				deal_window(&control_res, control, true);
-				res->cons.push_back(control_res);
+				res->subs.push_back(control_res);
 			}
 		}
 

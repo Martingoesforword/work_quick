@@ -6,7 +6,7 @@
 struct stct_window {
 	string id;
 	string res_id; 
-	vector<stct_window> cons;
+	vector<stct_window> subs;
 };
 
 //加‘_def’的结构体表示中间的实体应该如何被定义出来，而并非是中间的实体的内容
@@ -24,6 +24,7 @@ struct stct_list_def
 {
 	int num;
 	string name;
+	string context_id;
 	vector<stct_item_def> items;
 
 };
@@ -34,15 +35,22 @@ vector<stct_list_def> all_stcts;
 
 //为name添加stct_前缀
 //struct person---> struct stct_person
+void format_stct_name(stct_list_def& dec12, string name);
+void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items);
+void print_stct(ofstream& out);
+void print_stct_init_def(ofstream& out);
+
 void format_stct_name(stct_list_def& dec12, string name) {
 	dec12.name = STCT_PREFIX;
 	dec12.name.append(name);
 }
 
-void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items) {
+void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items, string context_id) 
+{
 
 	format_stct_name(dec12, name);
 	dec12.items = items;
+	dec12.context_id = context_id;
 }
 void print_stct(ofstream& out)
 {
@@ -89,6 +97,7 @@ void print_stct(ofstream& out)
 		out << "{" << endl;
 
 		auto items = all_stcts[i].items;
+		out<< "\tH3D_CLIENT::IUIWnd*   wnd_item;" <<endl;
 		for (size_t i = 0; i < items.size(); i++)
 		{
 			out << "\t" << items[i].type << "   " << items[i].name << ";" << endl;
@@ -96,9 +105,10 @@ void print_stct(ofstream& out)
 		out << "\t" << "\n" << endl;
 		out << "\t" << all_stcts[i].name << "()" << endl;
 		out << "\t" << "{" << endl;
+		out << "\t\twnd_item = NULL" << endl;
 		for (size_t i = 0; i < items.size(); i++)
 		{
-			out << "\t\t" << items[i].name << "= NULL;" << endl;
+			out << "\t\t" << items[i].name << " = NULL;" << endl;
 		}
 		out << "\t" << "}" << endl;
 		out << "}" << endl;
@@ -111,15 +121,35 @@ void print_stct(ofstream& out)
 	*/
 		out << "private:" << endl;
 		out << "\t" << all_stcts[i].name << "   "
-			<< all_stcts[i].name << "_arr[" << "MAX_" << all_stcts[i].name << "];" << endl;
+			<< all_stcts[i].name << "_arr[" << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << "];" << endl;
 	} 
 }
-void add_list_vector(vector< stct_item_def>& items, string name, int num)
+void add_list_vector(vector< stct_item_def>& items, string name, int num, string context_id)
 {
 	stct_list_def dec;
 	//类型判断items  
 	//格式化vector
-	add_stct_def(dec, name, items);
+	add_stct_def(dec, name, items, context_id);
 	dec.num = num;
 	all_stcts.push_back(dec);
+}
+
+void print_stct_init_def(ofstream& out)
+{
+	for (size_t i = 0; i < all_stcts.size(); i++)
+	{
+		stct_list_def def = all_stcts[i];
+		out << "\tfor (int i = 0; i < MAX_" << formal_allUp(def.name) << "_NUM; i++)" << endl;
+		out << "\t{" << endl;
+
+		out << "\t\tInitControl(this, " << all_stcts[i].name << "_arr[i]" << "." << "wnd_item" << ", " << "m_wnd_content_list_chatmember, L\"item\" + toWchar(i)); " << endl;
+		for (size_t j = 0; j < def.items.size(); j++)
+		{
+			stct_item_def item_def = def.items[j];
+			out <<"\t\tInitControl(this, "<< all_stcts[i].name << "_arr[i]"<<"." << item_def.name<<", "<< all_stcts[i].name << "_arr[i]"<<".wnd_item, L\""<< item_def.name<<"\");"<<endl;
+
+		}
+
+		out << "\t}" << endl;
+	}
 }
