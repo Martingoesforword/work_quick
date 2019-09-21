@@ -57,3 +57,13 @@ string H9D_EDBX_CODE = "m_rt_";
 string H9D_EFCT_CODE = "m_ew_";
 string H9D_PRCCBR_CODE = "m_pb_";
 #endif
+
+//回调函数flag
+//例如btn_close_clk_tp表示需要有onclick回调函数, 但是这个参数flag只出现在绑定函数中，不出现在类成员变量命名中，需要实现去除相关flag的函数，但是需要保留其id，以便绑定的时候使用
+#ifndef LIST_H9D_EXT_DESCRIPTION
+#define LIST_H9D_EXT_DESCRIPTION
+string H9D_HAS_ONCLICK = "_clk"; 
+string H9D_HAS_ONTOOOLTIPS = "_tp";  
+string H9D_HAS_ONMOVE = "_mv"; 
+string H9D_HAS_ONSCROLLCHANGE = "_src"; 
+#endif

@@ -82,6 +82,7 @@ string analysis_code_prefix(string id)
 }
 
 
+
 string formal_toHump_deleteFirstOne(string hname)
 {
 	string right_str = formal_deleteFirstOne(hname);
@@ -94,7 +95,7 @@ string formal_allUp(string hname)
 {
 	string one = hname;
 	string two = "";
-	for (int i = 0; i < one.size(); i++)
+	for (size_t i = 0; i < one.size(); i++)
 	{
 		if (one[i] != '_')
 		{
@@ -113,7 +114,7 @@ string formal_toHump(string hname)
 	string one = hname;
 	string two = "";
 	two.push_back(one[0] - 32);
-	for (int i = 1; i < one.size(); i++)
+	for (size_t i = 1; i < one.size(); i++)
 	{
 		if (one[i] != '_')
 		{

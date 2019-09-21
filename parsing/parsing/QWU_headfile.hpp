@@ -45,7 +45,7 @@ void output_haedimport_code(ofstream& out, string _hname)
 	#include "../../../UIBase.h"
 	需要后面相关处理
 	*/
-	out << "#include \"UIBase.h\"" << endl;
+	out << NEED_NOTICE << "#include \"UIBase.h\"" << endl;
 	out << "#include <vector>" << endl;
 }
 void output_class_def_code_BEGIN(ofstream& out, string _hname)
@@ -99,6 +99,7 @@ void output_headfile(ofstream& out,string _hname) {
 	 
 	out << "private:" << endl;
 	print_onBtnFun_declare(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
+	print_onToolTips_declare(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 	output_class_def_code_END(out, _hname);
 	output_idndef_code_END(out, _hname);
 }
