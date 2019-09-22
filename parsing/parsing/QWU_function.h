@@ -1,6 +1,24 @@
 #pragma once
 #include "QWU_include.h"
 #include "QWU_enum.h"
+
+ 
+class print_notice {
+private:
+	
+	ofstream& out;
+public:
+	static int NUM;
+	print_notice(ofstream& out) :out(out)
+	{
+		out << "\n<<<<<<<< NOT ABLED <<<<<<<< NO."<< NUM << endl;
+	}
+	~print_notice()
+	{
+		out << "========" << "================== NO." << NUM << "\n"<<endl;
+	}
+};
+int print_notice::NUM = 1;
 //判断是否是列表窗口 类似wnd_list_XXXX格式
 bool is_listWnd(string name);
 

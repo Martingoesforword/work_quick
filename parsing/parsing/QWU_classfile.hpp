@@ -103,7 +103,7 @@ void output_classfile(ofstream& out, string _hname) {
 	//onbtnº¯Êý
 	print_onBtnFun_def(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 	print_onToolTips_def(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
-
+	print_onScroll_def(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 	//initº¯Êý
 
 

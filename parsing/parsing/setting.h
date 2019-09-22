@@ -7,7 +7,7 @@
 #define STCT_PREFIX "stct_"
 
 //需要注意的代码处
-#define NEED_NOTICE "$$$$$$" 
+#define H9D_NOTICE____H9D_NOTICE print_notice notice(out);
 
 
 
@@ -32,4 +32,5 @@ RUBBISH函数为垃圾函数代码，需要替换，修改和优化
 8.增加识别信息模块
 9.增加UI协同的内容，例如str命名，string文件生成，描述文件的生成等
 	1.增加一个输出文件模块，可单独配置
+10.滚动框没有实现完全
 */

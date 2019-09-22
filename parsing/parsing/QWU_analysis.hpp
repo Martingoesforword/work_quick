@@ -68,10 +68,16 @@ void analysis_wnd(string context_name
 		{
 			if (type == H9D_BTN_CLASS)
 			{
-				vector<string> func_list = { H9D_HAS_ONCLICK, H9D_HAS_ONTOOOLTIPS };
+				vector<string> func_list = { H9D_HAS_ONCLICK };
 
 				if(isTop) add_indep_control(type, subs[i].id, "wnd", true, func_list);
 				else add_indep_control(type, subs[i].id, context_name,true, func_list);
+			}
+			else if(type == H9D_SCR_CLASS)
+			{
+				vector<string> func_list = { H9D_HAS_ONSCROLLCHANGE };
+				if (isTop) add_indep_control(type, subs[i].id, "wnd", true, func_list);
+				else add_indep_control(type, subs[i].id, context_name, true, func_list);
 			}
 			else if(type != H9D_WND_CLASS)
 			{
