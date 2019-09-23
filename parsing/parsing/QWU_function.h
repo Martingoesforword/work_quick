@@ -49,7 +49,11 @@ string formal_deleteFirstOne(string id);
 //取_最后一个的后面部分
 //类似wnd_list_person -> person
 string formal_saveLast(string id);
- 
+
+//将wnd_amusementPark和wnd_listTable合并为wnd_amusementPark_listTable
+string conbine_context(string comeinParent, string nowWnd);
+
+
 bool is_listWnd(string name)
 {
 	if (name.length() > 8 && name.substr(0, 8) == "wnd_list") return true;
@@ -70,7 +74,14 @@ string analysis_control_name(string id)
 	if (before == H9D_PRCCBR_PREFIX) return H9D_PRCCBR_CLASS;
 	return "";
 }
- 
+
+string conbine_context(string context_name, string nowWnd)
+{
+	if (context_name.empty()) return formal_deleteFirstOne(nowWnd);
+	else return context_name + "_" + formal_deleteFirstOne(nowWnd);
+}
+
+
 string analysis_ptr_type(string id)
 { 
 	if (id == H9D_BTN_CLASS) return H9D_BTN;

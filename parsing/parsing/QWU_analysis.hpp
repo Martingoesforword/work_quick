@@ -8,8 +8,6 @@
 //分析入口函数
 void analysis_main(stct_window& window);
 
-//将wnd_amusementPark和wnd_listTable合并为wnd_amusementPark_listTable
-string conbine_context(string comeinParent, string nowWnd);
 
 //判断window的子元素集合是否为空
 bool isEmpty(stct_window& window);
@@ -23,11 +21,6 @@ void analysis_wnd(string parentconbinename, stct_window& node, bool isTop);
   
 
 
-string conbine_context(string context_name, string nowWnd)
-{
-	if(context_name.empty()) return formal_deleteFirstOne(nowWnd);
-	else return context_name +"_"+ formal_deleteFirstOne(nowWnd);
-}
 
 bool isEmpty(stct_window& window)
 {
@@ -77,7 +70,7 @@ void analysis_wnd(string context_name
 			{
 				vector<string> func_list = { H9D_HAS_ONSCROLLCHANGE };
 				if (isTop) add_indep_control(type, subs[i].id, "wnd", true, func_list);
-				else add_indep_control(type, subs[i].id, context_name, true, func_list);
+				else add_unindep_scroll_control(type, subs, context_name,func_list);
 			}
 			else if(type != H9D_WND_CLASS)
 			{

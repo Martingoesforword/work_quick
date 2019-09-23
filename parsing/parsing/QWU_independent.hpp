@@ -10,12 +10,18 @@ struct stct_indepinfo
 	string name;
 	string idname;
 	string parentname; 
+
 	bool isOnClick = false;
 	string onclick_name;
+
 	bool isOnToolTips = false;
 	string ontooltips_name;
+
 	bool isOnScrollChange = false;
 	string onscrollchange_name;
+	string list_name;
+	string max_name;
+
 	bool isOnMove = false;
 	string onmove_name;
 };
@@ -73,7 +79,59 @@ void add_indep_control(string type, string id, string context_name, bool has_fun
 	indeps.push_back(indep);
 	 
 }
+string find_list_scroll_name(vector< stct_window>& subs, string context_name)
+{
+	for (size_t i = 0; i < subs.size(); i++)
+	{
+		if (analysis_control_name(subs[i].id) == H9D_SCR_CLASS)
+		{
+			return conbine_context(context_name, subs[i].id);
+		}
+	}
+	return "";
+}
+string find_list_name(vector< stct_window>& subs, string context_name)
+{
+	for (size_t i = 0; i < subs.size(); i++)
+	{
+		if (is_listWnd(subs[i].id))
+		{
+			return conbine_context(context_name, subs[i].id);
+		}
+	}
+	return "";
+}
+string find_max_name(vector< stct_window>& subs, string context_name)
+{
+	//这里的实现还有问题
+	return "MAX_"+ formal_allUp(STCT_PREFIX) + formal_allUp(context_name) + "_NUM";
+}
+void add_unindep_scroll_control(string type, vector< stct_window>& subs, string context_name, vector<string> func_list = {})
+{
+	string p = "";
+	if (context_name.find_first_of("_") != string::npos) p = "_";
 
+	stct_indepinfo indep;
+	indep.type = analysis_ptr_type(type);
+	indep.idname = find_list_scroll_name(subs, context_name);
+	indep.list_name = "m_"+find_list_name(subs, context_name);
+	indep.max_name = find_max_name(subs, context_name);
+	indep.name = "m_" + find_list_scroll_name(subs, context_name);
+	indep.parentname = "m_" + context_name;
+
+	indep.isOnScrollChange = true;
+	indep.isOnClick = false;
+	indep.isOnToolTips = false;
+	indep.isOnMove = false;
+
+	indep.onscrollchange_name = "onScroll" + formal_toHump(find_list_scroll_name(subs, context_name));
+	
+	
+	 
+
+	indeps.push_back(indep);
+
+}
 void print_memberdef(ofstream& out)
 {
 	for (size_t i = 0; i < indeps.size(); i++)
@@ -212,9 +270,9 @@ void print_onScroll_def(ofstream& out, string globleclassname)
 			out << "void " << globleclassname << "::" <<get_onScroll_declare_without_semicolon(indeps[i].onscrollchange_name) << endl;
 			out << "{" << endl;
 			
-			out << "\tCUI" << globleclassname << "* pthis = static_cast<" << globleclassname << "*>(ptrThis);" << endl;
+			out << "\t" << globleclassname << "* pthis = static_cast<" << globleclassname << "*>(ptrThis);" << endl;
 			out << "\tif(!pthis){ return; }" << endl;
-			out << "\tpthis->getClientHall()->GetUIHall()->RefreshScrollBarPos(pthis->" << indeps[i].name << ", mode, pos, pthis->m_list_start" << ", pthis->" << "m_listContentDataArray.size(), MAX_LIST_CONTENT_CONTROL_SIZE);" << endl;
+			out << "\tpthis->getClientHall()->GetUIHall()->RefreshScrollBarPos(pthis->" << indeps[i].name << ", mode, pos, pthis->m_list_start" << ", pthis->" << indeps[i].list_name <<".size(), "<< indeps[i].max_name <<");" << endl;
 			out << "\tpthis->RefreshList(); "<< endl;
 			out << "}" << endl;
 		}

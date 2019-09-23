@@ -36,7 +36,7 @@ vector<stct_list_def> all_stcts;
 //为name添加stct_前缀
 //struct person---> struct stct_person
 void format_stct_name(stct_list_def& dec12, string name);
-void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items);
+void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items, string context_id);
 void print_stct(ofstream& out);
 void print_stct_init_def(ofstream& out);
 
@@ -65,11 +65,11 @@ void print_stct(ofstream& out)
 	{
 		if (i == 0)
 		{
-			out << "\t" <<  "\t" << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
+			out << "\t" <<  "\t" << "MAX_" << formal_allUp(all_stcts[i].name) << "_CONTROL_NUM" << " = " << all_stcts[i].num << endl;
 		}
 		else
 		{
-			out << "\t"<<  "\t, " << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << " = " << all_stcts[i].num << endl;
+			out << "\t"<<  "\t, " << "MAX_" << formal_allUp(all_stcts[i].name) << "_CONTROL_NUM" << " = " << all_stcts[i].num << endl;
 		}
 	}
 	out << "\t" << "}" << endl;
@@ -93,7 +93,7 @@ void print_stct(ofstream& out)
 		*/
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
-		out << "\t" << "struct" << " " << all_stcts[i].name << endl;
+		out << "\t" << "struct" << " " << all_stcts[i].name<<"_control" << endl;
 		out << "\t" << "{" << endl;
 
 		auto items = all_stcts[i].items;
@@ -120,8 +120,8 @@ void print_stct(ofstream& out)
 	根据结构体定义生成结构体vector
 	*/
 		out << "private:" << endl;
-		out << "\t" << all_stcts[i].name << "   "
-			<< all_stcts[i].name << "_arr[" << "MAX_" << formal_allUp(all_stcts[i].name) << "_NUM" << "];" << endl;
+		out << "\t" << all_stcts[i].name << "_control" << "   "
+			<< all_stcts[i].name << "_control" << "_arr[" << "MAX_" << formal_allUp(all_stcts[i].name) << "_CONTROL_NUM" << "];" << endl;
 	} 
 }
 void add_list_vector(vector< stct_item_def>& items, string name, int num, string context_id)
@@ -139,14 +139,14 @@ void print_stct_init_def(ofstream& out)
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
 		stct_list_def def = all_stcts[i];
-		out << "\tfor (int i = 0; i < MAX_" << formal_allUp(def.name) << "_NUM; i++)" << endl;
+		out << "\tfor (int i = 0; i < MAX_" << formal_allUp(def.name) << "_CONTROL_NUM; i++)" << endl;
 		out << "\t{" << endl;
 
-		out << "\t\tInitControl(this, " << all_stcts[i].name << "_arr[i]" << "." << "wnd_item" << ", " << "m_wnd_content_list_chatmember, L\"item\" + toWchar(i)); " << endl;
+		out << "\t\tInitControl(this, " << all_stcts[i].name << "_control" << "_arr[i]" << "." << "wnd_item" << ", " << "m_wnd_content_list_chatmember, L\"item\" + toWchar(i)); " << endl;
 		for (size_t j = 0; j < def.items.size(); j++)
 		{
 			stct_item_def item_def = def.items[j];
-			out <<"\t\tInitControl(this, "<< all_stcts[i].name << "_arr[i]"<<"." << item_def.name<<", "<< all_stcts[i].name << "_arr[i]"<<".wnd_item, L\""<< item_def.name<<"\");"<<endl;
+			out <<"\t\tInitControl(this, "<< all_stcts[i].name << "_control" << "_arr[i]"<<"." << item_def.name<<", "<< all_stcts[i].name << "_control" << "_arr[i]"<<".wnd_item, L\""<< item_def.name<<"\");"<<endl;
 
 		}
 
