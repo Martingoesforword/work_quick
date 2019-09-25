@@ -136,13 +136,14 @@ void add_list_vector(vector< stct_item_def>& items, string name, int num, string
 
 void print_stct_init_def(ofstream& out)
 {
+	H9D_NOTICE____H9D_NOTICE
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
 		stct_list_def def = all_stcts[i];
 		out << "\tfor (int i = 0; i < MAX_" << formal_allUp(def.name) << "_CONTROL_NUM; i++)" << endl;
 		out << "\t{" << endl;
 
-		out << "\t\tInitControl(this, " << all_stcts[i].name << "_control" << "_arr[i]" << "." << "wnd_item" << ", " << "m_wnd_content_list_chatmember, L\"item\" + toWchar(i)); " << endl;
+		out << "\t\tInitControl(this, " << all_stcts[i].name << "_control" << "_arr[i]" << "." << "wnd_item" << ", " << def.context_id <<", _tstring(L\"item\") + ItoStr(i)); " << endl;
 		for (size_t j = 0; j < def.items.size(); j++)
 		{
 			stct_item_def item_def = def.items[j];

@@ -31,7 +31,9 @@ void output_classimport_code(ofstream& out, string _hname)
 	#include  "UIAmusementParkHelp.h"
 	*/
 	out << "#include \"UI" << formal_toHump_deleteFirstOne(_hname) << ".h\"" << endl;
-
+	H9D_NOTICE____H9D_NOTICE
+	out << "#include \"ui\\hall\\UIHall.h\"" << endl;
+	 
 }
 void output_construction_func_code(ofstream& out, string _hname)
 {
