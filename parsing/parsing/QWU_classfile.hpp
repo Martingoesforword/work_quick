@@ -18,6 +18,7 @@ void output_classimport_code(ofstream& out, string _hname);
 void output_construction_func_code(ofstream& out, string _hname);
 void output_deconstruction_func_code(ofstream& out, string _hname);
 void output_isshow_func_code(ofstream& out, string _hname);
+void output_init_func_code(ofstream& out, string _hname);
 void output_onshow_func_code(ofstream& out, string _hname);
 void output_onhide_func_code(ofstream& out, string _hname);
 void output_showwnd_func_code(ofstream& out, string _hname);
@@ -31,7 +32,7 @@ void output_classimport_code(ofstream& out, string _hname)
 	#include  "UIAmusementParkHelp.h"
 	*/
 	out << "#include \"UI" << formal_toHump_deleteFirstOne(_hname) << ".h\"" << endl;
-	H9D_NOTICE____H9D_NOTICE
+	H3D_NOTICE____H3D_NOTICE
 	out << "#include \"ui\\hall\\UIHall.h\"" << endl;
 	 
 }
@@ -39,14 +40,10 @@ void output_construction_func_code(ofstream& out, string _hname)
 {
 
 	out << "CUI" << formal_toHump_deleteFirstOne(_hname) << "::CUI" << formal_toHump_deleteFirstOne(_hname) << "()" << endl;
-	
-	out << "{" << endl;
-	out << "\t" << "m_wnd" << " = getWindow(L\"music_t\", L\"" << _hname << "\");" << endl;
-
-	//init函数
-	print_initdef(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
-	out << endl;
-	print_stct_init_def(out);
+	out << ":CUIBase(L\""+ _hname +"\")\n";
+	out << "{" << endl; 
+	out_with_tnum("//这里为不可重入的Init函数，进行初始化所有数据（UI和Data数据），在对象构建的时候执行一遍", out, 1);
+	out_with_tnum("Init();", out, 1);
 	out << endl;
 	out << "}" << endl;
 }
@@ -63,7 +60,23 @@ void output_isshow_func_code(ofstream& out, string _hname)
 	//IsShow
 	out << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::IsShow()" << endl;
 	out << "{" << endl;
-	out << "\t" << "return getStateWnd()->IsShow();" << endl;
+	out << "\t" << "return m_stateWnd->IsShow();" << endl;
+	out << "}" << endl;
+}
+void output_init_func_code(ofstream& out, string _hname)
+{
+	//Init
+	out << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::Init()" << endl;
+	out << "{" << endl; 
+
+	out_with_tnum("//初始化UI代码段(本质为UI属性的相关数据)", out, 1); 
+	print_initdef(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
+	out << endl;
+	print_stct_init_def(out);
+
+	out_with_tnum("//初始化Data代码段(本质为其他数据，下标等数据)", out, 1);
+
+
 	out << "}" << endl;
 }
 void output_onshow_func_code(ofstream& out, string _hname)
@@ -97,6 +110,7 @@ void output_classfile(ofstream& out, string _hname) {
 	output_classimport_code(out, _hname);
 	output_construction_func_code(out, _hname);
 	output_deconstruction_func_code(out, _hname);
+	output_init_func_code(out, _hname);
 	output_isshow_func_code(out, _hname);
 	output_onshow_func_code(out, _hname);
 	output_onhide_func_code(out, _hname);
@@ -105,7 +119,7 @@ void output_classfile(ofstream& out, string _hname) {
 	//onbtn函数
 	print_onBtnFun_def(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 	print_onToolTips_def(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
-	print_onScroll_def(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
+	print_onScroll_def_with_refresh(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 	//init函数
 
 

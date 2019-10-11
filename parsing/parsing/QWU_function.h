@@ -1,6 +1,6 @@
 #pragma once
 #include "QWU_include.h"
-#include "QWU_enum.h"
+#include "QWU_enum.h" 
 
  
 class print_notice {
@@ -11,11 +11,13 @@ public:
 	static int NUM;
 	print_notice(ofstream& out) :out(out)
 	{
-		out << "\n<<<<<<<< NOT ABLED <<<<<<<< NO."<< NUM << endl;
+		
+		out << "\n<<<<<<<< 请添加、修改代码 <<<<<<<< NO."<< NUM << endl;
 	}
 	~print_notice()
 	{
-		out << "========" << "================== NO." << NUM << "\n"<<endl;
+		out << "========  请添加、修改代码  ======= NO." << NUM << "\n"<<endl;
+		NUM++;
 	}
 };
 int print_notice::NUM = 1;
@@ -53,6 +55,11 @@ string formal_saveLast(string id);
 //将wnd_amusementPark和wnd_listTable合并为wnd_amusementPark_listTable
 string conbine_context(string comeinParent, string nowWnd);
 
+//带\t的输出
+void out_with_tnum(string out_content, ofstream& out, int _tnum);
+
+//输出一个定义语句
+string conbine_define(string type_name, string name);
 
 bool is_listWnd(string name)
 {
@@ -63,15 +70,15 @@ bool is_listWnd(string name)
 string analysis_control_name(string id)
 { 
 	string before = id.substr(0, id.find_first_of("_"));
-	if (before == H9D_BTN_PREFIX) return H9D_BTN_CLASS;
-	if (before == H9D_WND_PREFIX) return H9D_WND_CLASS;
-	if (before == H9D_ST_PREFIX) return H9D_ST_CLASS;
-	if (before == H9D_SCR_PREFIX) return H9D_SCR_CLASS;
-	if (before == H9D_IMG_PREFIX) return H9D_IMG_CLASS;
-	if (before == H9D_CHK_PREFIX) return H9D_CHK_CLASS;
-	if (before == H9D_EDBX_PREFIX) return H9D_EDBX_CLASS;
-	if (before == H9D_EFCT_PREFIX) return H9D_EFCT_CLASS;
-	if (before == H9D_PRCCBR_PREFIX) return H9D_PRCCBR_CLASS;
+	if (before == H3D_BTN_PREFIX) return H3D_BTN_CLASS;
+	if (before == H3D_WND_PREFIX) return H3D_WND_CLASS;
+	if (before == H3D_ST_PREFIX) return H3D_ST_CLASS;
+	if (before == H3D_SCR_PREFIX) return H3D_SCR_CLASS;
+	if (before == H3D_IMG_PREFIX) return H3D_IMG_CLASS;
+	if (before == H3D_CHK_PREFIX) return H3D_CHK_CLASS;
+	if (before == H3D_EDBX_PREFIX) return H3D_EDBX_CLASS;
+	if (before == H3D_EFCT_PREFIX) return H3D_EFCT_CLASS;
+	if (before == H3D_PRCCBR_PREFIX) return H3D_PRCCBR_CLASS;
 	return "";
 }
 
@@ -84,29 +91,29 @@ string conbine_context(string context_name, string nowWnd)
 
 string analysis_ptr_type(string id)
 { 
-	if (id == H9D_BTN_CLASS) return H9D_BTN;
-	if (id == H9D_WND_CLASS) return H9D_WND;
-	if (id == H9D_ST_CLASS) return H9D_ST;
-	if (id == H9D_SCR_CLASS) return H9D_SCR;
-	if (id == H9D_IMG_CLASS) return H9D_IMG;
-	if (id == H9D_CHK_CLASS) return H9D_CHK;
-	if (id == H9D_EDBX_CLASS) return H9D_EDBX;
-	if (id == H9D_EFCT_CLASS) return H9D_EFCT;
-	if (id == H9D_PRCCBR_CLASS) return H9D_PRCCBR;
+	if (id == H3D_BTN_CLASS) return H3D_BTN;
+	if (id == H3D_WND_CLASS) return H3D_WND;
+	if (id == H3D_ST_CLASS) return H3D_ST;
+	if (id == H3D_SCR_CLASS) return H3D_SCR;
+	if (id == H3D_IMG_CLASS) return H3D_IMG;
+	if (id == H3D_CHK_CLASS) return H3D_CHK;
+	if (id == H3D_EDBX_CLASS) return H3D_EDBX;
+	if (id == H3D_EFCT_CLASS) return H3D_EFCT;
+	if (id == H3D_PRCCBR_CLASS) return H3D_PRCCBR;
 	return "";
 }
 
 string analysis_code_prefix(string id)
 {
-	if (id == H9D_BTN_CLASS) return H9D_BTN_CODE;
-	if (id == H9D_WND_CLASS) return H9D_WND_CODE;
-	if (id == H9D_ST_CLASS) return H9D_ST_CODE;
-	if (id == H9D_SCR_CLASS) return H9D_SCR_CODE;
-	if (id == H9D_IMG_CLASS) return H9D_IMG_CODE;
-	if (id == H9D_CHK_CLASS) return H9D_CHK_CODE;
-	if (id == H9D_EDBX_CLASS) return H9D_EDBX_CODE;
-	if (id == H9D_EFCT_CLASS) return H9D_EFCT_CODE;
-	if (id == H9D_PRCCBR_CLASS) return H9D_PRCCBR_CODE;
+	if (id == H3D_BTN_CLASS) return H3D_BTN_CODE;
+	if (id == H3D_WND_CLASS) return H3D_WND_CODE;
+	if (id == H3D_ST_CLASS) return H3D_ST_CODE;
+	if (id == H3D_SCR_CLASS) return H3D_SCR_CODE;
+	if (id == H3D_IMG_CLASS) return H3D_IMG_CODE;
+	if (id == H3D_CHK_CLASS) return H3D_CHK_CODE;
+	if (id == H3D_EDBX_CLASS) return H3D_EDBX_CODE;
+	if (id == H3D_EFCT_CLASS) return H3D_EFCT_CODE;
+	if (id == H3D_PRCCBR_CLASS) return H3D_PRCCBR_CODE;
 	return "";
 }
 
@@ -170,3 +177,20 @@ string formal_saveLast(string id)
 {
 	return id.substr(id.find_last_of("_") + 1, id.size());
 }
+
+
+void out_with_tnum(string out_content, ofstream& out, int _tnum)
+{  
+	
+	for (int i = 0; i < _tnum; i++)
+	{
+		out << "\t";
+	}
+	out << out_content << endl;
+}
+
+string conbine_define(string type_name, string name)
+{
+	return type_name + DEFINE_SPACE + name;
+}
+ 

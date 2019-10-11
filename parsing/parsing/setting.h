@@ -3,12 +3,19 @@
 /*
 	setting:
 */
+//类成员前缀
+#define MEMBER_PREFIX "m_"
+//数组后缀
+#define ARRAY_POSTFIX_SHORT "_arr" 
+#define ARRAY_POSTFIX "_array" 
 //结构体命名前缀
-#define STCT_PREFIX "stct_"
-
+#define STCT_PREFIX "struct_"
+#define STCT_PREFIX_SHORT "S"
 //需要注意的代码处
-#define H9D_NOTICE____H9D_NOTICE print_notice notice(out);
+#define H3D_NOTICE____H3D_NOTICE print_notice notice(out);
 
+//定义空格数
+#define DEFINE_SPACE "   "
 
 
 /*

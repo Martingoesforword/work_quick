@@ -59,27 +59,27 @@ void analysis_wnd(string context_name
 
 		if (type != "")
 		{
-			if (type == H9D_BTN_CLASS)
+			if (type == H3D_BTN_CLASS)
 			{
-				vector<string> func_list = { H9D_HAS_ONCLICK };
+				vector<string> func_list = { H3D_HAS_ONCLICK };
 
-				if(isTop) add_indep_control(type, subs[i].id, "wnd", true, func_list);
+				if(isTop) add_indep_control(type, subs[i].id, "stateWnd", true, func_list);
 				else add_indep_control(type, subs[i].id, context_name,true, func_list);
 			}
-			else if(type == H9D_SCR_CLASS)
+			else if(type == H3D_SCR_CLASS)
 			{
-				vector<string> func_list = { H9D_HAS_ONSCROLLCHANGE };
-				if (isTop) add_indep_control(type, subs[i].id, "wnd", true, func_list);
+				vector<string> func_list = { H3D_HAS_ONSCROLLCHANGE };
+				if (isTop) add_indep_control(type, subs[i].id, "stateWnd", true, func_list);
 				else add_unindep_scroll_control(type, subs, context_name,func_list);
 			}
-			else if(type != H9D_WND_CLASS)
+			else if(type != H3D_WND_CLASS)
 			{
-				if (isTop) add_indep_control(type, subs[i].id, "wnd");
+				if (isTop) add_indep_control(type, subs[i].id, "stateWnd");
 				else add_indep_control(type, subs[i].id, context_name);
 			}
 			else 
 			{
-				if (isTop) add_indep_control(type, subs[i].id, "wnd");
+				if (isTop) add_indep_control(type, subs[i].id, "stateWnd");
 				else add_indep_control(type, subs[i].id, context_name);
 
 				//这里需要判断是列表窗口还是普通窗口
