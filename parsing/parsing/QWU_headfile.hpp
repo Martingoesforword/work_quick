@@ -78,8 +78,8 @@ void output_func_declare_code_RUBBISH(ofstream& out, string _hname)
 	out << "\t" << "//此处的函数表示数据和UI初始化的函数，类似Init函数在对象周期中只会使用一次" << endl;
 	out << "\t" << "void Init();" << endl;
 	out << "\t" << "void CheckData();" << endl;
-	out << "\t" << "//UpdateInterface函数是总的UI更新函数，所有对UI的修改都要从这个函数进入；" << endl;
-	out << "\t" << "void UpdateInterface();" << endl;
+	out << "\t" << "//refreshInterface函数是总的UI更新函数，所有对UI的修改都要从这个函数进入；" << endl;
+	out << "\t" << "void refreshInterface();" << endl;
 	out << "\t" << "//UpdateData函数是总的更新数据函数（虚假的，用来作为写代码提示函数），由于其多样性，需要有很多，但命名规则为updateDataXXXXX，XXXXX是有树形结构的" << endl;
 	out << "\t" << "void UpdateData();" << endl;
 	out << "\t" << "bool IsShow();" << endl;
@@ -100,9 +100,11 @@ void output_headfile(ofstream& out,string _hname) {
 
 	output_class_def_code_BEGIN(out, _hname);
 	
+	
+	print_stct_data(out);
 	//结构体及最大值枚举
 	print_stct(out, 1);
-
+	
 	output_func_declare_code_RUBBISH(out, _hname); 
 	output_mem_def_code(out, _hname);  
   
@@ -112,6 +114,8 @@ void output_headfile(ofstream& out,string _hname) {
 	print_onToolTips_declare(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 	print_onScroll_declare(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 
+	out << "private:" << endl;
+	print_refreshFun_declare(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 	output_class_def_code_END(out, _hname);
 	output_idndef_code_END(out, _hname);
 }

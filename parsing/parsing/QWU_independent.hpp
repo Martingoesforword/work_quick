@@ -6,29 +6,30 @@
 
 struct stct_indepinfo
 { 
-	string type;	 
-	string name;
-	string idname;
-	string parentname; 
+	string control_def_type;	 
+	string control_def_name;
+	string control_layout_name;
+	string control_def_parentname; 
 
 	bool isOnClick = false;
-	string onclick_name;
+	string control_btn_onFunc_name;
 
 	bool isOnToolTips = false;
-	string ontooltips_name;
+	string operation_onTips_name;
 
 	bool isOnScrollChange = false;
-	string onscrollchange_name;
-	string list_name;
-	string list_index_name;
+	string control_src_onFunc_name;
+	string list_inner_wnd_name; 
+	string list_control_index_name;
 	string list_refreshENUM_name;
-	string list_refreshfunc_name;
+	string list_refreshFunc_name;
 	string list_control_arr_name;
 	string list_data_arr_name;
-	string max_name;
+	string list_data_struct_name;
+	string list_control_max_name;
 
 	bool isOnMove = false;
-	string onmove_name;
+	string operation_moveFunc_name;
 };
 
 vector< stct_indepinfo> indeps; 
@@ -44,10 +45,10 @@ void add_indep_control(string type, string id, string context_name, bool has_fun
 	if (context_name.find_first_of("_") != string::npos) p = "_";
 
 	stct_indepinfo indep;
-	indep.type = analysis_ptr_type(type);
-	indep.idname = id;
-	indep.name = analysis_code_prefix(type) + formal_deleteFirstOne(context_name) + p + formal_deleteFirstOne(id);
-	indep.parentname = "m_" + context_name;
+	indep.control_def_type = analysis_ptr_type(type);
+	indep.control_layout_name = id;
+	indep.control_def_name = MEMBER_PREFIX + analysis_code_prefix(type) + formal_deleteFirstOne(context_name) + p + formal_deleteFirstOne(id);
+	indep.control_def_parentname = "m_" + context_name;
 	
 	if (has_func)
 	{
@@ -58,22 +59,22 @@ void add_indep_control(string type, string id, string context_name, bool has_fun
 			if (func_type == H3D_HAS_ONCLICK)
 			{
 				indep.isOnClick = true;
-				indep.onclick_name = "onBtn" + formal_toHump_deleteFirstOne(id);
+				indep.control_btn_onFunc_name = "onBtn" + formal_toHump_deleteFirstOne(id);
 			}
 			else if (func_type == H3D_HAS_ONTOOOLTIPS)
 			{
 				indep.isOnToolTips = true;
-				indep.ontooltips_name = "onTips" + formal_toHump_deleteFirstOne(id);
+				indep.operation_onTips_name = "onTips" + formal_toHump_deleteFirstOne(id);
 			}
 			else if (func_type == H3D_HAS_ONMOVE)
 			{
 				indep.isOnMove = true;
-				indep.onmove_name = "onMove" + formal_toHump_deleteFirstOne(id);
+				indep.operation_moveFunc_name = "onMove" + formal_toHump_deleteFirstOne(id);
 			}
 			else if (func_type == H3D_HAS_ONSCROLLCHANGE)
 			{
 				indep.isOnScrollChange = true;
-				indep.onscrollchange_name = "onScroll" + formal_toHump_deleteFirstOne(id);
+				indep.control_src_onFunc_name = "onScroll" + formal_toHump_deleteFirstOne(id);
 			}
 		} 
 	}
@@ -94,7 +95,7 @@ string find_list_scroll_name(vector< stct_window>& subs, string context_name)
 	{
 		if (analysis_control_name(subs[i].id) == H3D_SCR_CLASS)
 		{
-			return conbine_context(context_name, subs[i].id);
+			return subs[i].id;
 		}
 	}
 	return "";
@@ -102,19 +103,19 @@ string find_list_scroll_name(vector< stct_window>& subs, string context_name)
 string find_list_index_name(vector< stct_window>& subs, string context_name) {
 	//改变样式 m_wnd_content_friend --->  m_struct_friend_control_index
 	string gdfgfdgdfg = find_list_name(subs, context_name);
-	return string("m_struct_") + gdfgfdgdfg.substr(gdfgfdgdfg.find_last_of("_") + 1, gdfgfdgdfg.size()) + "_control_index";
+	return MEMBER_PREFIX+string("list_") + gdfgfdgdfg.substr(gdfgfdgdfg.find_last_of("_") + 1, gdfgfdgdfg.size()) + LIST_INDEX_NAME_POSTFIX_STYLE;
 } 
 string find_list_refreshENUM_name(vector< stct_window>& subs, string context_name)
 {
 	
 	string gdfgfdgdfg = find_list_name(subs, context_name);
-	return formal_allUp(gdfgfdgdfg.substr(gdfgfdgdfg.find_last_of("_") + 1, gdfgfdgdfg.size()))  + "_LIST_RF";
+	return "REFRESH_UI_"+formal_allUp(gdfgfdgdfg.substr(gdfgfdgdfg.find_last_of("_") + 1, gdfgfdgdfg.size()))  + "_LIST_FLAG";
 }
 string find_list_refreshfunction_name(vector< stct_window>& subs, string context_name)
 {
 
 	string gdfgfdgdfg = find_list_name(subs, context_name);
-	return "refreshUI" + formal_toHump(gdfgfdgdfg.substr(gdfgfdgdfg.find_last_of("_") + 1, gdfgfdgdfg.size()))+"List";
+	return "refresh" + formal_toHump(gdfgfdgdfg.substr(gdfgfdgdfg.find_last_of("_") + 1, gdfgfdgdfg.size()))+"List";
 }
 string find_list_name(vector< stct_window>& subs, string context_name)
 {
@@ -129,8 +130,9 @@ string find_list_name(vector< stct_window>& subs, string context_name)
 }
 string find_max_name(vector< stct_window>& subs, string context_name)
 {
-	//这里的实现还有问题
-	return "MAX_"+ formal_allUp(STCT_PREFIX) + formal_allUp(context_name) + "_NUM";
+	 
+	string name = formal_saveLast(find_list_scroll_name(subs, context_name)) ;
+	return "MAX_LIST_"+ formal_allUp(name) + LIST_MAX_NAME_POSTFIX_STYLE;
 }
 void add_unindep_scroll_control(string type, vector< stct_window>& subs, string context_name, vector<string> func_list = {})
 {
@@ -138,22 +140,25 @@ void add_unindep_scroll_control(string type, vector< stct_window>& subs, string 
 	if (context_name.find_first_of("_") != string::npos) p = "_";
 
 	stct_indepinfo indep;
-	indep.type = analysis_ptr_type(type);
-	indep.idname = find_list_scroll_name(subs, context_name);
-	indep.list_name = "m_"+find_list_name(subs, context_name);
-	indep.list_index_name = find_list_index_name(subs, context_name);
+	indep.control_def_type = analysis_ptr_type(type);
+	indep.control_layout_name = find_list_scroll_name(subs, context_name);
+	indep.list_inner_wnd_name = MEMBER_PREFIX +find_list_name(subs, context_name);
+	indep.list_data_arr_name = MEMBER_PREFIX + string("list_")+formal_saveLast(find_list_scroll_name(subs, context_name))+ LIST_DATA_ARRAY_POSTFIX_STYLE;
+	indep.list_data_struct_name = STCT_PREFIX_SHORT + formal_toHump(formal_saveLast( find_list_scroll_name(subs, context_name))) + "Data";
+	indep.list_control_arr_name = MEMBER_PREFIX + string("list_")+formal_saveLast(find_list_scroll_name(subs, context_name)) + LIST_CONTROL_ARRAY_POSTFIX_STYLE;
+	indep.list_control_index_name = find_list_index_name(subs, context_name);
 	indep.list_refreshENUM_name = find_list_refreshENUM_name(subs, context_name);
-	indep.list_refreshfunc_name = find_list_refreshfunction_name(subs, context_name);
-	indep.max_name = find_max_name(subs, context_name);
-	indep.name = "m_" + find_list_scroll_name(subs, context_name);
-	indep.parentname = "m_" + context_name;
+	indep.list_refreshFunc_name = find_list_refreshfunction_name(subs, context_name);
+	indep.list_control_max_name = find_max_name(subs, context_name);
+	indep.control_def_name = MEMBER_PREFIX + analysis_code_prefix(type)+formal_saveLast(find_list_scroll_name(subs, context_name));
+	indep.control_def_parentname = MEMBER_PREFIX + context_name;
 
 	indep.isOnScrollChange = true;
 	indep.isOnClick = false;
 	indep.isOnToolTips = false;
 	indep.isOnMove = false;
 
-	indep.onscrollchange_name = "onScroll" + formal_toHump(find_list_scroll_name(subs, context_name));
+	indep.control_src_onFunc_name = "onScroll" + formal_toHump(find_list_scroll_name(subs, context_name));
 	
 	
 	 
@@ -166,11 +171,13 @@ void print_memberdef(ofstream& out)
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
 		//实现将所有定义输出 
-		out << "\t" << indeps[i].type << "   " << indeps[i].name << ";" << endl;
+		OUTWITH_11_Tab << indeps[i].control_def_type << DEFINE_SPACE << indeps[i].control_def_name << ";" << endl;
 	}
 }
 void print_initdef(ofstream& out,string globleclassname)
 {
+	OUTWITH_11_NewLINE
+	OUTWITH_11_Tab << "//初始化UI中=======绑定部分" << endl;
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
 		//实现将所有初始化输出
@@ -179,28 +186,28 @@ void print_initdef(ofstream& out,string globleclassname)
 		if (indeps[i].isOnClick)
 		{
 			out << "\t" << "InitControl(this"
-				<< ", " << indeps[i].name
-				<< ", " << indeps[i].parentname
-				<< ", " << "L\"" << indeps[i].idname << "\""
-				<< ", " << "SetPressFunc(&" << globleclassname << "::" << indeps[i].onclick_name << "));"
+				<< ", " << indeps[i].control_def_name
+				<< ", " << indeps[i].control_def_parentname
+				<< ", " << "L\"" << indeps[i].control_layout_name << "\""
+				<< ", " << "SetPressFunc(&" << globleclassname << "::" << indeps[i].control_btn_onFunc_name << "));"
 				<< endl; 
 		}
 		else
 		{
 			out << "\t" << "InitControl(this"
-				<< ", " << indeps[i].name
-				<< ", " << indeps[i].parentname
-				<< ", " << "L\"" << indeps[i].idname << "\");"
+				<< ", " << indeps[i].control_def_name
+				<< ", " << indeps[i].control_def_parentname
+				<< ", " << "L\"" << indeps[i].control_layout_name << "\");"
 				<< endl;
 
 			if (indeps[i].isOnScrollChange)
 			{
-				out << "\t" << indeps[i].name
+				out << "\t" << indeps[i].control_def_name
 					<< "->" << "SetPosFunEx("
-					<< indeps[i].onscrollchange_name
+					<< indeps[i].control_src_onFunc_name
 					<< ", " << "this);"
 					<< endl;
-				out << "\t" << indeps[i].name
+				out << "\t" << indeps[i].control_def_name
 					<< "->" << "SetPos(0);"
 					<< endl;
 			}  
@@ -232,7 +239,7 @@ void print_onBtnFun_declare(ofstream& out, string globleclassname)
 		}
 		if (indeps[i].isOnClick)
 		{
-			out << "\t"<<"void " << get_onBtnFun_declare_without_semicolon(indeps[i].onclick_name, globleclassname)<<";" << endl;
+			out << "\t"<<"void " << get_onBtnFun_declare_without_semicolon(indeps[i].control_btn_onFunc_name, globleclassname)<<";" << endl;
 		}
 	}
 }
@@ -244,7 +251,7 @@ void print_onBtnFun_def(ofstream& out, string globleclassname)
 		//类似void CUIAmusementParkHelp::OnBtnClose(H3D_CLIENT::IUIWnd* wnd)
 		if (indeps[i].isOnClick)
 		{
-			out << "void " << globleclassname <<"::"<< get_onBtnFun_declare_without_semicolon(indeps[i].onclick_name, globleclassname) << endl;
+			out << "void " << globleclassname <<"::"<< get_onBtnFun_declare_without_semicolon(indeps[i].control_btn_onFunc_name, globleclassname) << endl;
 			out << "{" << endl;
 			out << "\t" << "//这里写下你的代码" << endl;
 			out << "}" << endl;
@@ -265,7 +272,7 @@ void print_onToolTips_declare(ofstream& out, string globleclassname)
 	{ 
 		if (indeps[i].isOnToolTips)
 		{
-			out << "\tvoid" << get_onToolTips_declare_without_semicolon(indeps[i].ontooltips_name, globleclassname) << ";" << endl;
+			out << "\tvoid" << get_onToolTips_declare_without_semicolon(indeps[i].operation_onTips_name, globleclassname) << ";" << endl;
 		}
 	}
 }
@@ -275,75 +282,100 @@ void print_onToolTips_def(ofstream& out, string globleclassname)
 	{ 
 		if (indeps[i].isOnToolTips)
 		{
-			out << "void " << globleclassname << "::"<<get_onBtnFun_declare_without_semicolon(indeps[i].ontooltips_name, globleclassname) << endl;
+			out << "void " << globleclassname << "::"<<get_onBtnFun_declare_without_semicolon(indeps[i].operation_onTips_name, globleclassname) << endl;
 			out << "{" << endl;
 			out << "\t" << "//这里写下你的代码" << endl;
 			out << "}" << endl;
 		}
 	}
-}
+} 
 string get_onScroll_declare_without_semicolon(string onscroll_name)
 {
 	 
 	return  onscroll_name + "(H3D_CLIENT::IUIWnd* wnd, int mode, int pos, void* ptrThis)";
 	 
 }
+void print_refreshFun_declare(ofstream& out, string globleclassname)
+{
+	OUTWITH_11_Tab << "//refresh函数是refreshInterface函数的子函数，只能被refreshInterface函数调用，使用枚举参数进行或运算识别" << endl;
+
+	for (size_t i = 0; i < indeps.size(); i++)
+	{
+		if (indeps[i].isOnScrollChange)
+		{
+			OUTWITH_11_Tab << "void " << indeps[i].list_refreshFunc_name << "();" << endl;
+
+		}
+	}
+	}
 void print_onScroll_declare(ofstream& out, string globleclassname)
 {
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
 		if (indeps[i].isOnScrollChange)
 		{
-			out << "\tstatic void " << get_onScroll_declare_without_semicolon(indeps[i].onscrollchange_name) << ";" << endl;
+			out << "\tstatic void " << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << ";" << endl;
+			
 		}
 	}
 }
 void print_onScroll_def_with_refresh(ofstream& out, string globleclassname)
 {
-	H3D_NOTICE____H3D_NOTICE
+	
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
 		if (indeps[i].isOnScrollChange)
 		{
-			OUTWITH_0000000000000_Tab << "void " << globleclassname << "::" <<get_onScroll_declare_without_semicolon(indeps[i].onscrollchange_name) << endl;
-			OUTWITH_0000000000000_Tab << "{" << endl;
-			
-			OUTWITH_0000000000000_Tab << globleclassname << "* pthis = static_cast<" << globleclassname << "*>(ptrThis);" << endl;
-			OUTWITH_0000000000000_Tab << "\tif(!pthis){ return; }" << endl;
-			OUTWITH_0000000000000_Tab << "\tpthis->getClientHall()->GetUIHall()->RefreshScrollBarPos(pthis->" << indeps[i].name << ", mode, pos, pthis->"
-				<< indeps[i].list_index_name << ", pthis->" << indeps[i].list_name << ".size(), " << indeps[i].max_name << ");" << endl;
-			OUTWITH_0000000000000_Tab << "\tpthis->"<<"refreshUI("+ indeps[i].list_refreshENUM_name +"); "<< endl;
-			OUTWITH_0000000000000_Tab << "}" << endl;
-
-			OUTWITH_0000000000000_Tab << "void " << globleclassname << "::" << indeps[i].list_refreshfunc_name<<"()" << endl;
-			OUTWITH_0000000000000_Tab << "{" << endl; 
-			OUTWITH_1111111111_Tab << "//update函数必须首先隐藏负责的界面" << endl;
-			OUTWITH_1111111111_Tab << "for (int i = 0; i < "+indeps[i].max_name+"; i++)" << endl;
-			OUTWITH_1111111111_Tab << "{" << endl;
-			OUTWITH_2222222_Tab << indeps[i].list_control_arr_name+"[i].m_wnd_item->ShowWindow(false);" << endl;
-			OUTWITH_1111111111_Tab << "}" << endl;
-			OUTWITH_1111111111_Tab << indeps[i].name<<"->ShowWindow(false);" << endl;
-
-			OUTWITH_1NewLINE
-			OUTWITH_1111111111_Tab << "//滚动条m_scr_content_friend刷新" << endl;
-			OUTWITH_1111111111_Tab << "int maxPageNum = ("<< indeps[i].list_data_arr_name<<".size() + "<< indeps[i].max_name<<" - 1) / "<< indeps[i].max_name <<";"<< endl;
-			OUTWITH_1111111111_Tab << "if (maxPageNum == 1 || maxPageNum == 0) " + indeps[i].list_name + "->ShowWindow(false);" << endl;
-			OUTWITH_1111111111_Tab << "else "+ indeps[i].list_name +"->ShowWindow(true);" << endl;
-			OUTWITH_1NewLINE
-			OUTWITH_1111111111_Tab << "//列表m_s_friend_control_arr刷新" << endl;
-			OUTWITH_1111111111_Tab << "vector<" << "SFiendData" << ">::iterator  pos = " + indeps[i].list_data_arr_name + ".begin();" << endl;
-			OUTWITH_1111111111_Tab << "std::advance(pos, "+ indeps[i].list_index_name+");" << endl;
+			//on函数
+			{
+				OUTWITH_00_Tab << "void " << globleclassname << "::" << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << endl;
+				OUTWITH_00_Tab << "{" << endl;
+				{
+					OUTWITH_11_Tab << globleclassname << "* pthis = static_cast<" << globleclassname << "*>(ptrThis);" << endl;
+					OUTWITH_11_Tab << "if(!pthis){ return; }" << endl;
+					OUTWITH_11_Tab << "pthis->getClientHall()->GetUIHall()->RefreshScrollBarPos(pthis->" << indeps[i].control_def_name << ", mode, pos, pthis->"
+						<< indeps[i].list_control_index_name << ", pthis->" << indeps[i].list_data_arr_name << ".size(), " << indeps[i].list_control_max_name << ");" << endl;
+					OUTWITH_11_Tab << "pthis->" << "refreshInterface(" + indeps[i].list_refreshENUM_name + "); " << endl;
+				}
+				OUTWITH_00_Tab << "}" << endl;
+			}
+			//refresh函数
+			{
+				OUTWITH_00_Tab << "void " << globleclassname << "::" << indeps[i].list_refreshFunc_name<<"()" << endl;
+				OUTWITH_00_Tab << "{" << endl; 
+				{
+					OUTWITH_11_Tab << "//update函数必须首先隐藏负责的界面" << endl;
+					OUTWITH_11_Tab << "for (int i = 0; i < "+indeps[i].list_control_max_name+"; i++)" << endl;
+					OUTWITH_11_Tab << "{" << endl;
+					{
+						OUTWITH_22_Tab << indeps[i].list_control_arr_name + "[i].m_wnd_item->ShowWindow(false);" << endl;
+					}
+					OUTWITH_11_Tab << "}" << endl;
+					OUTWITH_11_Tab << indeps[i].control_def_name<<"->ShowWindow(false);" << endl;
+					OUTWITH_11_NewLINE
+					OUTWITH_11_Tab << "//滚动条m_scr_content_friend刷新" << endl;
+					OUTWITH_11_Tab << "int maxPageNum = ("<< indeps[i].list_data_arr_name<<".size() + "<< indeps[i].list_control_max_name<<" - 1) / "<< indeps[i].list_control_max_name <<";"<< endl;
+					OUTWITH_11_Tab << "if (maxPageNum == 1 || maxPageNum == 0) " + indeps[i].control_def_name + "->ShowWindow(false);" << endl;
+					OUTWITH_11_Tab << "else "+ indeps[i].control_def_name +"->ShowWindow(true);" << endl;
+					OUTWITH_11_NewLINE
+					OUTWITH_11_Tab << "//列表m_s_friend_control_arr刷新" << endl;
+					OUTWITH_11_Tab << "vector<" << indeps[i].list_data_struct_name << ">::iterator  pos = " + indeps[i].list_data_arr_name + ".begin();" << endl;
+					OUTWITH_11_Tab << "std::advance(pos, "+ indeps[i].list_control_index_name+");" << endl;
 			 
-			OUTWITH_1111111111_Tab << "for (int i = 0; pos != "+ indeps[i].list_data_arr_name +".end() && i < "+indeps[i].max_name+"; ++pos)" << endl;
+					OUTWITH_11_Tab << "for (int i = 0; pos != "+ indeps[i].list_data_arr_name +".end() && i < "+indeps[i].list_control_max_name+"; ++pos)" << endl;
 	 
-			OUTWITH_1111111111_Tab << "{" << endl;
-			OUTWITH_2222222_Tab << endl;
-			OUTWITH_2222222_Tab << "//列表m_s_friend_control_arr内部wnd_item刷新" << endl;
-			OUTWITH_2222222_Tab << indeps[i].list_control_arr_name+"[i].m_wnd_item->ShowWindow(true);  "<<endl;
-			OUTWITH_2222222_Tab << "i++;" << endl;
-			OUTWITH_1111111111_Tab << "}" << endl;
-			OUTWITH_0000000000000_Tab << "}" << endl;
-			 
+					OUTWITH_11_Tab << "{" << endl;
+					{
+						H3D_NOTICE____H3D_NOTICE
+						OUTWITH_22_Tab << endl;
+						OUTWITH_22_Tab << "//列表m_s_friend_control_arr内部wnd_item刷新" << endl;
+						OUTWITH_22_Tab << indeps[i].list_control_arr_name+"[i].m_wnd_item->ShowWindow(true);  "<<endl;
+						OUTWITH_22_Tab << "i++;" << endl;
+					}
+					OUTWITH_11_Tab << "}" << endl;
+				}
+				OUTWITH_00_Tab << "}" << endl;
+			}
 		}
 	}
 }

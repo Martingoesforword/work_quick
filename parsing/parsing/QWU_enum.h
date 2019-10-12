@@ -47,15 +47,15 @@ string H3D_PRCCBR_PREFIX = "pb";
 
 #ifndef LIST_H3D_CONTROL_PROGRAMMER
 #define LIST_H3D_CONTROL_PROGRAMMER
-string H3D_BTN_CODE = "m_btn_";
-string H3D_WND_CODE = "m_wnd_";
-string H3D_ST_CODE = "m_st_";
-string H3D_SCR_CODE = "m_scr_";
-string H3D_IMG_CODE = "m_img_";
-string H3D_CHK_CODE = "m_chk_";
-string H3D_EDBX_CODE = "m_rt_";
-string H3D_EFCT_CODE = "m_ew_";
-string H3D_PRCCBR_CODE = "m_pb_";
+string H3D_BTN_CODE = "btn_";
+string H3D_WND_CODE = "wnd_";
+string H3D_ST_CODE = "st_";
+string H3D_SCR_CODE = "scr_";
+string H3D_IMG_CODE = "img_";
+string H3D_CHK_CODE = "chk_";
+string H3D_EDBX_CODE = "rt_";
+string H3D_EFCT_CODE = "ew_";
+string H3D_PRCCBR_CODE = "pb_";
 #endif
 
 //»Øµ÷º¯Êýflag
@@ -68,11 +68,21 @@ string H3D_HAS_ONMOVE = "_mv";
 string H3D_HAS_ONSCROLLCHANGE = "_src"; 
 #endif 
 
-#define OUTWITH_0000000000000_Tab out
-#define OUTWITH_1111111111_Tab out << "\t"
-#define OUTWITH_2222222_Tab out << "\t\t" 
-#define OUTWITH_3333_Tab out << "\t\t\t" 
-#define OUTWITH_4Tab out << "\t\t\t\t" 
-#define OUTWITH_1NewLINE out  << endl;
-#define OUTWITH_2NewLINE out << "\n" << endl;
-#define OUTWITH_3NewLINE out << "\n\n" << endl;
+#define OUTWITH_00_Tab out
+#define OUTWITH_00GG_Tab_Over out << "{"<<endl;
+#define OUTWITH_00YY_Tab_Over out << "};"<<endl;
+#define OUTWITH_11_Tab out << "\t"
+#define OUTWITH_11GG_Tab_Over out << "\t{"<<endl;
+#define OUTWITH_11YY_Tab_Over out << "\t};"<<endl;
+#define OUTWITH_22_Tab out << "\t\t" 
+#define OUTWITH_22GG_Tab_Over out << "\t\t{"<<endl;
+#define OUTWITH_22YY_Tab_Over out << "\t\t};"<<endl;
+#define OUTWITH_33_Tab out << "\t\t\t" 
+#define OUTWITH_33GG_Tab_Over out << "\t\t\t{"<<endl;
+#define OUTWITH_33YY_Tab_Over out << "\t\t\t};"<<endl;
+#define OUTWITH_44_Tab out << "\t\t\t\t" 
+#define OUTWITH_44GG_Tab_Over out << "\t\t\t\t{"<<endl;
+#define OUTWITH_44YY_Tab_Over out << "\t\t\t\t};"<<endl;
+#define OUTWITH_11_NewLINE out  << endl;
+#define OUTWITH_22_NewLINE out << "\n" << endl;
+#define OUTWITH_33_NewLINE out << "\n\n" << endl;

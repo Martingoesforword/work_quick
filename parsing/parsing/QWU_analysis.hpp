@@ -37,7 +37,8 @@ void analysis_listWindow(stct_window& node, string context_id)
 	{
 		stct_item_def content;
 		content.type = analysis_ptr_type( analysis_control_name(cons[i].id));
-		content.name = cons[i].id;
+		content.name = analysis_code_prefix(analysis_control_name(cons[i].id))+formal_deleteFirstOne(cons[i].id) ;
+		content.layout_name = cons[i].id;
 		items.push_back(content);
 	}
 

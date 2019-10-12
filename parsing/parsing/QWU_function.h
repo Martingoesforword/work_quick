@@ -55,10 +55,13 @@ string formal_saveLast(string id);
 //将wnd_amusementPark和wnd_listTable合并为wnd_amusementPark_listTable
 string conbine_context(string comeinParent, string nowWnd);
 
+//将wnd_amusementPark和btn_close合并为btn_amusementPark_close
+string conbine_context_not_wnd(string comeinParent, string nowWnd);
+
 //带\t的输出
 void out_with_tnum(string out_content, ofstream& out, int _tnum);
 
-//输出一个定义语句
+//获得一个定义语句
 string conbine_define(string type_name, string name);
 
 bool is_listWnd(string name)
@@ -87,8 +90,11 @@ string conbine_context(string context_name, string nowWnd)
 	if (context_name.empty()) return formal_deleteFirstOne(nowWnd);
 	else return context_name + "_" + formal_deleteFirstOne(nowWnd);
 }
-
-
+string conbine_context_not_wnd(string context_name, string nowWnd)
+{
+	if (context_name.empty()) return formal_deleteFirstOne(context_name);
+	else return nowWnd + "_" + formal_deleteFirstOne(context_name);
+} 
 string analysis_ptr_type(string id)
 { 
 	if (id == H3D_BTN_CLASS) return H3D_BTN;
@@ -191,6 +197,6 @@ void out_with_tnum(string out_content, ofstream& out, int _tnum)
 
 string conbine_define(string type_name, string name)
 {
-	return type_name + DEFINE_SPACE + name;
+	return type_name + DEFINE_SPACE + name+";";
 }
  

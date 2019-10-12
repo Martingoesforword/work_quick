@@ -15,9 +15,20 @@
 #define H3D_NOTICE____H3D_NOTICE print_notice notice(out);
 
 //定义空格数
-#define DEFINE_SPACE "   "
+#define DEFINE_SPACE " "
+
+//index命名后缀
+#define LIST_INDEX_NAME_POSTFIX_STYLE "_visual_index"
+
+//index命名后缀
+#define LIST_MAX_NAME_POSTFIX_STYLE "_NUM"
+
+//控件数组名后缀
+#define LIST_CONTROL_ARRAY_POSTFIX_STYLE "_control_arr"
+#define LIST_DATA_ARRAY_POSTFIX_STYLE "_control_arr"
 
 
+ 
 /*
 	future:
 */

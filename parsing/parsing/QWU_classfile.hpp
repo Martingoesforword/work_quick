@@ -18,6 +18,7 @@ void output_classimport_code(ofstream& out, string _hname);
 void output_construction_func_code(ofstream& out, string _hname);
 void output_deconstruction_func_code(ofstream& out, string _hname);
 void output_isshow_func_code(ofstream& out, string _hname);
+void output_checkdata_func_code(ofstream& out, string _hname);
 void output_init_func_code(ofstream& out, string _hname);
 void output_onshow_func_code(ofstream& out, string _hname);
 void output_onhide_func_code(ofstream& out, string _hname);
@@ -55,6 +56,14 @@ void output_deconstruction_func_code(ofstream& out, string _hname)
 	out << "\t" << "//输入你自己的代码" << endl;
 	out << "}" << endl;
 }
+void output_checkdata_func_code(ofstream& out, string _hname)
+{
+	//IsShow
+	out << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::CheckData()" << endl;
+	out << "{" << endl; 
+	OUTWITH_11_Tab << "//这个函数是假函数，只是用来标识重入数据（调用函数次数；生成对象次数等数据）需要进行检查方可使用，需要在重入函数中进行调用起到提醒作用" << endl;
+	out << "}" << endl;
+}
 void output_isshow_func_code(ofstream& out, string _hname)
 {
 	//IsShow
@@ -67,17 +76,25 @@ void output_init_func_code(ofstream& out, string _hname)
 {
 	//Init
 	out << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::Init()" << endl;
-	out << "{" << endl; 
-
-	out_with_tnum("//初始化UI代码段(本质为UI属性的相关数据)", out, 1); 
+	out << "{" << endl;  
+	OUTWITH_11_Tab << "//初始化UI代码段(本质为UI属性的相关数据)，分为UI绑定（UI资源绑定，UI操作函数绑定）和UI属性初始化（例如是否为显示状态）" << endl; 
 	print_initdef(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
-	out << endl;
+	
 	print_stct_init_def(out);
 
-	out_with_tnum("//初始化Data代码段(本质为其他数据，下标等数据)", out, 1);
+	OUTWITH_11_NewLINE
+	OUTWITH_11_Tab << "//初始化UI中=======UI属性初始化" << endl;
+	OUTWITH_11_NewLINE
 
+	OUTWITH_11_Tab << "//初始化Data代码段(本质为其他数据，下标等数据)" << endl;
+	{
+		H3D_NOTICE____H3D_NOTICE
+		OUTWITH_11_Tab << "此处实现生成控件显示show属性等属性的初始化" << endl;
+		//print_init_control_property(out);
+	}
+	
 
-	out << "}" << endl;
+	OUTWITH_00_Tab << "}" << endl;
 }
 void output_onshow_func_code(ofstream& out, string _hname)
 {
@@ -112,6 +129,7 @@ void output_classfile(ofstream& out, string _hname) {
 	output_deconstruction_func_code(out, _hname);
 	output_init_func_code(out, _hname);
 	output_isshow_func_code(out, _hname);
+	output_checkdata_func_code(out, _hname);
 	output_onshow_func_code(out, _hname);
 	output_onhide_func_code(out, _hname);
 	output_showwnd_func_code(out, _hname);
