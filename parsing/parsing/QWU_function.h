@@ -1,6 +1,7 @@
 #pragma once
 #include "QWU_include.h"
 #include "QWU_enum.h" 
+#include <stdarg.h>
 
  
 class print_notice {
@@ -11,12 +12,12 @@ public:
 	static int NUM;
 	print_notice(ofstream& out) :out(out)
 	{
-		
-		out << "\n<<<<<<<< 请添加、修改代码 <<<<<<<< NO."<< NUM << endl;
+		OUTPUT(0, 1);
+		OUTPUT(0,) << "<<<<<<<< 请添加、修改代码 <<<<<<<< NO."<< NUM << endl;
 	}
 	~print_notice()
-	{
-		out << "========  请添加、修改代码  ======= NO." << NUM << "\n"<<endl;
+	{ 
+		OUTPUT(0, ) << "========  请添加、修改代码  ======== NO." << NUM << "\n"<<endl;
 		NUM++;
 	}
 };
@@ -187,3 +188,32 @@ string conbine_define(string type_name, string name)
 	return type_name + DEFINE_SPACE + name+";";
 }
  
+string conbine_func_define_call(string name)
+{
+	string res = name + "()"; 
+
+	return res;
+
+}
+string conbine_func_define_call(string name, string parameter1,...)
+{
+	string res = name + "(";
+
+	va_list arg_ptr;
+	 
+	string tempValue;
+	 
+	res += parameter1;
+	
+	va_start(arg_ptr, parameter1);
+	do
+	{ 
+		tempValue = va_arg(arg_ptr, string);  
+		res += PARAMETER_DIVIDE_STYLE+ tempValue;
+	} while (1);
+
+	va_end(arg_ptr);
+	
+	return res;
+		 
+}

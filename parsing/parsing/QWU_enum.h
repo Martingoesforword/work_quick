@@ -68,7 +68,7 @@ string H3D_HAS_ONMOVE = "_mv";
 string H3D_HAS_ONSCROLLCHANGE = "_src"; 
 #endif 
 
-
+#define POINT_CALL "->"
 
 
 //参数n：表示tab的个数 

@@ -27,8 +27,10 @@
 #define LIST_CONTROL_ARRAY_POSTFIX_STYLE "_control_arr"
 #define LIST_DATA_ARRAY_POSTFIX_STYLE "_control_arr"
 
-
- 
+//参数分隔样式
+#define PARAMETER_DIVIDE_STYLE ", "
+#define PARAMETER_DIVIDE_STYLE1 " ,"
+#define PARAMETER_DIVIDE_STYLE2 " , "
 /*
 	future:
 */

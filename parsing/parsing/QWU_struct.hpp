@@ -135,7 +135,7 @@ void print_stct(ofstream& out, int _tnum)
 		}
 		else
 		{
-			OUTPUT(2,) << ", "<<all_stcts[i].max_name +
+			OUTPUT(2,) << ","<<all_stcts[i].max_name +
 				" = " +
 				to_string(all_stcts[i].num) + "," << endl;
 		 
@@ -197,12 +197,12 @@ void print_stct_init_def(ofstream& out)
 		OUTPUT(1,) << "for (int i = 0; i < MAX_" << formal_allUp(def.name) << LIST_MAX_NAME_POSTFIX_STYLE<<"; i++)" << endl;
 		OUTPUT(1,SS);
 
-		OUTPUT(2,) << "InitControl(this, " << all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE <<"[i]" << "." << "wnd_item" << ", " << def.context_id <<", _tstring(L\"item\") + ItoStr(i)); " << endl;
+		OUTPUT(2,) << "InitControl(this"<<PARAMETER_DIVIDE_STYLE << all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE <<"[i]" << "." << "wnd_item" << PARAMETER_DIVIDE_STYLE << def.context_id <<PARAMETER_DIVIDE_STYLE<<"_tstring(L\"item\") + ItoStr(i)); " << endl;
 		OUTPUT(2,) << "H3D_CLIENT::IUIWnd* wnd_item = "+ all_stcts[i].control_array_name+"[i].wnd_item;" << endl;
 		for (size_t j = 0; j < def.items.size(); j++)
 		{
 			stct_item_def item_def = def.items[j];
-			OUTPUT(2,) <<"InitControl(this, "<< all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE << "[i]"<<"." << item_def.name <<", "<< "wnd_item, L\""<< item_def.layout_name <<"\");"<<endl;
+			OUTPUT(2,) <<"InitControl(this"<<PARAMETER_DIVIDE_STYLE<< all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE << "[i]"<<"." << item_def.name <<PARAMETER_DIVIDE_STYLE<< "wnd_item"<<PARAMETER_DIVIDE_STYLE<<"L\""<< item_def.layout_name <<"\");"<<endl;
 
 		}
 

@@ -101,7 +101,12 @@ void output_onshow_func_code(ofstream& out, string _hname)
 	//OnShow
 	OUTPUT(0,) << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnShow()" << endl;
 	OUTPUT(0, SS);
-	OUTPUT(1,) << "GetWndManager()->ShowModalWnd(L\"" << _hname << "\",L\"music_t\", NULL);" << endl;
+	OUTPUT(1,) << conbine_func_define_call("GetWndManager")<< POINT_CALL 
+		<< conbine_func_define_call("ShowModalWnd", 
+			"L\"" + _hname + "\"", 
+			"L\"music_t\"",
+			"NULL") 
+		<<";" << endl;
 	OUTPUT(0, EE);
 }
 void output_onhide_func_code(ofstream& out, string _hname)
@@ -109,7 +114,7 @@ void output_onhide_func_code(ofstream& out, string _hname)
 	//OnHide
 	OUTPUT(0,) << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnHide()" << endl;
 	OUTPUT(0, SS);
-	OUTPUT(1,) << "GetWndManager()->HideModalWnd(false," << _hname << ");" << endl;
+	OUTPUT(1,) << "GetWndManager()->HideModalWnd(false"<<PARAMETER_DIVIDE_STYLE<<"" << _hname << ");" << endl;
 	OUTPUT(0, EE);
 }
 void output_showwnd_func_code(ofstream& out, string _hname)

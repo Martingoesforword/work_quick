@@ -186,18 +186,18 @@ void print_initdef(ofstream& out,string globleclassname)
 		if (indeps[i].isOnClick)
 		{
 			OUTPUT(1,) << "InitControl(this"
-				<< ", " << indeps[i].control_def_name
-				<< ", " << indeps[i].control_def_parentname
-				<< ", " << "L\"" << indeps[i].control_layout_name << "\""
-				<< ", " << "SetPressFunc(&" << globleclassname << "::" << indeps[i].control_btn_onFunc_name << "));"
+				<< PARAMETER_DIVIDE_STYLE << indeps[i].control_def_name
+				<< PARAMETER_DIVIDE_STYLE << indeps[i].control_def_parentname
+				<< PARAMETER_DIVIDE_STYLE << "L\"" << indeps[i].control_layout_name << "\""
+				<< PARAMETER_DIVIDE_STYLE << "SetPressFunc(&" << globleclassname << "::" << indeps[i].control_btn_onFunc_name << "));"
 				<< endl; 
 		}
 		else
 		{
 			OUTPUT(1,) << "InitControl(this"
-				<< ", " << indeps[i].control_def_name
-				<< ", " << indeps[i].control_def_parentname
-				<< ", " << "L\"" << indeps[i].control_layout_name << "\");"
+				<< PARAMETER_DIVIDE_STYLE << indeps[i].control_def_name
+				<< PARAMETER_DIVIDE_STYLE << indeps[i].control_def_parentname
+				<< PARAMETER_DIVIDE_STYLE << "L\"" << indeps[i].control_layout_name << "\");"
 				<< endl;
 
 			if (indeps[i].isOnScrollChange)
@@ -205,7 +205,7 @@ void print_initdef(ofstream& out,string globleclassname)
 				OUTPUT(1,) << indeps[i].control_def_name
 					<< "->" << "SetPosFunEx("
 					<< indeps[i].control_src_onFunc_name
-					<< ", " << "this);"
+					<< PARAMETER_DIVIDE_STYLE << "this);"
 					<< endl;
 				OUTPUT(1,) << indeps[i].control_def_name
 					<< "->" << "SetPos(0);"
@@ -237,7 +237,7 @@ void print_onBtnFun_declare(ofstream& out, string globleclassname)
 		}
 		if (indeps[i].isOnClick)
 		{
-			OUTPUT(1,) <<"void " << get_onBtnFun_declare_without_semicolon(indeps[i].control_btn_onFunc_name, globleclassname)<<";" << endl;
+			OUTPUT(1,) <<"void"<<DEFINE_SPACE << get_onBtnFun_declare_without_semicolon(indeps[i].control_btn_onFunc_name, globleclassname)<<";" << endl;
 		}
 	}
 }
@@ -290,7 +290,7 @@ void print_onToolTips_def(ofstream& out, string globleclassname)
 string get_onScroll_declare_without_semicolon(string onscroll_name)
 {
 	 
-	return  onscroll_name + "(H3D_CLIENT::IUIWnd* wnd, int mode, int pos, void* ptrThis)";
+	return  onscroll_name + "(H3D_CLIENT::IUIWnd* wnd"+PARAMETER_DIVIDE_STYLE+"int mode" + PARAMETER_DIVIDE_STYLE + "int pos" + PARAMETER_DIVIDE_STYLE + "void* ptrThis)";
 	 
 }
 void print_refreshFun_declare(ofstream& out, string globleclassname)
@@ -331,8 +331,8 @@ void print_onScroll_def_with_refresh(ofstream& out, string globleclassname)
 				{
 					OUTPUT(1,) << globleclassname << "* pthis = static_cast<" << globleclassname << "*>(ptrThis);" << endl;
 					OUTPUT(1,) << "if(!pthis){ return; }" << endl;
-					OUTPUT(1,) << "pthis->getClientHall()->GetUIHall()->RefreshScrollBarPos(pthis->" << indeps[i].control_def_name << ", mode, pos, pthis->"
-						<< indeps[i].list_control_index_name << ", pthis->" << indeps[i].list_data_arr_name << ".size(), " << indeps[i].list_control_max_name << ");" << endl;
+					OUTPUT(1,) << "pthis->getClientHall()->GetUIHall()->RefreshScrollBarPos(pthis->" << indeps[i].control_def_name << PARAMETER_DIVIDE_STYLE<<"mode"<<PARAMETER_DIVIDE_STYLE<<"pos"<<PARAMETER_DIVIDE_STYLE<<"pthis->"
+						<< indeps[i].list_control_index_name << PARAMETER_DIVIDE_STYLE<<"pthis->" << indeps[i].list_data_arr_name << ".size()"<<PARAMETER_DIVIDE_STYLE << indeps[i].list_control_max_name << ");" << endl;
 					OUTPUT(1,) << "pthis->" << "refreshInterface(" + indeps[i].list_refreshENUM_name + "); " << endl;
 				}
 				OUTPUT(0, EE);
@@ -357,8 +357,8 @@ void print_onScroll_def_with_refresh(ofstream& out, string globleclassname)
 					OUTPUT(1,) << "else "+ indeps[i].control_def_name +"->ShowWindow(true);" << endl;
 					OUTPUT(0, 1);
 					OUTPUT(1,) << "//ÁÐ±ím_s_friend_control_arrË¢ÐÂ" << endl;
-					OUTPUT(1,) << "vector<" << indeps[i].list_data_struct_name << ">::iterator  pos = " + indeps[i].list_data_arr_name + ".begin();" << endl;
-					OUTPUT(1,) << "std::advance(pos, "+ indeps[i].list_control_index_name+");" << endl;
+					OUTPUT(1,) << "vector<" << indeps[i].list_data_struct_name << ">::iterator"<<DEFINE_SPACE<<"pos = " + indeps[i].list_data_arr_name + ".begin();" << endl;
+					OUTPUT(1,) << string("std::advance(pos")+PARAMETER_DIVIDE_STYLE+ indeps[i].list_control_index_name+");" << endl;
 			 
 					OUTPUT(1,) << "for (int i = 0; pos != "+ indeps[i].list_data_arr_name +".end() && i < "+indeps[i].list_control_max_name+"; ++pos)" << endl;
 	 
