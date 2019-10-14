@@ -6,7 +6,7 @@
  
 class print_notice {
 private:
-	
+
 	ofstream& out;
 public:
 	static int NUM;
@@ -19,7 +19,7 @@ public:
 	{ 
 		OUTPUT(0, ) << "========  请添加、修改代码  ======== NO." << NUM << "\n"<<endl;
 		NUM++;
-	}
+	} 
 };
 int print_notice::NUM = 1;
 //判断是否是列表窗口 类似wnd_list_XXXX格式
