@@ -204,12 +204,12 @@ string conbine_func_define_call(string name, string parameter1,...)
 	string tempValue;
 	 
 	res += parameter1;
-	
+	return res;
 	va_start(arg_ptr, parameter1);
 	do
 	{ 
 		tempValue = va_arg(arg_ptr, string);  
-		res += PARAMETER_DIVIDE_STYLE+ tempValue;
+		//res += PARAMETER_DIVIDE_STYLE+ tempValue;
 	} while (1);
 
 	va_end(arg_ptr);

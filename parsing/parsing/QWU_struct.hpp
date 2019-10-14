@@ -145,7 +145,7 @@ void print_stct(ofstream& out, int _tnum)
 	  
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
-		OUTPUT(1,) << "struct "+style_stct_name_ext1(all_stcts[i].name) << endl;
+		OUTPUT(1,) << "struct"<<DEFINE_SPACE<<style_stct_name_ext1(all_stcts[i].name) << endl;
 		 
 		OUTPUT(1, SS);
 		
@@ -194,11 +194,11 @@ void print_stct_init_def(ofstream& out)
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
 		stct_list_def def = all_stcts[i];
-		OUTPUT(1,) << "for (int i = 0; i < MAX_" << formal_allUp(def.name) << LIST_MAX_NAME_POSTFIX_STYLE<<"; i++)" << endl;
+		OUTPUT(1,) << "for (int"<<DEFINE_SPACE<<"i = 0; i < MAX_" << formal_allUp(def.name) << LIST_MAX_NAME_POSTFIX_STYLE<<"; i++)" << endl;
 		OUTPUT(1,SS);
 
 		OUTPUT(2,) << "InitControl(this"<<PARAMETER_DIVIDE_STYLE << all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE <<"[i]" << "." << "wnd_item" << PARAMETER_DIVIDE_STYLE << def.context_id <<PARAMETER_DIVIDE_STYLE<<"_tstring(L\"item\") + ItoStr(i)); " << endl;
-		OUTPUT(2,) << "H3D_CLIENT::IUIWnd* wnd_item = "+ all_stcts[i].control_array_name+"[i].wnd_item;" << endl;
+		OUTPUT(2,) << "H3D_CLIENT::IUIWnd*"<<DEFINE_SPACE<<"wnd_item = "+ all_stcts[i].control_array_name+"[i].wnd_item;" << endl;
 		for (size_t j = 0; j < def.items.size(); j++)
 		{
 			stct_item_def item_def = def.items[j];

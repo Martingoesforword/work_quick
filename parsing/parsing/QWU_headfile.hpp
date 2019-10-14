@@ -56,7 +56,7 @@ void output_class_def_code_BEGIN(ofstream& out, string _hname)
 	class CUIAmusementHelp:  public CUIBase
 	{
 	*/
-	OUTPUT(0,) << "class " << "CUI" << formal_toHump_deleteFirstOne(_hname) << ": public CUIBase" << endl;
+	OUTPUT(0,) << "class"<<DEFINE_SPACE << "CUI" << formal_toHump_deleteFirstOne(_hname) << ":"<<DEFINE_SPACE<<"public"<<DEFINE_SPACE<<"CUIBase" << endl;
 	OUTPUT(0, SS);
 }
 void output_class_def_code_END(ofstream& out, string _hname)

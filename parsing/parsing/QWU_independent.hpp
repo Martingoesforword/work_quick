@@ -301,7 +301,7 @@ void print_refreshFun_declare(ofstream& out, string globleclassname)
 	{
 		if (indeps[i].isOnScrollChange)
 		{
-			OUTPUT(1,) << "void " << indeps[i].list_refreshFunc_name << "();" << endl;
+			OUTPUT(1,) << "void"<<DEFINE_SPACE << indeps[i].list_refreshFunc_name << "();" << endl;
 
 		}
 	}
@@ -312,7 +312,7 @@ void print_onScroll_declare(ofstream& out, string globleclassname)
 	{
 		if (indeps[i].isOnScrollChange)
 		{
-			OUTPUT(1,)  << "static void " << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << ";" << endl;
+			OUTPUT(1,)  << "static"<<DEFINE_SPACE<<"void"<<DEFINE_SPACE << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << ";" << endl;
 			
 		}
 	}
@@ -326,10 +326,10 @@ void print_onScroll_def_with_refresh(ofstream& out, string globleclassname)
 		{
 			//on函数
 			{
-				OUTPUT(0,) << "void " << globleclassname << "::" << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << endl;
+				OUTPUT(0,) << "void"<<DEFINE_SPACE << globleclassname << "::" << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << endl;
 				OUTPUT(0, SS);
 				{
-					OUTPUT(1,) << globleclassname << "* pthis = static_cast<" << globleclassname << "*>(ptrThis);" << endl;
+					OUTPUT(1,) << globleclassname<<"*" <<DEFINE_SPACE<< "pthis = static_cast<" << globleclassname << "*>(ptrThis);" << endl;
 					OUTPUT(1,) << "if(!pthis){ return; }" << endl;
 					OUTPUT(1,) << "pthis->getClientHall()->GetUIHall()->RefreshScrollBarPos(pthis->" << indeps[i].control_def_name << PARAMETER_DIVIDE_STYLE<<"mode"<<PARAMETER_DIVIDE_STYLE<<"pos"<<PARAMETER_DIVIDE_STYLE<<"pthis->"
 						<< indeps[i].list_control_index_name << PARAMETER_DIVIDE_STYLE<<"pthis->" << indeps[i].list_data_arr_name << ".size()"<<PARAMETER_DIVIDE_STYLE << indeps[i].list_control_max_name << ");" << endl;
@@ -343,7 +343,7 @@ void print_onScroll_def_with_refresh(ofstream& out, string globleclassname)
 				OUTPUT(0, SS);
 				{
 					OUTPUT(1,) << "//update函数必须首先隐藏负责的界面" << endl;
-					OUTPUT(1,) << "for (int i = 0; i < "+indeps[i].list_control_max_name+"; i++)" << endl;
+					OUTPUT(1,) << "for (int"<<DEFINE_SPACE<<"i = 0; i < "+indeps[i].list_control_max_name+"; i++)" << endl;
 					OUTPUT(1, SS);
 					{
 						OUTPUT(2,) << indeps[i].list_control_arr_name + "[i].m_wnd_item->ShowWindow(false);" << endl;
@@ -352,7 +352,7 @@ void print_onScroll_def_with_refresh(ofstream& out, string globleclassname)
 					OUTPUT(1,) << indeps[i].control_def_name<<"->ShowWindow(false);" << endl;
 					OUTPUT(0, 1);
 					OUTPUT(1,) << "//滚动条m_scr_content_friend刷新" << endl;
-					OUTPUT(1,) << "int maxPageNum = ("<< indeps[i].list_data_arr_name<<".size() + "<< indeps[i].list_control_max_name<<" - 1) / "<< indeps[i].list_control_max_name <<";"<< endl;
+					OUTPUT(1,) << "int"<<DEFINE_SPACE<<"maxPageNum = ("<< indeps[i].list_data_arr_name<<".size() + "<< indeps[i].list_control_max_name<<" - 1) / "<< indeps[i].list_control_max_name <<";"<< endl;
 					OUTPUT(1,) << "if (maxPageNum == 1 || maxPageNum == 0) " + indeps[i].control_def_name + "->ShowWindow(false);" << endl;
 					OUTPUT(1,) << "else "+ indeps[i].control_def_name +"->ShowWindow(true);" << endl;
 					OUTPUT(0, 1);
@@ -360,7 +360,7 @@ void print_onScroll_def_with_refresh(ofstream& out, string globleclassname)
 					OUTPUT(1,) << "vector<" << indeps[i].list_data_struct_name << ">::iterator"<<DEFINE_SPACE<<"pos = " + indeps[i].list_data_arr_name + ".begin();" << endl;
 					OUTPUT(1,) << string("std::advance(pos")+PARAMETER_DIVIDE_STYLE+ indeps[i].list_control_index_name+");" << endl;
 			 
-					OUTPUT(1,) << "for (int i = 0; pos != "+ indeps[i].list_data_arr_name +".end() && i < "+indeps[i].list_control_max_name+"; ++pos)" << endl;
+					OUTPUT(1,) << "for (int"<<DEFINE_SPACE<<"i = 0; pos != "+ indeps[i].list_data_arr_name +".end() && i < "+indeps[i].list_control_max_name+"; ++pos)" << endl;
 	 
 					OUTPUT(1, SS);
 					{
