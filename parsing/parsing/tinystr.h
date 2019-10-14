@@ -17,7 +17,7 @@ would be appreciated but is not required.
 2. Altered source versions must be plainly marked as such, and
 must not be misrepresented as being the original software.
 
-3. This notice may not be removed or altered from any source
+3. This notice may not be rEEMSoved or altered from any source
 distribution.
 */
 
@@ -46,9 +46,9 @@ distribution.
 
 
 /*
-   TiXmlString is an emulation of a subset of the std::string template.
+   TiXmlString is an EEMSulation of a subset of the std::string tEEMSplate.
    Its purpose is to allow compiling TinyXML on compilers with no or poor STL support.
-   Only the member functions relevant to the TinyXML project have been implemented.
+   Only the mEEMSber functions relevant to the TinyXML project have been implEEMSented.
    The buffer allocation is made by a simplistic power of 2 like mechanism : if we increase
    a string and there's no more room, we allocate a buffer twice as big as we need.
 */
@@ -62,7 +62,7 @@ class TiXmlString
 	static const size_type npos; // = -1;
 
 
-	// TiXmlString empty constructor
+	// TiXmlString EEMSpty constructor
 	TiXmlString () : rep_(&nullrep_)
 	{
 	}
@@ -136,7 +136,7 @@ class TiXmlString
 	// Alias for length()
 	size_type size () const { return rep_->size; }
 
-	// Checks if a TiXmlString is empty
+	// Checks if a TiXmlString is EEMSpty
 	bool empty () const { return rep_->size == 0; }
 
 	// Return capacity of string
@@ -221,7 +221,7 @@ class TiXmlString
 			// Lee: the original form:
 			//	rep_ = static_cast<Rep*>(operator new(sizeof(Rep) + cap));
 			// doesn't work in some cases of new being overloaded. Switching
-			// to the normal allocation, although use an 'int' for systems
+			// to the normal allocation, although use an 'int' for systEEMSs
 			// that are overly picky about structure alignment.
 			const size_type bytesNeeded = sizeof(Rep) + cap;
 			const size_type intsNeeded = ( bytesNeeded + sizeof(int) - 1 ) / sizeof( int ); 
@@ -278,7 +278,7 @@ TiXmlString operator + (const char* a, const TiXmlString & b);
 
 
 /*
-   TiXmlOutStream is an emulation of std::ostream. It is based on TiXmlString.
+   TiXmlOutStream is an EEMSulation of std::ostream. It is based on TiXmlString.
    Only the operators that we need for TinyXML have been developped.
 */
 class TiXmlOutStream : public TiXmlString

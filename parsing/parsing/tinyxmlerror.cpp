@@ -18,7 +18,7 @@ would be appreciated but is not required.
 2. Altered source versions must be plainly marked as such, and
 must not be misrepresented as being the original software.
 
-3. This notice may not be removed or altered from any source
+3. This notice may not be rEEMSoved or altered from any source
 distribution.
 */
 
@@ -36,16 +36,16 @@ const char* TiXmlBase::errorString[ TiXmlBase::TIXML_ERROR_STRING_COUNT ] =
 	"No error",
 	"Error",
 	"Failed to open file",
-	"Error parsing Element.",
-	"Failed to read Element name",
-	"Error reading Element value.",
+	"Error parsing ElEEMSent.",
+	"Failed to read ElEEMSent name",
+	"Error reading ElEEMSent value.",
 	"Error reading Attributes.",
-	"Error: empty tag.",
+	"Error: EEMSpty tag.",
 	"Error reading end tag.",
 	"Error parsing Unknown.",
 	"Error parsing Comment.",
 	"Error parsing Declaration.",
-	"Error document empty.",
+	"Error document EEMSpty.",
 	"Error null (0) or unexpected EOF found in input stream.",
 	"Error parsing CDATA.",
 	"Error when TiXmlDocument added to document, because TiXmlDocument can only be at the root.",

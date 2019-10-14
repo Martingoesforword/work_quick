@@ -14,7 +14,7 @@
     <Show>false</Show>
     <Tile>-1 -1</Tile>
     <TileHeadTail>0 0</TileHeadTail>
-    <TileModeAdv>tilemode_null</TileModeAdv>
+    <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
     <TileSize>16 16</TileSize>
     <ZLevel>z_9</ZLevel>
     <ResourceID>star_ui_newback</ResourceID>
@@ -33,7 +33,7 @@
       <Show>true</Show>
       <Tile>-1 -1</Tile>
       <TileHeadTail>0 0</TileHeadTail>
-      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
       <TileSize>16 16</TileSize>
       <ZLevel>z_0</ZLevel>
       <ResourceID>star_ui_ZwndYes</ResourceID>
@@ -65,7 +65,7 @@
       <Show>true</Show>
       <Tile>-1 -1</Tile>
       <TileHeadTail>0 0</TileHeadTail>
-      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
       <TileSize>16 16</TileSize>
       <ZLevel>z_0</ZLevel>
       <ResourceID>
@@ -92,7 +92,7 @@
       <Show>false</Show>
       <Tile>-1 -1</Tile>
       <TileHeadTail>0 0</TileHeadTail>
-      <TileModeAdv>tilemode_null</TileModeAdv>
+      <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
       <TileSize>16 16</TileSize>
       <ZLevel>z_0</ZLevel>
       <ResourceID>star_ui_newback</ResourceID>
@@ -111,7 +111,7 @@
         <Show>true</Show>
         <Tile>-1 -1</Tile>
         <TileHeadTail>0 0</TileHeadTail>
-        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
         <TileSize>16 16</TileSize>
         <ZLevel>z_0</ZLevel>
         <ScrollAlways>0</ScrollAlways>
@@ -133,13 +133,13 @@
         </Font>
         <FontID>
         </FontID>
-        <ID>wnd_list_chatmember</ID>
+        <ID>wnd_list_chatmEEMSber</ID>
         <Position>14 20</Position>
         <Rect>0 270 573 0</Rect>
         <Show>false</Show>
         <Tile>-1 -1</Tile>
         <TileHeadTail>0 0</TileHeadTail>
-        <TileModeAdv>tilemode_null</TileModeAdv>
+        <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
         <TileSize>16 16</TileSize>
         <ZLevel>z_0</ZLevel>
         <ResourceID>star_ui_newback</ResourceID>
@@ -152,13 +152,13 @@
           </Font>
           <FontID>
           </FontID>
-          <ID>item1</ID>
+          <ID>itEEMS1</ID>
           <Position>10 40</Position>
           <Rect>0 29 554 0</Rect>
           <Show>false</Show>
           <Tile>-1 -1</Tile>
           <TileHeadTail>0 0</TileHeadTail>
-          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
           <TileSize>16 16</TileSize>
           <ZLevel>z_0</ZLevel>
           <ResourceID>star_ui_newback</ResourceID>
@@ -177,7 +177,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>star_ui_ZwndYes</ResourceID>
@@ -208,7 +208,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -229,7 +229,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -251,7 +251,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>
@@ -276,13 +276,13 @@
           </Font>
           <FontID>
           </FontID>
-          <ID>item2</ID>
+          <ID>itEEMS2</ID>
           <Position>10 228</Position>
           <Rect>0 29 554 0</Rect>
           <Show>false</Show>
           <Tile>-1 -1</Tile>
           <TileHeadTail>0 0</TileHeadTail>
-          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
           <TileSize>16 16</TileSize>
           <ZLevel>z_0</ZLevel>
           <ResourceID>star_ui_newback</ResourceID>
@@ -301,7 +301,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>star_ui_ZwndYes</ResourceID>
@@ -332,7 +332,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -353,7 +353,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -375,7 +375,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>
@@ -400,13 +400,13 @@
           </Font>
           <FontID>
           </FontID>
-          <ID>item3</ID>
+          <ID>itEEMS3</ID>
           <Position>10 181</Position>
           <Rect>0 29 554 0</Rect>
           <Show>false</Show>
           <Tile>-1 -1</Tile>
           <TileHeadTail>0 0</TileHeadTail>
-          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
           <TileSize>16 16</TileSize>
           <ZLevel>z_0</ZLevel>
           <ResourceID>star_ui_newback</ResourceID>
@@ -425,7 +425,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>star_ui_ZwndYes</ResourceID>
@@ -456,7 +456,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -477,7 +477,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -499,7 +499,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>
@@ -524,13 +524,13 @@
           </Font>
           <FontID>
           </FontID>
-          <ID>item4</ID>
+          <ID>itEEMS4</ID>
           <Position>10 134</Position>
           <Rect>0 29 554 0</Rect>
           <Show>false</Show>
           <Tile>-1 -1</Tile>
           <TileHeadTail>0 0</TileHeadTail>
-          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
           <TileSize>16 16</TileSize>
           <ZLevel>z_0</ZLevel>
           <ResourceID>star_ui_newback</ResourceID>
@@ -549,7 +549,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>star_ui_ZwndYes</ResourceID>
@@ -580,7 +580,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -601,7 +601,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -623,7 +623,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>
@@ -648,13 +648,13 @@
           </Font>
           <FontID>
           </FontID>
-          <ID>item5</ID>
+          <ID>itEEMS5</ID>
           <Position>10 87</Position>
           <Rect>0 29 554 0</Rect>
           <Show>false</Show>
           <Tile>-1 -1</Tile>
           <TileHeadTail>0 0</TileHeadTail>
-          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
           <TileSize>16 16</TileSize>
           <ZLevel>z_0</ZLevel>
           <ResourceID>star_ui_newback</ResourceID>
@@ -673,7 +673,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>star_ui_ZwndYes</ResourceID>
@@ -704,7 +704,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -725,7 +725,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -747,7 +747,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>
@@ -772,13 +772,13 @@
           </Font>
           <FontID>
           </FontID>
-          <ID>item6</ID>
+          <ID>itEEMS6</ID>
           <Position>15 -277</Position>
           <Rect>0 29 554 0</Rect>
           <Show>false</Show>
           <Tile>-1 -1</Tile>
           <TileHeadTail>0 0</TileHeadTail>
-          <TileModeAdv>tilemode_null</TileModeAdv>
+          <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
           <TileSize>16 16</TileSize>
           <ZLevel>z_0</ZLevel>
           <ResourceID>star_ui_newback</ResourceID>
@@ -797,7 +797,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>star_ui_ZwndYes</ResourceID>
@@ -828,7 +828,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -849,7 +849,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>GUI_background_img</ResourceID>
@@ -871,7 +871,7 @@
             <Show>true</Show>
             <Tile>-1 -1</Tile>
             <TileHeadTail>0 0</TileHeadTail>
-            <TileModeAdv>tilemode_null</TileModeAdv>
+            <TilEEMSodeAdv>tilEEMSode_null</TilEEMSodeAdv>
             <TileSize>16 16</TileSize>
             <ZLevel>z_0</ZLevel>
             <ResourceID>

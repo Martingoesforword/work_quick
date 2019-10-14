@@ -118,5 +118,5 @@ TiXmlElement* findXmlById(string id, TiXmlElement* xml)
 			return  (TiXmlElement*)node;
 		}
 	}
-
+	return NULL;
 }

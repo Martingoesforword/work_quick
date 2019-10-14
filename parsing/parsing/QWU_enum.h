@@ -72,27 +72,40 @@ string H3D_HAS_ONSCROLLCHANGE = "_src";
 
 
 //参数n：表示tab的个数 
-//参数m：表示选择额外输出类型：数字表示空行个数；START和END表示前后大括号
+//参数m：表示选择额外输出类型：数字表示空行个数；SS和EE表示前后大括号,EEWS表示带semicolon(;)的后括号
 #define OUTPUT(n,m) OUTWITH_##n##n##_##m##_HAHA
+
 #define OUTWITH_00__HAHA out
 #define OUTWITH_11__HAHA out << "\t"
 #define OUTWITH_22__HAHA out << "\t\t" 
 #define OUTWITH_33__HAHA out << "\t\t\t" 
 #define OUTWITH_44__HAHA out << "\t\t\t\t" 
 #define OUTWITH_55__HAHA out << "\t\t\t\t\t" 
-#define OUTWITH_00_START_HAHA out << "{"<<endl 
-#define OUTWITH_00_END_HAHA out << "};"<<endl 
-#define OUTWITH_11_START_HAHA out << "\t{"<<endl 
-#define OUTWITH_11_END_HAHA out << "\t};"<<endl 
-#define OUTWITH_22_START_HAHA out << "\t\t{"<<endl 
-#define OUTWITH_22_END_HAHA out << "\t\t};"<<endl 
-#define OUTWITH_33_START_HAHA out << "\t\t\t{"<<endl 
-#define OUTWITH_33_END_HAHA out << "\t\t\t};"<<endl 
-#define OUTWITH_44_START_HAHA out << "\t\t\t\t{"<<endl 
-#define OUTWITH_44_END_HAHA out << "\t\t\t\t};"<<endl 
-#define OUTWITH_55_START_HAHA out << "\t\t\t\t\t{"<<endl 
-#define OUTWITH_55_END_HAHA out << "\t\t\t\t\t};"<<endl 
-#define OUTWITH_00_1_HAHA out  << endl;
+
+#define OUTWITH_00_SS_HAHA out << "{"<<endl 
+#define OUTWITH_11_SS_HAHA out << "\t{"<<endl 
+#define OUTWITH_22_SS_HAHA out << "\t\t{"<<endl 
+#define OUTWITH_33_SS_HAHA out << "\t\t\t{"<<endl 
+#define OUTWITH_44_SS_HAHA out << "\t\t\t\t{"<<endl  
+#define OUTWITH_55_SS_HAHA out << "\t\t\t\t\t{"<<endl 
+
+#define OUTWITH_00_EEWS_HAHA out << "};"<<endl  
+#define OUTWITH_55_EEWS_HAHA out << "\t\t\t\t\t};"<<endl  
+#define OUTWITH_44_EEWS_HAHA out << "\t\t\t\t};"<<endl 
+#define OUTWITH_33_EEWS_HAHA out << "\t\t\t};"<<endl 
+#define OUTWITH_22_EEWS_HAHA out << "\t\t};"<<endl 
+#define OUTWITH_11_EEWS_HAHA out << "\t};"<<endl 
+
+
+#define OUTWITH_00_EE_HAHA out << "}"<<endl  
+#define OUTWITH_11_EE_HAHA out << "\t}"<<endl  
+#define OUTWITH_22_EE_HAHA out << "\t\t};"<<endl  
+#define OUTWITH_33_EE_HAHA out << "\t\t\t};"<<endl  
+#define OUTWITH_44_EE_HAHA out << "\t\t\t\t};"<<endl  
+#define OUTWITH_55_EE_HAHA out << "\t\t\t\t\t};"<<endl 
+
+#define OUTWITH_00_0_HAHA
+#define OUTWITH_00_1_HAHA out << endl;
 #define OUTWITH_00_2_HAHA out << "\n" << endl;
 #define OUTWITH_00_3_HAHA out << "\n\n" << endl;
 #define OUTWITH_00_4_HAHA out << "\n\n\n" << endl;

@@ -171,13 +171,13 @@ void print_memberdef(ofstream& out)
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
 		//实现将所有定义输出 
-		OUTPUT(1) << indeps[i].control_def_type << DEFINE_SPACE << indeps[i].control_def_name << ";" << endl;
+		OUTPUT(1,) << indeps[i].control_def_type << DEFINE_SPACE << indeps[i].control_def_name << ";" << endl;
 	}
 }
 void print_initdef(ofstream& out,string globleclassname)
 {
 	OUTPUT(0, 1);
-	OUTPUT(1) << "//初始化UI中=======绑定部分" << endl;
+	OUTPUT(1,) << "//初始化UI中=======绑定部分" << endl;
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
 		//实现将所有初始化输出
@@ -185,7 +185,7 @@ void print_initdef(ofstream& out,string globleclassname)
 		//InitControl(this, m_btn_close, m_wnd, L"btn_close", SetPressFunc(&CUIAmusementParkHelp::OnBtnClose));
 		if (indeps[i].isOnClick)
 		{
-			OUTPUT(1) << "InitControl(this"
+			OUTPUT(1,) << "InitControl(this"
 				<< ", " << indeps[i].control_def_name
 				<< ", " << indeps[i].control_def_parentname
 				<< ", " << "L\"" << indeps[i].control_layout_name << "\""
@@ -194,7 +194,7 @@ void print_initdef(ofstream& out,string globleclassname)
 		}
 		else
 		{
-			OUTPUT(1) << "InitControl(this"
+			OUTPUT(1,) << "InitControl(this"
 				<< ", " << indeps[i].control_def_name
 				<< ", " << indeps[i].control_def_parentname
 				<< ", " << "L\"" << indeps[i].control_layout_name << "\");"
@@ -202,12 +202,12 @@ void print_initdef(ofstream& out,string globleclassname)
 
 			if (indeps[i].isOnScrollChange)
 			{
-				OUTPUT(1) << indeps[i].control_def_name
+				OUTPUT(1,) << indeps[i].control_def_name
 					<< "->" << "SetPosFunEx("
 					<< indeps[i].control_src_onFunc_name
 					<< ", " << "this);"
 					<< endl;
-				OUTPUT(1) << indeps[i].control_def_name
+				OUTPUT(1,) << indeps[i].control_def_name
 					<< "->" << "SetPos(0);"
 					<< endl;
 			}  
@@ -232,12 +232,12 @@ void print_onBtnFun_declare(ofstream& out, string globleclassname)
 		//类似void CUIAmusementParkHelp::OnBtnClose(H3D_CLIENT::IUIWnd* wnd)
 		if (!hadOutputComment)
 		{
-			OUTPUT(1) << "//on函数是H3DAPI中的函数，其本质是Data更新函数，需要调用相关数据更新函数进行修改" << endl;
+			OUTPUT(1,) << "//on函数是H3DAPI中的函数，其本质是Data更新函数，需要调用相关数据更新函数进行修改" << endl;
 			hadOutputComment = true;
 		}
 		if (indeps[i].isOnClick)
 		{
-			OUTPUT(1) <<"void " << get_onBtnFun_declare_without_semicolon(indeps[i].control_btn_onFunc_name, globleclassname)<<";" << endl;
+			OUTPUT(1,) <<"void " << get_onBtnFun_declare_without_semicolon(indeps[i].control_btn_onFunc_name, globleclassname)<<";" << endl;
 		}
 	}
 }
@@ -249,10 +249,10 @@ void print_onBtnFun_def(ofstream& out, string globleclassname)
 		//类似void CUIAmusementParkHelp::OnBtnClose(H3D_CLIENT::IUIWnd* wnd)
 		if (indeps[i].isOnClick)
 		{
-			OUTPUT(0) << "void " << globleclassname <<"::"<< get_onBtnFun_declare_without_semicolon(indeps[i].control_btn_onFunc_name, globleclassname) << endl;
-			OUTPUT(0, START);
-			OUTPUT(1) << "//这里写下你的代码" << endl;
-			OUTPUT(0, END);
+			OUTPUT(0,) << "void " << globleclassname <<"::"<< get_onBtnFun_declare_without_semicolon(indeps[i].control_btn_onFunc_name, globleclassname) << endl;
+			OUTPUT(0, SS);
+			OUTPUT(1,) << "//这里写下你的代码" << endl;
+			OUTPUT(0, EE);
 		}
 	}
 }
@@ -270,7 +270,7 @@ void print_onToolTips_declare(ofstream& out, string globleclassname)
 	{ 
 		if (indeps[i].isOnToolTips)
 		{
-			OUTPUT(1) << "void" << get_onToolTips_declare_without_semicolon(indeps[i].operation_onTips_name, globleclassname) << ";" << endl;
+			OUTPUT(1,) << "void" << get_onToolTips_declare_without_semicolon(indeps[i].operation_onTips_name, globleclassname) << ";" << endl;
 		}
 	}
 }
@@ -280,10 +280,10 @@ void print_onToolTips_def(ofstream& out, string globleclassname)
 	{ 
 		if (indeps[i].isOnToolTips)
 		{
-			OUTPUT(0) << "void " << globleclassname << "::"<<get_onBtnFun_declare_without_semicolon(indeps[i].operation_onTips_name, globleclassname) << endl;
-			OUTPUT(0, START);
-			OUTPUT(1) << "//这里写下你的代码" << endl;
-			OUTPUT(0, END);
+			OUTPUT(0,) << "void " << globleclassname << "::"<<get_onBtnFun_declare_without_semicolon(indeps[i].operation_onTips_name, globleclassname) << endl;
+			OUTPUT(0, SS);
+			OUTPUT(1,) << "//这里写下你的代码" << endl;
+			OUTPUT(0, EE);
 		}
 	}
 } 
@@ -295,13 +295,13 @@ string get_onScroll_declare_without_semicolon(string onscroll_name)
 }
 void print_refreshFun_declare(ofstream& out, string globleclassname)
 {
-	OUTPUT(1) << "//refresh函数是refreshInterface函数的子函数，只能被refreshInterface函数调用，使用枚举参数进行或运算识别" << endl;
+	OUTPUT(1,) << "//refresh函数是refreshInterface函数的子函数，只能被refreshInterface函数调用，使用枚举参数进行或运算识别" << endl;
 
 	for (size_t i = 0; i < indeps.size(); i++)
 	{
 		if (indeps[i].isOnScrollChange)
 		{
-			OUTPUT(1) << "void " << indeps[i].list_refreshFunc_name << "();" << endl;
+			OUTPUT(1,) << "void " << indeps[i].list_refreshFunc_name << "();" << endl;
 
 		}
 	}
@@ -312,7 +312,7 @@ void print_onScroll_declare(ofstream& out, string globleclassname)
 	{
 		if (indeps[i].isOnScrollChange)
 		{
-			OUTPUT(1)  << "static void " << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << ";" << endl;
+			OUTPUT(1,)  << "static void " << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << ";" << endl;
 			
 		}
 	}
@@ -326,53 +326,53 @@ void print_onScroll_def_with_refresh(ofstream& out, string globleclassname)
 		{
 			//on函数
 			{
-				OUTPUT(0) << "void " << globleclassname << "::" << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << endl;
-				OUTPUT(0, START);
+				OUTPUT(0,) << "void " << globleclassname << "::" << get_onScroll_declare_without_semicolon(indeps[i].control_src_onFunc_name) << endl;
+				OUTPUT(0, SS);
 				{
-					OUTPUT(1) << globleclassname << "* pthis = static_cast<" << globleclassname << "*>(ptrThis);" << endl;
-					OUTPUT(1) << "if(!pthis){ return; }" << endl;
-					OUTPUT(1) << "pthis->getClientHall()->GetUIHall()->RefreshScrollBarPos(pthis->" << indeps[i].control_def_name << ", mode, pos, pthis->"
+					OUTPUT(1,) << globleclassname << "* pthis = static_cast<" << globleclassname << "*>(ptrThis);" << endl;
+					OUTPUT(1,) << "if(!pthis){ return; }" << endl;
+					OUTPUT(1,) << "pthis->getClientHall()->GetUIHall()->RefreshScrollBarPos(pthis->" << indeps[i].control_def_name << ", mode, pos, pthis->"
 						<< indeps[i].list_control_index_name << ", pthis->" << indeps[i].list_data_arr_name << ".size(), " << indeps[i].list_control_max_name << ");" << endl;
-					OUTPUT(1) << "pthis->" << "refreshInterface(" + indeps[i].list_refreshENUM_name + "); " << endl;
+					OUTPUT(1,) << "pthis->" << "refreshInterface(" + indeps[i].list_refreshENUM_name + "); " << endl;
 				}
-				OUTPUT(0, END);
+				OUTPUT(0, EE);
 			}
 			//refresh函数
 			{
-				OUTPUT(0) << "void " << globleclassname << "::" << indeps[i].list_refreshFunc_name<<"()" << endl;
-				OUTPUT(0, START);
+				OUTPUT(0,) << "void " << globleclassname << "::" << indeps[i].list_refreshFunc_name<<"()" << endl;
+				OUTPUT(0, SS);
 				{
-					OUTPUT(1) << "//update函数必须首先隐藏负责的界面" << endl;
-					OUTPUT(1) << "for (int i = 0; i < "+indeps[i].list_control_max_name+"; i++)" << endl;
-					OUTPUT(1, START);
+					OUTPUT(1,) << "//update函数必须首先隐藏负责的界面" << endl;
+					OUTPUT(1,) << "for (int i = 0; i < "+indeps[i].list_control_max_name+"; i++)" << endl;
+					OUTPUT(1, SS);
 					{
-						OUTPUT(2) << indeps[i].list_control_arr_name + "[i].m_wnd_item->ShowWindow(false);" << endl;
+						OUTPUT(2,) << indeps[i].list_control_arr_name + "[i].m_wnd_item->ShowWindow(false);" << endl;
 					}
-					OUTPUT(1, END);
-					OUTPUT(1) << indeps[i].control_def_name<<"->ShowWindow(false);" << endl;
+					OUTPUT(1, EE);
+					OUTPUT(1,) << indeps[i].control_def_name<<"->ShowWindow(false);" << endl;
 					OUTPUT(0, 1);
-					OUTPUT(1) << "//滚动条m_scr_content_friend刷新" << endl;
-					OUTPUT(1) << "int maxPageNum = ("<< indeps[i].list_data_arr_name<<".size() + "<< indeps[i].list_control_max_name<<" - 1) / "<< indeps[i].list_control_max_name <<";"<< endl;
-					OUTPUT(1) << "if (maxPageNum == 1 || maxPageNum == 0) " + indeps[i].control_def_name + "->ShowWindow(false);" << endl;
-					OUTPUT(1) << "else "+ indeps[i].control_def_name +"->ShowWindow(true);" << endl;
+					OUTPUT(1,) << "//滚动条m_scr_content_friend刷新" << endl;
+					OUTPUT(1,) << "int maxPageNum = ("<< indeps[i].list_data_arr_name<<".size() + "<< indeps[i].list_control_max_name<<" - 1) / "<< indeps[i].list_control_max_name <<";"<< endl;
+					OUTPUT(1,) << "if (maxPageNum == 1 || maxPageNum == 0) " + indeps[i].control_def_name + "->ShowWindow(false);" << endl;
+					OUTPUT(1,) << "else "+ indeps[i].control_def_name +"->ShowWindow(true);" << endl;
 					OUTPUT(0, 1);
-					OUTPUT(1) << "//列表m_s_friend_control_arr刷新" << endl;
-					OUTPUT(1) << "vector<" << indeps[i].list_data_struct_name << ">::iterator  pos = " + indeps[i].list_data_arr_name + ".begin();" << endl;
-					OUTPUT(1) << "std::advance(pos, "+ indeps[i].list_control_index_name+");" << endl;
+					OUTPUT(1,) << "//列表m_s_friend_control_arr刷新" << endl;
+					OUTPUT(1,) << "vector<" << indeps[i].list_data_struct_name << ">::iterator  pos = " + indeps[i].list_data_arr_name + ".begin();" << endl;
+					OUTPUT(1,) << "std::advance(pos, "+ indeps[i].list_control_index_name+");" << endl;
 			 
-					OUTPUT(1) << "for (int i = 0; pos != "+ indeps[i].list_data_arr_name +".end() && i < "+indeps[i].list_control_max_name+"; ++pos)" << endl;
+					OUTPUT(1,) << "for (int i = 0; pos != "+ indeps[i].list_data_arr_name +".end() && i < "+indeps[i].list_control_max_name+"; ++pos)" << endl;
 	 
-					OUTPUT(1, START);
+					OUTPUT(1, SS);
 					{
 						H3D_NOTICE____H3D_NOTICE
-						OUTPUT(2) << endl;
-						OUTPUT(2) << "//列表m_s_friend_control_arr内部wnd_item刷新" << endl;
-						OUTPUT(2) << indeps[i].list_control_arr_name+"[i].m_wnd_item->ShowWindow(true);  "<<endl;
-						OUTPUT(2) << "i++;" << endl;
+						OUTPUT(2,) << endl;
+						OUTPUT(2,) << "//列表m_s_friend_control_arr内部wnd_item刷新" << endl;
+						OUTPUT(2,) << indeps[i].list_control_arr_name+"[i].m_wnd_item->ShowWindow(true);  "<<endl;
+						OUTPUT(2,) << "i++;" << endl;
 					}
-					OUTPUT(1, END);
+					OUTPUT(1, EE);
 				}
-				OUTPUT(0, END);
+				OUTPUT(0, EE);
 			}
 		}
 	}
