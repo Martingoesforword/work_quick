@@ -32,94 +32,94 @@ void output_classimport_code(ofstream& out, string _hname)
 	类似
 	#include  "UIAmusementParkHelp.h"
 	*/
-	out << "#include \"UI" << formal_toHump_deleteFirstOne(_hname) << ".h\"" << endl;
+	OUTPUT(0) << "#include \"UI" << formal_toHump_deleteFirstOne(_hname) << ".h\"" << endl;
 	H3D_NOTICE____H3D_NOTICE
-	out << "#include \"ui\\hall\\UIHall.h\"" << endl;
+	OUTPUT(0) << "#include \"ui\\hall\\UIHall.h\"" << endl;
 	 
 }
 void output_construction_func_code(ofstream& out, string _hname)
 {
 
-	out << "CUI" << formal_toHump_deleteFirstOne(_hname) << "::CUI" << formal_toHump_deleteFirstOne(_hname) << "()" << endl;
-	out << ":CUIBase(L\""+ _hname +"\")\n";
-	out << "{" << endl; 
-	out_with_tnum("//这里为不可重入的Init函数，进行初始化所有数据（UI和Data数据），在对象构建的时候执行一遍", out, 1);
-	out_with_tnum("Init();", out, 1);
-	out << endl;
-	out << "}" << endl;
+	OUTPUT(0) << "CUI" << formal_toHump_deleteFirstOne(_hname) << "::CUI" << formal_toHump_deleteFirstOne(_hname) << "()" << endl;
+	OUTPUT(0) << ":CUIBase(L\""+ _hname +"\")\n";
+	OUTPUT(0, START);
+	OUTPUT(1) << "//这里为不可重入的Init函数，进行初始化所有数据（UI和Data数据），在对象构建的时候执行一遍";
+	OUTPUT(1) << "Init();"<<endl;
+	OUTPUT(0, 1);
+	OUTPUT(0, END);
 }
 void output_deconstruction_func_code(ofstream& out, string _hname)
 {
 	//析构
-	out << "CUI" << formal_toHump_deleteFirstOne(_hname) << "::~CUI" << formal_toHump_deleteFirstOne(_hname) << "()" << endl;
-	out << "{" << endl;
-	out << "\t" << "//输入你自己的代码" << endl;
-	out << "}" << endl;
+	OUTPUT(0) << "CUI" << formal_toHump_deleteFirstOne(_hname) << "::~CUI" << formal_toHump_deleteFirstOne(_hname) << "()" << endl;
+	OUTPUT(0, START);
+	OUTPUT(1) << "//输入你自己的代码" << endl;
+	OUTPUT(0, END);
 }
 void output_checkdata_func_code(ofstream& out, string _hname)
 {
 	//IsShow
-	out << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::CheckData()" << endl;
-	out << "{" << endl; 
-	OUTWITH_11_Tab << "//这个函数是假函数，只是用来标识重入数据（调用函数次数；生成对象次数等数据）需要进行检查方可使用，需要在重入函数中进行调用起到提醒作用" << endl;
-	out << "}" << endl;
+	OUTPUT(0) << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::CheckData()" << endl;
+	OUTPUT(0, START);
+	OUTPUT(1) << "//这个函数是假函数，只是用来标识重入数据（调用函数次数；生成对象次数等数据）需要进行检查方可使用，需要在重入函数中进行调用起到提醒作用" << endl;
+	OUTPUT(0, END);
 }
 void output_isshow_func_code(ofstream& out, string _hname)
 {
 	//IsShow
-	out << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::IsShow()" << endl;
-	out << "{" << endl;
-	out << "\t" << "return m_stateWnd->IsShow();" << endl;
-	out << "}" << endl;
+	OUTPUT(0) << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::IsShow()" << endl;
+	OUTPUT(0, START);
+	OUTPUT(1) << "return m_stateWnd->IsShow();" << endl;
+	OUTPUT(0, END);
 }
 void output_init_func_code(ofstream& out, string _hname)
 {
 	//Init
-	out << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::Init()" << endl;
-	out << "{" << endl;  
-	OUTWITH_11_Tab << "//初始化UI代码段(本质为UI属性的相关数据)，分为UI绑定（UI资源绑定，UI操作函数绑定）和UI属性初始化（例如是否为显示状态）" << endl; 
+	OUTPUT(0) << "bool CUI" << formal_toHump_deleteFirstOne(_hname) << "::Init()" << endl;
+	OUTPUT(0, START);
+	OUTPUT(1) << "//初始化UI代码段(本质为UI属性的相关数据)，分为UI绑定（UI资源绑定，UI操作函数绑定）和UI属性初始化（例如是否为显示状态）" << endl;
 	print_initdef(out, "CUI" + formal_toHump_deleteFirstOne(_hname));
 	
 	print_stct_init_def(out);
 
-	OUTWITH_11_NewLINE
-	OUTWITH_11_Tab << "//初始化UI中=======UI属性初始化" << endl;
-	OUTWITH_11_NewLINE
+	OUTPUT(0, 1);
+	OUTPUT(1) << "//初始化UI中=======UI属性初始化" << endl;
+	OUTPUT(0, 1);
 
-	OUTWITH_11_Tab << "//初始化Data代码段(本质为其他数据，下标等数据)" << endl;
+	OUTPUT(1) << "//初始化Data代码段(本质为其他数据，下标等数据)" << endl;
 	{
 		H3D_NOTICE____H3D_NOTICE
-		OUTWITH_11_Tab << "此处实现生成控件显示show属性等属性的初始化" << endl;
+		OUTPUT(1) << "此处实现生成控件显示show属性等属性的初始化" << endl;
 		//print_init_control_property(out);
 	}
 	
 
-	OUTWITH_00_Tab << "}" << endl;
+	OUTPUT(0, END);
 }
 void output_onshow_func_code(ofstream& out, string _hname)
 {
 	//OnShow
-	out << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnShow()" << endl;
-	out << "{" << endl;
-	out << "\t" << "GetWndManager()->ShowModalWnd(L\"" << _hname << "\",L\"music_t\", NULL);" << endl;
-	out << "}" << endl;
+	OUTPUT(0) << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnShow()" << endl;
+	OUTPUT(0, START);
+	OUTPUT(1) << "GetWndManager()->ShowModalWnd(L\"" << _hname << "\",L\"music_t\", NULL);" << endl;
+	OUTPUT(0, END);
 }
 void output_onhide_func_code(ofstream& out, string _hname)
 {
 	//OnHide
-	out << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnHide()" << endl;
-	out << "{" << endl;
-	out << "\t" << "GetWndManager()->HideModalWnd(false," << _hname << ");" << endl;
-	out << "}" << endl;
+	OUTPUT(0) << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnHide()" << endl;
+	OUTPUT(0, START);
+	OUTPUT(1) << "GetWndManager()->HideModalWnd(false," << _hname << ");" << endl;
+	OUTPUT(0, END);
 }
 void output_showwnd_func_code(ofstream& out, string _hname)
 {
 	//ShowWnd
-	out << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::ShowWnd()" << endl;
-	out << "{" << endl;
-	out << "\t" << "//输入你自己的代码" << endl;
-	out << "\t" << "Show();" << endl;
-	out << "}" << endl;
+	OUTPUT(0) << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::ShowWnd()" << endl;
+	OUTPUT(0, START);
+	OUTPUT(1) << "//输入你自己的代码" << endl;
+	OUTPUT(1) << "Show();" << endl;
+	OUTPUT(0, END);
 }
 
 void output_classfile(ofstream& out, string _hname) {

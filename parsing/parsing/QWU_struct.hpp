@@ -97,82 +97,82 @@ void print_stct_data(ofstream& out)
 {
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
-		OUTWITH_11_Tab << "struct" << DEFINE_SPACE + all_stcts[i].data_stct << endl;
-		OUTWITH_11GG_Tab_Over
+		OUTPUT(1) << "struct" << DEFINE_SPACE + all_stcts[i].data_stct << endl;
+		OUTPUT(1,START);
 		{
-			OUTWITH_22_Tab << all_stcts[i].data_stct <<"()"<< endl;
-			OUTWITH_22GG_Tab_Over
+			OUTPUT(2) << all_stcts[i].data_stct <<"()"<< endl;
+			OUTPUT(2,START);
 			{
 
 			}
-			OUTWITH_22YY_Tab_Over
+			OUTPUT(2,END);
 			
 		}
-		OUTWITH_11YY_Tab_Over
+		OUTPUT(1,END);
 	}
-	OUTWITH_11_NewLINE
+	OUTPUT(0, 1);
 	{
 		H3D_NOTICE____H3D_NOTICE
-		OUTWITH_11_Tab << "//生成数据结构体实例" << endl;
+		OUTPUT(1) << "//生成数据结构体实例" << endl;
 
 	}
 }
 void print_stct(ofstream& out, int _tnum)
 { 
-	OUTWITH_11_Tab << "//结构体最大宽度定义" << endl; 
-	OUTWITH_11_Tab << "enum" << endl;
-	OUTWITH_11_Tab << "{" << endl;
+	OUTPUT(1) << "//结构体最大宽度定义" << endl; 
+	OUTPUT(1) << "enum" << endl;
+	OUTPUT(1) << "{" << endl;
 	 
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
 		if (i == 0)
 		{
 
-			OUTWITH_22_Tab << all_stcts[i].max_name +
+			OUTPUT(2) << all_stcts[i].max_name +
 				" = " +
 				to_string(all_stcts[i].num) + "," << endl; 
 			 
 		}
 		else
 		{
-			OUTWITH_22_Tab << ", "<<all_stcts[i].max_name +
+			OUTPUT(2) << ", "<<all_stcts[i].max_name +
 				" = " +
 				to_string(all_stcts[i].num) + "," << endl;
 		 
 		}
 	}
-	OUTWITH_11_Tab << "}" << endl;
+	OUTPUT(1) << "}" << endl;
 	  
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
-		OUTWITH_11_Tab << "struct "+style_stct_name_ext1(all_stcts[i].name) << endl;
+		OUTPUT(1) << "struct "+style_stct_name_ext1(all_stcts[i].name) << endl;
 		 
-		OUTWITH_11_Tab << "{" << endl;
+		OUTPUT(1) << "{" << endl;
 		
 
 		auto items = all_stcts[i].items;  
-		OUTWITH_22_Tab << conbine_define("H3D_CLIENT::IUIWnd*", "wnd_item") << endl; 
+		OUTPUT(2) << conbine_define("H3D_CLIENT::IUIWnd*", "wnd_item") << endl;
 		for (size_t i = 0; i < items.size(); i++)
 		{
-			OUTWITH_22_Tab << conbine_define(items[i].type, items[i].name) << endl;
+			OUTPUT(2) << conbine_define(items[i].type, items[i].name) << endl;
 		}
 		
-		OUTWITH_22_Tab << "" << endl;
-		OUTWITH_22_Tab << style_stct_name_ext1(all_stcts[i].name) +"()" << endl;
-		OUTWITH_22_Tab << "{" << endl;
-		OUTWITH_33_Tab << "wnd_item = NULL;" << endl;  
+		OUTPUT(2) << "" << endl;
+		OUTPUT(2) << style_stct_name_ext1(all_stcts[i].name) +"()" << endl;
+		OUTPUT(2) << "{" << endl;
+		OUTPUT(3) << "wnd_item = NULL;" << endl;
 		for (size_t i = 0; i < items.size(); i++)
 		{
-			OUTWITH_33_Tab << items[i].name + " = NULL;" << endl; 
+			OUTPUT(3) << items[i].name + " = NULL;" << endl;
 		}
-		OUTWITH_22_Tab << "};" << endl;
-		OUTWITH_11_Tab << "};" << endl;
-		OUTWITH_11_Tab << conbine_define(
+		OUTPUT(2) << "};" << endl;
+		OUTPUT(1) << "};" << endl;
+		OUTPUT(1) << conbine_define(
 			"int",
 			all_stcts[i].index_name
 		) << endl;
-		OUTWITH_00_Tab << "private:" << endl;    
-		OUTWITH_11_Tab << conbine_define(
+		OUTPUT(0) << "private:" << endl;    
+		OUTPUT(1) << conbine_define(
 			style_stct_name_ext1(all_stcts[i].name),
 			all_stcts[i].control_array_name +"["+ all_stcts[i].max_name+"]"
 		) << endl; 
@@ -194,19 +194,19 @@ void print_stct_init_def(ofstream& out)
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
 		stct_list_def def = all_stcts[i];
-		OUTWITH_11_Tab << "for (int i = 0; i < MAX_" << formal_allUp(def.name) << LIST_MAX_NAME_POSTFIX_STYLE<<"; i++)" << endl;
-		OUTWITH_11_Tab << "{" << endl;
+		OUTPUT(1) << "for (int i = 0; i < MAX_" << formal_allUp(def.name) << LIST_MAX_NAME_POSTFIX_STYLE<<"; i++)" << endl;
+		OUTPUT(1) << "{" << endl;
 
-		OUTWITH_22_Tab << "InitControl(this, " << all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE <<"[i]" << "." << "wnd_item" << ", " << def.context_id <<", _tstring(L\"item\") + ItoStr(i)); " << endl;
-		OUTWITH_22_Tab << "H3D_CLIENT::IUIWnd* wnd_item = "+ all_stcts[i].control_array_name+"[i].wnd_item;" << endl;
+		OUTPUT(2) << "InitControl(this, " << all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE <<"[i]" << "." << "wnd_item" << ", " << def.context_id <<", _tstring(L\"item\") + ItoStr(i)); " << endl;
+		OUTPUT(2) << "H3D_CLIENT::IUIWnd* wnd_item = "+ all_stcts[i].control_array_name+"[i].wnd_item;" << endl;
 		for (size_t j = 0; j < def.items.size(); j++)
 		{
 			stct_item_def item_def = def.items[j];
-			OUTWITH_22_Tab <<"InitControl(this, "<< all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE << "[i]"<<"." << item_def.name <<", "<< "wnd_item, L\""<< item_def.layout_name <<"\");"<<endl;
+			OUTPUT(2) <<"InitControl(this, "<< all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE << "[i]"<<"." << item_def.name <<", "<< "wnd_item, L\""<< item_def.layout_name <<"\");"<<endl;
 
 		}
 
-		OUTWITH_11_Tab << "}" << endl;
+		OUTPUT(1) << "}" << endl;
 	}
 }
  

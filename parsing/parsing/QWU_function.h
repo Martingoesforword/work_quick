@@ -57,9 +57,7 @@ string conbine_context(string comeinParent, string nowWnd);
 
 //将wnd_amusementPark和btn_close合并为btn_amusementPark_close
 string conbine_context_not_wnd(string comeinParent, string nowWnd);
-
-//带\t的输出
-void out_with_tnum(string out_content, ofstream& out, int _tnum);
+ 
 
 //获得一个定义语句
 string conbine_define(string type_name, string name);
@@ -183,18 +181,7 @@ string formal_saveLast(string id)
 {
 	return id.substr(id.find_last_of("_") + 1, id.size());
 }
-
-
-void out_with_tnum(string out_content, ofstream& out, int _tnum)
-{  
-	
-	for (int i = 0; i < _tnum; i++)
-	{
-		out << "\t";
-	}
-	out << out_content << endl;
-}
-
+ 
 string conbine_define(string type_name, string name)
 {
 	return type_name + DEFINE_SPACE + name+";";

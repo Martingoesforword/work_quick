@@ -68,21 +68,32 @@ string H3D_HAS_ONMOVE = "_mv";
 string H3D_HAS_ONSCROLLCHANGE = "_src"; 
 #endif 
 
-#define OUTWITH_00_Tab out
-#define OUTWITH_00GG_Tab_Over out << "{"<<endl;
-#define OUTWITH_00YY_Tab_Over out << "};"<<endl;
-#define OUTWITH_11_Tab out << "\t"
-#define OUTWITH_11GG_Tab_Over out << "\t{"<<endl;
-#define OUTWITH_11YY_Tab_Over out << "\t};"<<endl;
-#define OUTWITH_22_Tab out << "\t\t" 
-#define OUTWITH_22GG_Tab_Over out << "\t\t{"<<endl;
-#define OUTWITH_22YY_Tab_Over out << "\t\t};"<<endl;
-#define OUTWITH_33_Tab out << "\t\t\t" 
-#define OUTWITH_33GG_Tab_Over out << "\t\t\t{"<<endl;
-#define OUTWITH_33YY_Tab_Over out << "\t\t\t};"<<endl;
-#define OUTWITH_44_Tab out << "\t\t\t\t" 
-#define OUTWITH_44GG_Tab_Over out << "\t\t\t\t{"<<endl;
-#define OUTWITH_44YY_Tab_Over out << "\t\t\t\t};"<<endl;
-#define OUTWITH_11_NewLINE out  << endl;
-#define OUTWITH_22_NewLINE out << "\n" << endl;
-#define OUTWITH_33_NewLINE out << "\n\n" << endl;
+
+
+
+//参数n：表示tab的个数 
+//参数m：表示选择额外输出类型：数字表示空行个数；START和END表示前后大括号
+#define OUTPUT(n,m) OUTWITH_##n##n##_##m##_HAHA
+#define OUTWITH_00__HAHA out
+#define OUTWITH_11__HAHA out << "\t"
+#define OUTWITH_22__HAHA out << "\t\t" 
+#define OUTWITH_33__HAHA out << "\t\t\t" 
+#define OUTWITH_44__HAHA out << "\t\t\t\t" 
+#define OUTWITH_55__HAHA out << "\t\t\t\t\t" 
+#define OUTWITH_00_START_HAHA out << "{"<<endl 
+#define OUTWITH_00_END_HAHA out << "};"<<endl 
+#define OUTWITH_11_START_HAHA out << "\t{"<<endl 
+#define OUTWITH_11_END_HAHA out << "\t};"<<endl 
+#define OUTWITH_22_START_HAHA out << "\t\t{"<<endl 
+#define OUTWITH_22_END_HAHA out << "\t\t};"<<endl 
+#define OUTWITH_33_START_HAHA out << "\t\t\t{"<<endl 
+#define OUTWITH_33_END_HAHA out << "\t\t\t};"<<endl 
+#define OUTWITH_44_START_HAHA out << "\t\t\t\t{"<<endl 
+#define OUTWITH_44_END_HAHA out << "\t\t\t\t};"<<endl 
+#define OUTWITH_55_START_HAHA out << "\t\t\t\t\t{"<<endl 
+#define OUTWITH_55_END_HAHA out << "\t\t\t\t\t};"<<endl 
+#define OUTWITH_00_1_HAHA out  << endl;
+#define OUTWITH_00_2_HAHA out << "\n" << endl;
+#define OUTWITH_00_3_HAHA out << "\n\n" << endl;
+#define OUTWITH_00_4_HAHA out << "\n\n\n" << endl;
+#define OUTWITH_00_5_HAHA out << "\n\n\n\n" << endl;
