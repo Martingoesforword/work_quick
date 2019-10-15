@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="例子">
+      <UniqueIdentifier>{3a6dd0b6-4784-435d-95c7-5c094f198c2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -24,6 +27,12 @@
     <ClInclude Include="ui.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="F:\workspace\a\trunc\src\star\client_hall\UIReturningPrivateChat.h">
+      <Filter>例子</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\workspace\a\trunc\src\star\client_hall\ScrollAgent.h">
+      <Filter>例子</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -31,6 +40,9 @@
     </ClCompile>
     <ClCompile Include="list_adapter_test.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\workspace\a\trunc\src\star\client_hall\UIReturningPrivateChat.cpp">
+      <Filter>例子</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

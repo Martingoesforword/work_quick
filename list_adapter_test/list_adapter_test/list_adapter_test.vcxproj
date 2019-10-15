@@ -152,10 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="adapter.h" />
+    <ClInclude Include="F:\workspace\a\trunc\src\star\client_hall\ScrollAgent.h" />
+    <ClInclude Include="F:\workspace\a\trunc\src\star\client_hall\UIReturningPrivateChat.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ui.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="F:\workspace\a\trunc\src\star\client_hall\UIReturningPrivateChat.cpp" />
     <ClCompile Include="list_adapter_test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

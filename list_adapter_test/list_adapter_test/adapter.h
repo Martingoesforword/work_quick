@@ -10,21 +10,18 @@ public:
 	IUIWnd*   m_wnd_item;
 };
 template<typename control_struct, typename data_struct>
-class ListUpdate
+class ScrollAgent
 {
 private:
 	vector< control_struct>& cons;
-	
 	vector< data_struct>& datas;
-	int control_index;
 	void(*func)(control_struct, data_struct);
 	I_ScrollBar_Adv* scr;
-public:
-	ListUpdate(I_ScrollBar_Adv* scrs, vector< control_struct>& conss, vector<data_struct>& datass, void(*funcc)(control_struct, data_struct))
-		:cons(conss), datas(datass), func(funcc), control_index(0), scr(scrs)
-	{
 
-	}
+	int control_index;
+public:
+	ScrollAgent(I_ScrollBar_Adv* scrs, vector< control_struct>& conss, vector<data_struct>& datass, void(*funcc)(control_struct, data_struct))
+		:cons(conss), datas(datass), func(funcc), control_index(0), scr(scrs) {}
 	void update()
 	{
 		for (int i = 0; i < cons.size(); i++)
@@ -47,7 +44,14 @@ public:
 			i++;
 		}
 	}
-
+	void reset()
+	{
+		control_index = 0;
+	}
+	void review()
+	{
+		control_index = 0;
+	}
 };
 
 
