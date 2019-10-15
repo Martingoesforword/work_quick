@@ -13,27 +13,27 @@ template<typename control_struct, typename data_struct>
 class ListUpdate
 {
 private:
-	vector< control_struct>& cons;
-	
+	control_struct* cons;
+	int length;
 	vector< data_struct>& datas;
 	int control_index;
 	void(*func)(control_struct, data_struct);
 	I_ScrollBar_Adv* scr;
 public:
-	ListUpdate(I_ScrollBar_Adv* scrs, vector< control_struct>& conss, vector<data_struct>& datass, void(*funcc)(control_struct, data_struct))
-		:cons(conss), datas(datass), func(funcc), control_index(0), scr(scrs)
+	ListUpdate(int cons_length, I_ScrollBar_Adv* scrs, control_struct* conss, vector<data_struct>& datass, void(*funcc)(control_struct, data_struct))
+		:cons(conss), datas(datass), func(funcc), control_index(0), scr(scrs), length(cons_length)
 	{
 
 	}
 	void update()
 	{
-		for (int i = 0; i < cons.size(); i++)
+		for (int i = 0; i < length; i++)
 		{
 			cons[i].m_wnd_item->ShowWindow(false);
 		}
 
 		//¹ö¶¯Ìõm_scr_content_friendË¢ÐÂ
-		int maxPageNum = (datas.size() + cons.size() - 1) / cons.size();
+		int maxPageNum = (datas.size() + length) / length;
 		if (maxPageNum == 1 || maxPageNum == 0) scr->ShowWindow(false);
 		else scr->ShowWindow(true);
 
@@ -41,7 +41,7 @@ public:
 		auto pos = datas.begin();
 		std::advance(pos, control_index);
 
-		for (int i = 0; pos != datas.end() && i < control_index; ++pos)
+		for (int i = 0; pos != datas.end() && i < length; ++pos)
 		{
 			func(cons[i], datas[control_index + i]);
 			i++;
