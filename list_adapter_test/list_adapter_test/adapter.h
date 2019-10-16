@@ -4,6 +4,7 @@
 #include "ui.h"
 
 using namespace std;
+
 class view_base
 {
 public:
