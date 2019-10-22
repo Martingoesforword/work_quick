@@ -42,3 +42,14 @@
 *.bak
 /testmqsql/testmqsql/Debug/0
 /testmqsql/testmqsql/x64/Release/0
+/csv_parse_mysql/csv_for_search/Debug/0
+/csv_parse_mysql/csv_for_search/x64/Release/0
+/csv_parse_mysql/e/layout.e
+/csv_parse_mysql/##bujusubmit布局提交.lnk
+/csv_parse_mysql/csv_for_search/tinyxmlparser.cpp
+/csv_parse_mysql/csv_for_search/tinyxmlerror.cpp
+/csv_parse_mysql/csv_for_search/tinyxml.h
+/csv_parse_mysql/csv_for_search/tinyxml.cpp
+/csv_parse_mysql/csv_for_search/tinystr.h
+/csv_parse_mysql/csv_for_search/tinystr.cpp
+/csv_parse_mysql
