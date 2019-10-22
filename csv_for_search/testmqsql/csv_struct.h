@@ -38,7 +38,8 @@ void parsecsvfile(string file_name, vector<csv_kv>& vec,int & num)
 			do
 			{
 				getline(inFile, now_str);
-				lineStr += "==" + now_str;  
+				lineStr += "==" + now_str;
+				if(now_str.empty()) continue;
 			} while (now_str.size() && (now_str.size()>1&& now_str[now_str.size() - 1] != '"' && now_str.size() > 2 && now_str[now_str.size() - 2] != '"' &&now_str.size() > 3 && now_str[now_str.size() - 3] != '"' &&now_str.size() > 4 && now_str[now_str.size() - 4] != '"' &&now_str.size() > 5 && now_str[now_str.size() - 5] != '"'&&now_str.size() > 6 && now_str[now_str.size() - 6] != '"'&&now_str.size() > 7 && now_str[now_str.size() - 7] != '"'));
 		} 
 		if (lineStr.size() <= lineStr.size() - point - 1) continue;
