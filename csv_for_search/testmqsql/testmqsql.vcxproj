@@ -164,6 +164,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="csv_struct.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="setting.h" />
   </ItemGroup>
