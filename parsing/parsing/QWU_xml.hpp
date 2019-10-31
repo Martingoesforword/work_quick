@@ -90,7 +90,7 @@ void IterateXmlNode(string windowname,string path, stct_window& res_window )
 
 	
 	//处理第一个window，建立window结构体 
-	deal_window(&res_window, (TiXmlElement*)firstwindow->NextSiblingElement(), true);
+	deal_window(&res_window, (TiXmlElement*)firstwindow, true);
 	 
 	//TiXmlNode* message = nullptr;
 	/*
