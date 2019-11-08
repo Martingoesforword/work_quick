@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<Windows version="2">
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn0</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn1</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn2</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn3</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn4</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn5</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn6</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn7</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn8</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn9</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
+
+	<Control Class="Button">
+		<AppearanceType>sc_normal</AppearanceType>
+		<CanChangeSize>false</CanChangeSize>
+		<Font></Font>
+		<FontID></FontID>
+		<ID>btn10</ID>
+		<Position>130 364</Position>
+		<Rect>0 26 94 0</Rect>
+		<Show>true</Show>
+		<Tile>-1 -1</Tile>
+		<TileHeadTail>0 0</TileHeadTail>
+		<TileModeAdv>tilemode_null</TileModeAdv>
+		<TileSize>16 16</TileSize>
+		<ZLevel>z_0</ZLevel>
+		<Self>
+			<ClickSound></ClickSound>
+			<TextOffset_X></TextOffset_X>
+			<TextOffset_Y></TextOffset_Y>
+			<CustomCur></CustomCur>
+			<GlowOffset>0 0</GlowOffset>
+			<ButtonState>Normal</ButtonState>
+		</Self>
+	</Control>
