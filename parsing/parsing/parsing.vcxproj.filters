@@ -57,6 +57,9 @@
     <ClInclude Include="QWU_struct.hpp">
       <Filter>hpp</Filter>
     </ClInclude>
+    <ClInclude Include="QWU_prefile.hpp">
+      <Filter>hpp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">

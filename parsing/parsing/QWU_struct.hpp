@@ -19,14 +19,18 @@ struct stct_item_def {
 
 	string type;
 	string name;
-};
+	string layout_name;
+}; 
 struct stct_list_def
 {
 	int num;
 	string name;
 	string context_id;
 	vector<stct_item_def> items;
-
+	string index_name;
+	string max_name;
+	string control_array_name;
+	string data_stct;
 };
 
 
@@ -36,92 +40,142 @@ vector<stct_list_def> all_stcts;
 //为name添加stct_前缀
 //struct person---> struct stct_person
 void format_stct_name(stct_list_def& dec12, string name);
-void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items, string context_id);
-void print_stct(ofstream& out);
+void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items, string context_id); 
+//_tnum：前置\t的个数
+void print_stct(ofstream& out, int _tnum);
+//输出数据结构体
+void print_stct_data(ofstream& out);
+
+//改变样式 struct_friend --->  SFriendControl
+string style_stct_name_ext1(string base_style);
+//改变样式 struct_friend --->  struct_friend_control
+string style_stct_name_ext2(string base_style);  
 void print_stct_init_def(ofstream& out);
 
+string get_max_name(string name);
+string get_index_name(string name);
+string get_control_array_name(string name);
+ 
 void format_stct_name(stct_list_def& dec12, string name) {
-	dec12.name = STCT_PREFIX;
-	dec12.name.append(name);
+	
+	dec12.name = string(MEMBER_PREFIX)+ "list_"+ name; 
 }
+string style_stct_name_ext1(string base_style) {
+	string base = STCT_PREFIX;
+	int length = base.size();
+	string result = STCT_PREFIX_SHORT;
+	result += formal_toHump(base_style.substr(length, base_style.size())) ;
+	return result+"Control";
+}
+string style_stct_name_ext2(string base_style) { 
+	return base_style + "_control";
+} 
 
-void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items, string context_id) 
+void add_stct_def(stct_list_def& dec12, string name, vector<stct_item_def>& items, string context_id)
 {
-
 	format_stct_name(dec12, name);
 	dec12.items = items;
 	dec12.context_id = context_id;
+	dec12.index_name = get_index_name(name);
+	dec12.max_name = get_max_name(name);
+	dec12.control_array_name = get_control_array_name(name); 
+	dec12.data_stct = STCT_PREFIX_SHORT + formal_toHump(name)  + string("Data");
 }
-void print_stct(ofstream& out)
+string get_index_name(string name)
 {
-	/*enum {MaxTipsNum = 3, MaxBoxReward = 5};*/
+	return MEMBER_PREFIX + string("list_") + name + LIST_INDEX_NAME_POSTFIX_STYLE;
+}
+string get_control_array_name(string name)
+{
+	return MEMBER_PREFIX + string("list_")+name + LIST_CONTROL_ARRAY_POSTFIX_STYLE;
+}
+string get_max_name(string name)
+{
+	return "MAX_LIST_" + formal_allUp(name) + LIST_MAX_NAME_POSTFIX_STYLE;
+}
+void print_stct_data(ofstream& out)
+{
+	for (size_t i = 0; i < all_stcts.size(); i++)
+	{
+		OUTPUT(1,) << "struct" << DEFINE_SPACE + all_stcts[i].data_stct << endl;
+		OUTPUT(1,SS);
+		{
+			OUTPUT(2,) << all_stcts[i].data_stct <<"()"<< endl;
+			OUTPUT(2,SS);
+			{
 
-	out << "\t" << "//结构体最大宽度定义" << endl;
-	out << "\t" << "enum" << endl;
-	out << "\t" << "{" << endl;
+			}
+			OUTPUT(2,EE);
+			
+		}
+		OUTPUT(1,EE);
+	}
+	OUTPUT(0, 1);
+	{
+		H3D_NOTICE____H3D_NOTICE
+		OUTPUT(1,) << "//生成数据结构体实例" << endl;
 
-
+	}
+}
+void print_stct(ofstream& out, int _tnum)
+{ 
+	OUTPUT(1,) << "//结构体最大宽度定义" << endl; 
+	OUTPUT(1,) << "enum" << endl;
+	OUTPUT(1, SS);
+	 
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
 		if (i == 0)
 		{
-			out << "\t" <<  "\t" << "MAX_" << formal_allUp(all_stcts[i].name) << "_CONTROL_NUM" << " = " << all_stcts[i].num << endl;
+
+			OUTPUT(2,) << all_stcts[i].max_name +
+				" = " +
+				to_string(all_stcts[i].num) + "," << endl; 
+			 
 		}
 		else
 		{
-			out << "\t"<<  "\t, " << "MAX_" << formal_allUp(all_stcts[i].name) << "_CONTROL_NUM" << " = " << all_stcts[i].num << endl;
+			OUTPUT(2,) << ","<<all_stcts[i].max_name +
+				" = " +
+				to_string(all_stcts[i].num) + "," << endl;
+		 
 		}
 	}
-	out << "\t" << "}" << endl;
-	/*
-		struct AmusementBoxRewrad
-		{
-			H3D_CLIENT::IUIWnd*			wnd_boxReward;
-			H3D_CLIENT::IUIButton*		btn_Reward;
-			H3D_CLIENT::IUIStaticText*	st_RewardNum;
-			H3D_CLIENT::IUIEffectWnd*	effect_Reward;
-
-			AmusementBoxRewrad()
-			{
-				wnd_boxReward = NULL;
-				btn_Reward = NULL;
-				st_RewardNum = NULL;
-				effect_Reward = NULL;
-			}
-
-		}
-		*/
+	OUTPUT(1, EE);
+	  
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
-		out << "\t" << "struct" << " " << all_stcts[i].name<<"_control" << endl;
-		out << "\t" << "{" << endl;
+		OUTPUT(1,) << "struct"<<DEFINE_SPACE<<style_stct_name_ext1(all_stcts[i].name) << endl;
+		 
+		OUTPUT(1, SS);
+		
 
-		auto items = all_stcts[i].items;
-		out << "\t" << "\tH3D_CLIENT::IUIWnd*   wnd_item;" <<endl;
+		auto items = all_stcts[i].items;  
+		OUTPUT(2,) << conbine_define("H3D_CLIENT::IUIWnd*", "wnd_item") << endl;
 		for (size_t i = 0; i < items.size(); i++)
 		{
-			out << "\t" << "\t" << items[i].type << "   " << items[i].name << ";" << endl;
+			OUTPUT(2,) << conbine_define(items[i].type, items[i].name) << endl;
 		}
-		out << "\t" << "\t" << "\n" << endl;
-		out << "\t" << "\t" << all_stcts[i].name << "()" << endl;
-		out << "\t" << "\t" << "{" << endl;
-		out << "\t" << "\t\twnd_item = NULL" << endl;
+		
+		OUTPUT(0, 1);
+		OUTPUT(2,) << style_stct_name_ext1(all_stcts[i].name) +"()" << endl;
+		OUTPUT(2, SS);
+		OUTPUT(3,) << "wnd_item = NULL;" << endl;
 		for (size_t i = 0; i < items.size(); i++)
 		{
-			out << "\t" << "\t\t" << items[i].name << " = NULL;" << endl;
+			OUTPUT(3,) << items[i].name + " = NULL;" << endl;
 		}
-		out << "\t" << "\t" << "}" << endl;
-		out << "\t" << "}" << endl;
-
-		/*
-	类似
-	private:
-		std::vector<AmusementBoxRewrad>			m_box_reward_vec;
-	根据结构体定义生成结构体vector
-	*/
-		out << "private:" << endl;
-		out << "\t" << all_stcts[i].name << "_control" << "   "
-			<< all_stcts[i].name << "_control" << "_arr[" << "MAX_" << formal_allUp(all_stcts[i].name) << "_CONTROL_NUM" << "];" << endl;
+		OUTPUT(2, EEWS);
+		OUTPUT(1, EEWS);
+		OUTPUT(1,) << conbine_define(
+			"int",
+			all_stcts[i].index_name
+		) << endl;
+		OUTPUT(0,) << "private:" << endl;    
+		OUTPUT(1,) << conbine_define(
+			style_stct_name_ext1(all_stcts[i].name),
+			all_stcts[i].control_array_name +"["+ all_stcts[i].max_name+"]"
+		) << endl; 
 	} 
 }
 void add_list_vector(vector< stct_item_def>& items, string name, int num, string context_id)
@@ -136,20 +190,23 @@ void add_list_vector(vector< stct_item_def>& items, string name, int num, string
 
 void print_stct_init_def(ofstream& out)
 {
+	H3D_NOTICE____H3D_NOTICE
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
 		stct_list_def def = all_stcts[i];
-		out << "\tfor (int i = 0; i < MAX_" << formal_allUp(def.name) << "_CONTROL_NUM; i++)" << endl;
-		out << "\t{" << endl;
+		OUTPUT(1,) << "for (int"<<DEFINE_SPACE<<"i = 0; i < MAX_" << formal_allUp(def.name) << LIST_MAX_NAME_POSTFIX_STYLE<<"; i++)" << endl;
+		OUTPUT(1,SS);
 
-		out << "\t\tInitControl(this, " << all_stcts[i].name << "_control" << "_arr[i]" << "." << "wnd_item" << ", " << "m_wnd_content_list_chatmember, L\"item\" + toWchar(i)); " << endl;
+		OUTPUT(2,) << "InitControl(this"<<PARAMETER_DIVIDE_STYLE << all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE <<"[i]" << "." << "wnd_item" << PARAMETER_DIVIDE_STYLE << def.context_id <<PARAMETER_DIVIDE_STYLE<<"_tstring(L\"item\") + ItoStr(i)); " << endl;
+		OUTPUT(2,) << "H3D_CLIENT::IUIWnd*"<<DEFINE_SPACE<<"wnd_item = "+ all_stcts[i].control_array_name+"[i].wnd_item;" << endl;
 		for (size_t j = 0; j < def.items.size(); j++)
 		{
 			stct_item_def item_def = def.items[j];
-			out <<"\t\tInitControl(this, "<< all_stcts[i].name << "_control" << "_arr[i]"<<"." << item_def.name<<", "<< all_stcts[i].name << "_control" << "_arr[i]"<<".wnd_item, L\""<< item_def.name<<"\");"<<endl;
+			OUTPUT(2,) <<"InitControl(this"<<PARAMETER_DIVIDE_STYLE<< all_stcts[i].name << LIST_CONTROL_ARRAY_POSTFIX_STYLE << "[i]"<<"." << item_def.name <<PARAMETER_DIVIDE_STYLE<< "wnd_item"<<PARAMETER_DIVIDE_STYLE<<"L\""<< item_def.layout_name <<"\");"<<endl;
 
 		}
 
-		out << "\t}" << endl;
+		OUTPUT(1, EE);
 	}
 }
+ 

@@ -40,3 +40,5 @@
 /commit_control/testmqsql/testmqsql/1 (1).txt
 /commit_control/testmqsql/testmqsql/0
 *.bak
+/testmqsql/testmqsql/Debug/0
+/testmqsql/testmqsql/x64/Release/0
