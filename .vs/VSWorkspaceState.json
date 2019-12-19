@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\csv_for_search",
+    "\\csv_for_search\\testmqsql"
   ],
-  "SelectedNode": "\\testmqsql",
+  "SelectedNode": "\\csv_for_search\\testmqsql\\csv_for_reserch.cpp",
   "PreviewInSolutionExplorer": false
 }
