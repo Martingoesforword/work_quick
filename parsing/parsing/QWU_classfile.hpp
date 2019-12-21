@@ -114,7 +114,7 @@ void output_onhide_func_code(ofstream& out, string _hname)
 	//OnHide
 	OUTPUT(0,) << "void CUI" << formal_toHump_deleteFirstOne(_hname) << "::OnHide()" << endl;
 	OUTPUT(0, SS);
-	OUTPUT(1,) << "GetWndManager()->HideModalWnd(false"<<PARAMETER_DIVIDE_STYLE<<"" << _hname << ");" << endl;
+	OUTPUT(1,) << "GetWndManager()->HideModalWnd(false"<<PARAMETER_DIVIDE_STYLE<< "m_stateWnd" << ");" << endl;
 	OUTPUT(0, EE);
 }
 void output_showwnd_func_code(ofstream& out, string _hname)

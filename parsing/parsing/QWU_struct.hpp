@@ -141,7 +141,7 @@ void print_stct(ofstream& out, int _tnum)
 		 
 		}
 	}
-	OUTPUT(1, EE);
+	OUTPUT(1, EEWS);
 	  
 	for (size_t i = 0; i < all_stcts.size(); i++)
 	{
