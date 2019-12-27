@@ -23,7 +23,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="X51UICodeGuider.cpp">
+    <ClCompile Include="X51CodeGuider.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
